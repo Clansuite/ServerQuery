@@ -1,5 +1,5 @@
 ## Clansuite Server Query
-## Table of Contents
+### Table of Contents
 
 1. [Supported Server Protocols](#supported-server-protocols)
 2. [Supported Game Servers](#supported-game-servers)
@@ -8,12 +8,14 @@
 4. [Game List](./game_list.md)
 
 
+---
+
 ### Supported Server Protocols
 
 Total Protocols: 33
 Total Games: 146
 
-This document lists the server protocols supported, organized in a hierarchical tree structure.
+This section lists the server protocols supported, organized in a hierarchical tree structure.
 Each protocol serves as a top-level category, with the games they support listed underneath.
 
 ```
