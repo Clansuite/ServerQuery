@@ -5,8 +5,6 @@
 2. [Supported Game Servers](#supported-game-servers)
 3. [Game Series](#game-series)
 
-4. [Game List](./game_list.md)
-
 
 ---
 
