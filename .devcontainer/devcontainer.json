@@ -1,0 +1,33 @@
+{
+  "name": "PHP-Devbox",
+  "dockerFile": "Dockerfile",
+  // config settings you would have in ".vscode/settings.json"
+  "customizations": {
+      "vscode": {
+          // Add the IDs of extensions you want installed when the container is created.
+          "extensions": [
+              // VS Code specific
+              "EditorConfig.EditorConfig",
+              // Asciidoc specific
+              "asciidoctor.asciidoctor-vscode",
+              // Markdown specific
+              "yzhang.markdown-all-in-one",
+              // PHP specific
+              "xdebug.php-pack",
+              "DEVSENSE.phptools-vscode"
+          ],
+          "settings": {
+            "extensions.ignoreRecommendations": true,
+            "terminal.integrated.defaultProfile.linux": "zsh",
+            "terminal.integrated.shell.linux": "/bin/zsh",
+            // tell VSCode that you want the shell to be a login, interactive shell
+            "terminal.integrated.shellArgs.linux": [
+              "-l",
+              "-i"
+            ]
+          }
+      }
+  },
+  "remoteUser": "root"//,
+  //"forwardPorts": [80, 81, 11343]
+}

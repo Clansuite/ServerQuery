@@ -1,0 +1,26 @@
+; https://github.com/editorconfig/
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.bat]
+end_of_line = crlf
+
+[*.php]
+indent_size = 4
+
+[*.{css,js,mjs,json,scss,yml,yaml}]
+indent_size = 2
+
+[*.xml]
+indent_size = 4
+
+[*.{md,adoc}]
+trim_trailing_whitespace = false
