@@ -153,23 +153,6 @@ class DocumentProtocols
         // Build series
         $this->series = [];
 
-        foreach ($this->protocols as $games) {
-            // Since we don't have per-class series now, use the base as series or something
-            // But to keep, perhaps need to adjust
-            // For simplicity, since series is from game_series_list, but now grouped, perhaps skip or adjust
-            // The series is built from the original loop, but since we changed, need to rebuild
-            // Actually, the series is independent, but to keep it, we can leave it as is, but since we removed the loop, need to adjust
-            // The series loop is after, but now $this->protocols is different.
-            // To fix, perhaps keep the original loop for series.
-            // But for now, since the task is about the tree, and series is separate, perhaps regenerate series from the grouped.
-            // But the series uses game_series_list, which is per class.
-            // To keep accurate, I need to keep the original protocols array for series.
-            // So, let's add a separate array for series building.
-        }
-
-        // For series, rebuild from files
-        $this->series = [];
-
         foreach ($files as $file) {
             $className     = basename($file, '.php');
             $fullClassName = 'Clansuite\\ServerQuery\\ServerProtocols\\' . $className;
