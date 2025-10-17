@@ -16,5 +16,5 @@ All changes to the project will be documented in this file.
 
 <!-- Section for Reference Links -->
 
-[vNext]: https://github.com/Clansuite/GameServerQuery/v0.0.1...HEAD
-[0.0.1]: https://github.com/Clansuite/GameServerQuery/releases/tag/v0.0.1
+[vNext]: https://github.com/Clansuite/ServerQuery/v0.0.1...HEAD
+[0.0.1]: https://github.com/Clansuite/ServerQuery/releases/tag/v0.0.1

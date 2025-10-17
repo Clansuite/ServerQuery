@@ -276,7 +276,7 @@ class DocumentProtocols
         $html .= "<h2>Clansuite Server Query</h2>\n";
         $html .= "Clansuite Server Query currently supports {$this->totalProtocols} server protocols and is compatible with {$this->totalGames} game and voice servers.\n";
         $html .= "<p>This document provides a complete list of supported protocols and games.</p>\n";
-        $html .= "<p>If the server you are looking for is not included, you can either contribute by forking the project on <a href='https://github.com/Clansuite/GameServerQuery'>GitHub</a> and add it yourself, or <a href='https://github.com/Clansuite/GameServerQuery/issues'>submit a request</a> to have it added.</p>\n";
+        $html .= "<p>If the server you are looking for is not included, you can either contribute by forking the project on <a href='https://github.com/Clansuite/GameServerQuery'>GitHub</a> and add it yourself, or <a href='https://github.com/Clansuite/ServerQuery/issues'>submit a request</a> to have it added.</p>\n";
         $html .= "<p>Best regards,<br>Jens A. Koch</p>\n";
 
         $html .= "<h3>Supported Server Protocols</h3>\n";

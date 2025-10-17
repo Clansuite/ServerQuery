@@ -8,9 +8,11 @@ Also inspired by projects like hlsw, kquery, squery, GameQ and phgstats.
 
 ## Requirements
 
-- PHP 8.2+ (a supported PHP Version: https://www.php.net/supported-versions.php)
+- PHP 8.2+
 
 ## Installation
+
+`composer require clansuite/gameserverquery`
 
 ## Usage
 
@@ -20,14 +22,14 @@ Also inspired by projects like hlsw, kquery, squery, GameQ and phgstats.
 require_once 'vendor/autoload.php';
 
 $factory = new Clansuite\ServerQuery\CSQuery();
-$gameserver = $factory->createInstance('Quake3a', '172.104.253.108', 27980);
+$server = $factory->createInstance('Quake3a', '172.104.253.108', 27980);
 
-if ($gameserver->query_server()) {
+if ($server->query_server()) {
     // Get JSON output
-    $json = $gameserver->toJson();
+    $json = $server->toJson();
 
     // Get HTML table output
-    $html = $gameserver->toHtml();
+    $html = $server->toHtml();
 
     echo $html; // Display in browser
 }

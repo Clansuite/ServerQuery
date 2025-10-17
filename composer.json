@@ -1,0 +1,67 @@
+{
+  "name": "clansuite/gameserverquery",
+  "description": "A PHP library to query game and voice servers for their status and player information (e.g. CSGO, Quake3, TeamSpeak).",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.4",
+    "friendsofphp/php-cs-fixer": "^3.88",
+    "rector/rector": "^2.1.7",
+    "vimeo/psalm": "^6.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "Clansuite\\ServerQuery\\": "src/CSQuery/",
+      "Clansuite\\Capture\\": "src/Capture/",
+      "Clansuite\\Capture\\CLI\\": "src/CLI/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "homepage": "https://github.com/Clansuite/GameServerQuery",
+  "support": {
+    "issues": "https://github.com/Clansuite/ServerQuery/issues",
+    "source": "https://github.com/Clansuite/GameServerQuery"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/jakoch"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Jens A. Koch",
+      "email": "jakoch@web.de"
+    }
+  ],
+  "keywords": [
+    "clansuite",
+    "server query",
+    "game server",
+    "voice server",
+    "query",
+    "serverstatus",
+    "php game server query",
+    "php voice server query",
+    "half-life server query",
+    "quake3 server query",
+    "steam server query",
+    "teamspeak server query",
+    "discord server query",
+    "game server info",
+    "server status api",
+    "multiplayer server query"
+  ]
+}
