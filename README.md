@@ -1,10 +1,12 @@
 # Clansuite Server Query
 
 Clansuite Server Query is a PHP library that allows you to query
-game and voice servers. See [list of supported servers](/docs/protocols.md).
+game and voice servers.
 
-It is a full rewrite of the deprecated gsQuery by Jeremias Reith.
-Also inspired by projects like hlsw, kquery, squery, GameQ and phgstats.
+See the [list of supported servers](/docs/protocols.md).
+
+This library is a complete rewrite of the deprecated gsQuery by Jeremias Reith.
+It is also inspired by projects such as hlsw, kquery, squery, GameQ, and phgstats.
 
 ## Requirements
 
