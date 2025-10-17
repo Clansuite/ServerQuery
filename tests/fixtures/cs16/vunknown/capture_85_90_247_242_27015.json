@@ -1,0 +1,27 @@
+{
+    "ip": "85.90.247.242",
+    "port": 27015,
+    "protocol": "Cs16",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759102877,
+    "datetime": "2025-09-28T23:41:17+00:00",
+    "options": [],
+    "server_info": {
+        "address": "85.90.247.242",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "cstrike",
+        "gameversion": "by STRONG-HOST.DE",
+        "servertitle": "2.59.135.161:27015",
+        "mapname": "..:: KISS.CS1.RO # VIP FREE | SINCE 2023 # LEGACY OF KINGS::.",
+        "gametype": "cstrike",
+        "numplayers": 72,
+        "maxplayers": 111,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 5,
+    "total_bytes": 142
+}

@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "193.25.252.22",
+        "port": 27015,
+        "protocol": "dods",
+        "timestamp": 1759259394
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "193.25.252.22",
+        "queryport": 27015,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

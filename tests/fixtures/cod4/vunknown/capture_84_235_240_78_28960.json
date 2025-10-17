@@ -1,0 +1,198 @@
+{
+    "ip": "84.235.240.78",
+    "port": 28960,
+    "protocol": "Cod4",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759184916,
+    "datetime": "2025-09-29T22:28:36+00:00",
+    "options": [],
+    "server_info": {
+        "address": "84.235.240.78",
+        "queryport": 28960,
+        "online": true,
+        "gamename": "q3a_call_of_duty_4",
+        "gameversion": "-",
+        "servertitle": "^2PAK ^0PRO^1NESS",
+        "mapname": "mp_backlot",
+        "gametype": "Call of Duty 4",
+        "numplayers": 29,
+        "maxplayers": 64,
+        "rules": {
+            "fs_game": "Mods\/pakproness_v13",
+            "sv_maxclients": "64",
+            "build": "77",
+            "branch": "master",
+            "revision": "49cd028a3e1d3a3fb24d710eca0fb1026056bcee",
+            "_CoD4 X Site": "http:\/\/cod4x.ovh",
+            "protocol": "21",
+            "sv_privateClients": "0",
+            "sv_minPing": "0",
+            "sv_maxPing": "500",
+            "sv_disableClientConsole": "0",
+            "sv_voice": "0",
+            "g_mapStartTime": "Tue Sep 30 02:57:26 2025",
+            "uptime": "20 hours",
+            "g_gametype": "sd",
+            "sv_maxRate": "100000",
+            "sv_floodprotect": "4",
+            "sv_pure": "1",
+            "Discord": "^5discord.gg\/AJNggc5",
+            "Admins": "dicodur x HaKai",
+            "Email": "talha.atiq323@gmail.com",
+            "Website": "pakproness.com",
+            "roundsPlayed": "6-10",
+            "lastPlayedMap": "mp_citystreets",
+            "g_compassShowEnemies": "0"
+        },
+        "players": [
+            {
+                "name": "AbuObeida",
+                "score": "62",
+                "ping": "184"
+            },
+            {
+                "name": "^?[horny]^1wk",
+                "score": "140",
+                "ping": "50"
+            },
+            {
+                "name": "Test",
+                "score": "140",
+                "ping": "113"
+            },
+            {
+                "name": "[H.C] R3B3L",
+                "score": "113",
+                "ping": "49"
+            },
+            {
+                "name": "Really",
+                "score": "62",
+                "ping": "34"
+            },
+            {
+                "name": "Spiers",
+                "score": "28",
+                "ping": "163"
+            },
+            {
+                "name": "drifter.",
+                "score": "127",
+                "ping": "56"
+            },
+            {
+                "name": "TALKA . 7",
+                "score": "65",
+                "ping": "51"
+            },
+            {
+                "name": "riz4r",
+                "score": "75",
+                "ping": "255"
+            },
+            {
+                "name": "mody",
+                "score": "80",
+                "ping": "33"
+            },
+            {
+                "name": "sheikh",
+                "score": "184",
+                "ping": "40"
+            },
+            {
+                "name": "Z11do",
+                "score": "97",
+                "ping": "50"
+            },
+            {
+                "name": "^9K^8AJ^9U ^7(^0Skill Issue^7)",
+                "score": "112",
+                "ping": "51"
+            },
+            {
+                "name": "^?[horny]^0iSmokeWeed^4.",
+                "score": "304",
+                "ping": "46"
+            },
+            {
+                "name": "Mr.MaX",
+                "score": "14",
+                "ping": "51"
+            },
+            {
+                "name": "^7[^1VIRGINS^7]ProDelta",
+                "score": "69",
+                "ping": "48"
+            },
+            {
+                "name": "ISI_kosam",
+                "score": "92",
+                "ping": "108"
+            },
+            {
+                "name": "^1Fals^0e",
+                "score": "0",
+                "ping": "38"
+            },
+            {
+                "name": "SGx 804",
+                "ping": "1"
+            },
+            {
+                "name": "^0D^1E^0A^1T^0H",
+                "score": "118",
+                "ping": "114"
+            },
+            {
+                "name": "INFINITY",
+                "score": "118",
+                "ping": "31"
+            },
+            {
+                "name": "bleki",
+                "score": "18",
+                "ping": "129"
+            },
+            {
+                "name": "ruDe",
+                "score": "141",
+                "ping": "47"
+            },
+            {
+                "name": "sliced",
+                "score": "104",
+                "ping": "113"
+            },
+            {
+                "name": "zzz",
+                "score": "108",
+                "ping": "40"
+            },
+            {
+                "name": "Pain",
+                "score": "195",
+                "ping": "45"
+            },
+            {
+                "name": "TLH",
+                "score": "57",
+                "ping": "46"
+            },
+            {
+                "name": "Bacteria",
+                "score": "150",
+                "ping": "53"
+            },
+            {
+                "name": "asjfiu",
+                "score": "0",
+                "ping": "41"
+            }
+        ],
+        "errstr": ""
+    },
+    "packet_count": 1,
+    "total_bytes": 1236
+}

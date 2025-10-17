@@ -1,0 +1,41 @@
+{
+    "metadata": {
+        "ip": "185.83.152.202",
+        "port": 28316,
+        "protocol": "A2S",
+        "timestamp": 1759451000
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "185.83.152.202",
+        "queryport": 28316,
+        "online": true,
+        "gamename": "Natural Selection 2",
+        "gameversion": "1.0.0.0",
+        "servertitle": "The Thirsty Onos",
+        "mapname": "ns2_veil_cured",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 20,
+        "rules": {
+            "IP": "",
+            "gamedir": "Natural Selection 2",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 56,
+            "botplayers": 0,
+            "dedicated": "No",
+            "server_os": "Linux",
+            "secure": "No",
+            "port": 28315,
+            "steam_id": 90274795467081731,
+            "keywords": "344|ns2|R|205|0|47|65|30|26|20|100|0|5|0|0|0|-2147483648|shine",
+            "game_id": 4920
+        },
+        "players": [],
+        "channels": [],
+        "errstr": ""
+    }
+}

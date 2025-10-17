@@ -1,0 +1,25 @@
+{
+  "server_info": {
+    "online": true,
+    "address": "farming-simulator.example.com:8080",
+    "queryport": 8080,
+    "gamename": "Farming Simulator",
+    "servertitle": "Test Farming Simulator Server",
+    "mapname": "Test Map",
+    "gametype": "",
+    "numplayers": 2,
+    "maxplayers": 10,
+    "password": false,
+    "gameversion": "",
+    "players": [
+      {"name": "player1", "score": 0, "time": 3600},
+      {"name": "player2", "score": 0, "time": 1800}
+    ],
+    "rules": {
+      "name": "Test Farming Simulator Server",
+      "mapName": "Test Map",
+      "dayTime": "120000",
+      "gameVersion": "1.0"
+    }
+  }
+}

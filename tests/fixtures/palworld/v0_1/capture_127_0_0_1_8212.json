@@ -1,0 +1,24 @@
+{
+  "server_info": {
+    "online": true,
+    "address": "127.0.0.1:8212",
+    "queryport": 8212,
+    "gamename": "Palworld",
+    "servertitle": "Test Palworld Server",
+    "mapname": "",
+    "gametype": "",
+    "numplayers": 2,
+    "maxplayers": 32,
+    "password": false,
+    "gameversion": "v0.1.5.0",
+    "players": [
+      {"name": "Player1", "score": 0, "time": 0},
+      {"name": "Player2", "score": 0, "time": 0}
+    ],
+    "rules": {
+      "version": "v0.1.5.0",
+      "servername": "Test Palworld Server",
+      "description": "A test Palworld server"
+    }
+  }
+}

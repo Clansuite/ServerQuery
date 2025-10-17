@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "ip": "95.165.136.15",
+        "port": 7777,
+        "protocol": "Unreal2",
+        "timestamp": 1759452376
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "95.165.136.15",
+        "queryport": 7777,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "channels": [],
+        "errstr": ""
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "ip": "46.174.54.120",
+    "port": 2402,
+    "protocol": "Steam",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759161776,
+    "datetime": "2025-09-29T16:02:56+00:00",
+    "options": [],
+    "server_info": {
+        "address": "46.174.54.120",
+        "queryport": 2402,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 1,
+    "total_bytes": 13
+}

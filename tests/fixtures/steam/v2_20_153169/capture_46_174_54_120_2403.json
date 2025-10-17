@@ -1,0 +1,43 @@
+{
+    "ip": "46.174.54.120",
+    "port": 2403,
+    "protocol": "Steam",
+    "version": "2.20.153169",
+    "normalized_version": "v2_20_153169",
+    "timestamp": 1759161887,
+    "datetime": "2025-09-29T16:04:47+00:00",
+    "options": [],
+    "server_info": {
+        "address": "46.174.54.120",
+        "queryport": 2403,
+        "online": true,
+        "gamename": "King of the Hill by Sa-Matra (v17)",
+        "gameversion": "2.20.153169",
+        "servertitle": "\b *[RU] - King of the Hill - WS.ARMA.SU - #2",
+        "mapname": "Altis",
+        "gametype": "",
+        "numplayers": 97,
+        "maxplayers": 105,
+        "rules": {
+            "IP": "",
+            "gamedir": "Arma3",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": 2402,
+            "steam_id": 90274813492437007,
+            "keywords": "bt,r220,n152946,s7,i3,mf,lf,vt,dt,tkoth,g65545,hd45fd29e,f0,c-2147483648--2147483648,pw,e15,j0,k0,",
+            "game_id": 107410
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 4,
+    "total_bytes": 272
+}

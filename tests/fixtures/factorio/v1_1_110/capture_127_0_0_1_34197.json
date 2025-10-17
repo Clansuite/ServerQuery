@@ -1,0 +1,26 @@
+{
+  "server_info": {
+    "online": true,
+    "address": "127.0.0.1:34197",
+    "queryport": 34197,
+    "gamename": "Factorio",
+    "servertitle": "Test Factorio Server",
+    "mapname": "",
+    "gametype": "",
+    "numplayers": 2,
+    "maxplayers": 10,
+    "password": false,
+    "gameversion": "1.1.12345",
+    "players": [
+      {"name": "player1", "score": 0, "time": 0},
+      {"name": "player2", "score": 0, "time": 0}
+    ],
+    "rules": {
+      "name": "Test Factorio Server",
+      "has_password": false,
+      "max_players": 10,
+      "game_version": "1.1",
+      "build_version": "12345"
+    }
+  }
+}

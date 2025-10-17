@@ -1,38 +1,28 @@
 #
 # .gitignore
 #
-# Ignore works for the dir the gitignore file resides in.
-# To have a global effect affect to all repositories run this command:
-# git config --global core.excludesfile ~/.gitignore
-
-# Mac OS X Finder and whatnot
-.DS_Store
-
-# Windows crap
-Thumbs.db
 
 # Netbeans IDE related
-nbproject
+/nbproject
 
-# Eclipse IDE related
-.cache*
-.project
-.settings*
-.buildpath
+# PHPStorm + Eclipse IDE related
+/.buildpath
+/.cache
+/.project
+/.idea
+/.settings
 
-# Webserver
-/.htaccess
+# VSCODE related
+/.vscode
 
-# Scriptfiles
-cache
-*.log
+# OS related
+.DS_Store
+Thumbs.db
 
-# Subversion
-.svn
-.svn/entries
-
-# PHPUnit
-phpunit.xml
-
-# PHP composer related
+# Composer related
+/vendor
+composer.phar
 composer.lock
+
+vendor/
+build/

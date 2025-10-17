@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "ip": "127.0.0.1",
+        "port": 27015,
+        "protocol": "deadside",
+        "timestamp": 1759448289
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "127.0.0.1",
+        "queryport": 27015,
+        "online": false,
+        "gamename": "DEADSIDE",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "channels": [],
+        "errstr": "No reply received"
+    }
+}

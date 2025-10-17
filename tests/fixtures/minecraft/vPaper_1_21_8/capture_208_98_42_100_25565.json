@@ -1,0 +1,53 @@
+{
+    "metadata": {
+        "ip": "208.98.42.100",
+        "port": 25565,
+        "protocol": "minecraft",
+        "timestamp": 1759258545
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "208.98.42.100",
+        "queryport": 25565,
+        "online": true,
+        "gamename": "",
+        "gameversion": "Paper 1.21.8",
+        "servertitle": "MinedHype Survival Server (SMP) [Bedrock & Java]\nVisit our website! - www.MinedHype.com",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 7,
+        "maxplayers": 100,
+        "rules": [],
+        "players": [
+            {
+                "name": "-DarkDemom1",
+                "id": "00000000-0000-0000-0009-01f18077ec04"
+            },
+            {
+                "name": "Itz_Neox",
+                "id": "1714561c-5486-4218-88c0-af61531c4a03"
+            },
+            {
+                "name": "Evanescentwolfx",
+                "id": "582dd815-8332-4c5a-86f3-527f65333cc8"
+            },
+            {
+                "name": "MoreReckless",
+                "id": "f3e47942-8db7-43cf-add2-7a713a318291"
+            },
+            {
+                "name": "KyloFluff",
+                "id": "c7044d77-2206-483c-9f26-d27453f668a3"
+            },
+            {
+                "name": "xRecklessAsianx",
+                "id": "6bc4b8b5-0e38-4537-9ff9-3d3ac1b10e29"
+            },
+            {
+                "name": "-Gizmochop4388",
+                "id": "00000000-0000-0000-0009-01f29cb5fc02"
+            }
+        ],
+        "errstr": ""
+    }
+}

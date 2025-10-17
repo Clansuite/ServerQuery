@@ -1,0 +1,43 @@
+{
+    "ip": "54.38.154.47",
+    "port": 2303,
+    "protocol": "Arma3",
+    "version": "2.20.152984",
+    "normalized_version": "v2_20_152984",
+    "timestamp": 1759161905,
+    "datetime": "2025-09-29T16:05:05+00:00",
+    "options": [],
+    "server_info": {
+        "address": "54.38.154.47",
+        "queryport": 2303,
+        "online": true,
+        "gamename": "Live Your Life RPG Altis - Lebe dein Leben | www.lyl.gg",
+        "gameversion": "2.20.152984",
+        "servertitle": "[GER] LiveYourLife #1 |Sprachtelefon|Clanbase|Quest| Altis Life",
+        "mapname": "Altis",
+        "gametype": "",
+        "numplayers": 84,
+        "maxplayers": 255,
+        "rules": {
+            "IP": "",
+            "gamedir": "Arma3",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": 2302,
+            "steam_id": 90274828052611082,
+            "keywords": "bt,r220,n152946,s7,i3,mf,lf,vt,dt,trpg,g65545,hd45fd29e,f0,c-2147483648--2147483648,pw,e15,j0,k0,",
+            "game_id": 107410
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 4,
+    "total_bytes": 311
+}

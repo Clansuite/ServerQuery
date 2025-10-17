@@ -1,0 +1,144 @@
+{
+    "metadata": {
+        "ip": "72.5.195.163",
+        "port": 7708,
+        "protocol": "killingfloor",
+        "timestamp": 1759299719
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "72.5.195.163",
+        "queryport": 7708,
+        "online": true,
+        "gamename": "Killing Floor",
+        "gameversion": "1064",
+        "servertitle": "Ultimate Game Servers.Eu - Hell On Earth | Lvl 40 | Perks | Weapons | Characters | Specimen | Maps | Fast D/L",
+        "mapname": "kf-defence-c1",
+        "gametype": "KFGameType",
+        "numplayers": 14,
+        "maxplayers": 24,
+        "rules": {
+            "adminemail": "FoxYMcCloud94@gmail.com",
+            "adminname": "Mythril",
+            "balanceteams": "True",
+            "currentwave": 2,
+            "endtimedelay": "4.00",
+            "finalwave": "10",
+            "forcerespawn": "True",
+            "friendlyfirescale": "0%",
+            "gameport": 7707,
+            "goalscore": "60",
+            "initialwave": "0",
+            "isvacsecured": "true",
+            "kickvoting": "true",
+            "mapvoting": "true",
+            "max perk level": "40",
+            "max runtime zombies": "32",
+            "maxspectators": "2",
+            "min perk level": "1",
+            "minplayers": "6",
+            "mutator0": "KillingFloorMut",
+            "mutator1": "MutVisSpecs",
+            "mutator10": "KFARGChat",
+            "mutator11": "WeldArmor",
+            "mutator12": "MutKFAntiBlocker",
+            "mutator13": "MutAdminPlus",
+            "mutator14": "KFBotsMut",
+            "mutator2": "UGWeaponPickupMessages",
+            "mutator3": "MutChatter",
+            "mutator4": "UGSlotMachine",
+            "mutator5": "UGServerPerksMutAddon",
+            "mutator6": "MutRTD",
+            "mutator7": "RespawningMutator",
+            "mutator8": "MutPatHPLeft",
+            "mutator9": "DropAllWeapMut",
+            "num trader weapons": "140",
+            "queryport": 0,
+            "serverid": 0,
+            "serverip": false,
+            "servermode": "dedicated",
+            "serverversion": "1064",
+            "slot machines": "Ver 200",
+            "starting cash": "2500",
+            "timelimit": "0",
+            "translocator": "False",
+            "veterancy": "Engineer",
+            "veterancy handler": "Ver 700",
+            "veterancy saving": "Enabled",
+            "weaponstay": "True"
+        },
+        "players": [
+            {
+                "name": "Scarz722",
+                "ping": 64,
+                "score": 1615
+            },
+            {
+                "name": "Loveage",
+                "ping": 38,
+                "score": 280
+            },
+            {
+                "name": "-Good-By-Omission",
+                "ping": 30,
+                "score": 280
+            },
+            {
+                "name": "Dr.Feels",
+                "ping": 20,
+                "score": 280
+            },
+            {
+                "name": "Kemp",
+                "ping": 152,
+                "score": 2500
+            },
+            {
+                "name": "b0b3r",
+                "ping": 32,
+                "score": 1058
+            },
+            {
+                "name": "Kanade_Tachibana",
+                "ping": 72,
+                "score": 5181
+            },
+            {
+                "name": "MoonmanBT",
+                "ping": 48,
+                "score": 410
+            },
+            {
+                "name": "[PhFG]_Darth-Taco",
+                "ping": 52,
+                "score": 1178
+            },
+            {
+                "name": "Edsu",
+                "ping": 40,
+                "score": 5323
+            },
+            {
+                "name": "Zangetsu_Grim_Hitsug",
+                "ping": 1020,
+                "score": 3000
+            },
+            {
+                "name": "Dat_scoot",
+                "ping": 60,
+                "score": 3474
+            },
+            {
+                "name": "KIKOFU",
+                "ping": 196,
+                "score": 47
+            },
+            {
+                "name": "NextGear",
+                "ping": 260,
+                "score": 6779
+            }
+        ],
+        "errstr": null
+    }
+}

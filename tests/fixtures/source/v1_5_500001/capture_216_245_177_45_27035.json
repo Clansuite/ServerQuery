@@ -1,0 +1,40 @@
+{
+    "metadata": {
+        "ip": "216.245.177.45",
+        "port": 27035,
+        "protocol": "source",
+        "timestamp": 1759296561
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "216.245.177.45",
+        "queryport": 27035,
+        "online": true,
+        "gamename": "Homefront",
+        "gameversion": "1.5.500001",
+        "servertitle": "Salty Bawls",
+        "mapname": "FL-HARBOR",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 32,
+        "rules": {
+            "IP": "",
+            "gamedir": "homefront.1.5.500001",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 60,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": 27035,
+            "steam_id": 90273458991850500,
+            "keywords": " s1 105 s2 2 s3 2 s4 1 s5 0 s10 1 s11 0 s12 0",
+            "game_id": 55100
+        },
+        "players": [],
+        "errstr": ""
+    }
+}

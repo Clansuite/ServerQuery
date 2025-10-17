@@ -1,0 +1,27 @@
+{
+    "ip": "5.181.187.33",
+    "port": 27015,
+    "protocol": "Cs16",
+    "version": "1.1",
+    "normalized_version": "v1_1",
+    "timestamp": 1759102373,
+    "datetime": "2025-09-28T23:32:53+00:00",
+    "options": [],
+    "server_info": {
+        "address": "5.181.187.33",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Counter-Strike",
+        "gameversion": "1.1.2.7\/Stdio",
+        "servertitle": "Global Gaming Nis",
+        "mapname": "de_dust2",
+        "gametype": "Counter-Strike 1.6",
+        "numplayers": 24,
+        "maxplayers": 32,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 4,
+    "total_bytes": 82
+}

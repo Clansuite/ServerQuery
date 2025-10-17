@@ -1,0 +1,27 @@
+{
+    "ip": "arenacamper.ddns.net",
+    "port": 27500,
+    "protocol": "Quake2",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759099404,
+    "datetime": "2025-09-28T22:43:24+00:00",
+    "options": [],
+    "server_info": {
+        "address": "arenacamper.ddns.net",
+        "queryport": 27500,
+        "online": false,
+        "gamename": null,
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": "No reply received"
+    },
+    "packet_count": 3,
+    "total_bytes": 0
+}

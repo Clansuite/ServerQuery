@@ -1,0 +1,60 @@
+{
+    "ip": "176.31.226.111",
+    "port": 27015,
+    "protocol": "ArkSurvivalEvolved",
+    "version": "1.0.0.0",
+    "normalized_version": "v1_0_0_0",
+    "timestamp": 1759231070,
+    "datetime": "2025-09-30T11:17:50+00:00",
+    "options": [],
+    "server_info": {
+        "address": "176.31.226.111",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "ARK: Survival Evolved",
+        "gameversion": "1.0.0.0",
+        "servertitle": "nN-[Ragnarok]-[PVE Omega Rewards Seeds AA]-www.noname.zone] - (",
+        "mapname": "Ragnarok",
+        "gametype": "",
+        "numplayers": 2,
+        "maxplayers": 64,
+        "rules": {
+            "IP": "",
+            "gamedir": "ark_survival_evolved",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Linux",
+            "secure": "No",
+            "port": 7777,
+            "steam_id": 90273514635071501,
+            "keywords": ",OWNINGID:90273514635071501,OWNINGNAME:90273514635071501,NUMOPENPUBCONN:64,P2PADDR:90273514635071501,P2PPORT:7777,LEGACY_i:0",
+            "game_id": 346110
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "captures": [
+        {
+            "sent": "\/\/\/\/\/1RTb3VyY2UgRW5naW5lIFF1ZXJ5AA==",
+            "received": "\/\/\/\/\/0kRbk4tW1JhZ25hcm9rXS1bUFZFIE9tZWdhIFJld2FyZHMgU2VlZHMgQUFdLXd3dy5ub25hbWUuem9uZV0gLSAoAFJhZ25hcm9rAGFya19zdXJ2aXZhbF9ldm9sdmVkAEFSSzogU3Vydml2YWwgRXZvbHZlZAAAAAJAAGRsAAExLjAuMC4wALFhHg0Qc4RIt0ABLE9XTklOR0lEOjkwMjczNTE0NjM1MDcxNTAxLE9XTklOR05BTUU6OTAyNzM1MTQ2MzUwNzE1MDEsTlVNT1BFTlBVQkNPTk46NjQsUDJQQUREUjo5MDI3MzUxNDYzNTA3MTUwMSxQMlBQT1JUOjc3NzcsTEVHQUNZX2k6MAD+RwUAAAAAAA==",
+            "timestamp": 1759231070.415542
+        },
+        {
+            "sent": "\/\/\/\/\/1c=",
+            "received": "KG5vIHJlc3BvbnNlKQ==",
+            "timestamp": 1759231070.415545
+        },
+        {
+            "sent": "\/\/\/\/\/1c=",
+            "received": "KG5vIHJlc3BvbnNlKQ==",
+            "timestamp": 1759231070.415546
+        }
+    ],
+    "packet_count": 3,
+    "total_bytes": 309
+}

@@ -1,0 +1,90 @@
+{
+    "metadata": {
+        "ip": "68.232.163.58",
+        "port": 12203,
+        "protocol": "quake",
+        "timestamp": 1759304357
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "68.232.163.58",
+        "queryport": 12203,
+        "online": true,
+        "gamename": "mohaa",
+        "gameversion": "Medal of Honor Spearhead 2.15 linux-i386 Aug 29 2004",
+        "servertitle": "TheWarLegends.com | Rifles Objective Server",
+        "mapname": "obj_team3",
+        "gametype": "Objective-Match",
+        "numplayers": 7,
+        "maxplayers": 15,
+        "rules": {
+            "cheats": "0",
+            "sv_maxclients": "16",
+            "deathmatch": "1",
+            "skill": "1",
+            "dmflags": "786432",
+            "fraglimit": "7",
+            "timelimit": "25",
+            "protocol": "17",
+            "sv_privateClients": "1",
+            "sv_maxRate": "0",
+            "sv_minPing": "0",
+            "sv_maxPing": "300",
+            "sv_floodProtect": "1",
+            "g_gametype": "4",
+            "sv_fps": "20",
+            "sv_mapChecksum": "1203543893",
+            "g_realismmode": "1",
+            "sv_team_spawn_interval": "1",
+            "g_allowvote": "1",
+            "sv_invulnerabletime": "3",
+            "g_allowjointime": "20",
+            "roundlimit": "5",
+            "sv_friction": "4",
+            "sv_stopspeed": "100",
+            "sv_waterfriction": "1",
+            "sv_waterspeed": "400",
+            "g_forceready": "1",
+            "g_forcerespawn": "0",
+            "g_maxintermission": "15",
+            "g_obj_alliedtext1": "- Breach the shingle",
+            "g_obj_alliedtext2": "- Destroy two 15cm",
+            "g_obj_alliedtext3": "cannons",
+            "g_obj_axistext1": "- Prevent Allies from",
+            "g_obj_axistext2": "taking the beach",
+            "g_obj_axistext3": "test",
+            "g_scoreboardpic": "objdm5"
+        },
+        "players": [
+            {
+                "name": "<TWL>--------Soldier--------",
+                "ping": "150"
+            },
+            {
+                "name": "RaptorZ",
+                "ping": "235"
+            },
+            {
+                "name": "Mohamed-FoX",
+                "ping": "198"
+            },
+            {
+                "name": "<TWL>onbekende_soldaat_PL",
+                "ping": "153"
+            },
+            {
+                "name": "Inbornexception",
+                "ping": "148"
+            },
+            {
+                "name": "<TWL>Jeff",
+                "ping": "72"
+            },
+            {
+                "name": "<TWL>AW",
+                "ping": "198"
+            }
+        ],
+        "errstr": null
+    }
+}

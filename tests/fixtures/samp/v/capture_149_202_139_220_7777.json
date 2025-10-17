@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "ip": "149.202.139.220",
+        "port": 7777,
+        "protocol": "samp",
+        "timestamp": 1759447631
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "149.202.139.220",
+        "queryport": 7777,
+        "online": false,
+        "gamename": "SAMP",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "channels": [],
+        "errstr": "No reply received"
+    }
+}

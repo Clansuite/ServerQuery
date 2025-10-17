@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "ger2.ddnet.org",
+        "port": 8303,
+        "protocol": "ddnet",
+        "timestamp": 1759414911
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": null,
+        "queryport": null,
+        "online": false,
+        "gamename": null,
+        "gameversion": null,
+        "servertitle": null,
+        "mapname": null,
+        "gametype": null,
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": null
+    }
+}

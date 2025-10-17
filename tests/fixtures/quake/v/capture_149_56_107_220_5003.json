@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "149.56.107.220",
+        "port": 5003,
+        "protocol": "quake",
+        "timestamp": 1759303427
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "149.56.107.220",
+        "queryport": 5003,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": null
+    }
+}

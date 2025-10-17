@@ -1,0 +1,27 @@
+{
+    "ip": "146.19.215.234",
+    "port": 27015,
+    "protocol": "Cs16",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759104803,
+    "datetime": "2025-09-29T00:13:23+00:00",
+    "options": [],
+    "server_info": {
+        "address": "146.19.215.234",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "cstrike",
+        "gameversion": "-Strike",
+        "servertitle": "146.19.215.234:27015",
+        "mapname": "PUB.WORLDCS.RO",
+        "gametype": "cstrike",
+        "numplayers": 67,
+        "maxplayers": 111,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 5,
+    "total_bytes": 84
+}

@@ -1,0 +1,64 @@
+{
+    "metadata": {
+        "ip": "204.44.116.72",
+        "port": 7777,
+        "protocol": "jc2",
+        "timestamp": 1759299719
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "204.44.116.72",
+        "queryport": 7777,
+        "online": true,
+        "gamename": "Just Cause 2 Multiplayer",
+        "gameversion": "1.0",
+        "servertitle": "[USA/EU] Hasbo's |FREEROAM|FREE BUYMENU|FACTIONS|TP|",
+        "mapname": "Panau",
+        "gametype": "Freeroam",
+        "numplayers": 7,
+        "maxplayers": 500,
+        "rules": {
+            "dedicated": "true",
+            "description": "Press v to warp to players press b to open the buy shop",
+            "password": "False"
+        },
+        "players": [
+            {
+                "name": "That1EdgyJohn",
+                "steamid": "STEAM_0:1:80615257",
+                "ping": 69
+            },
+            {
+                "name": "William",
+                "steamid": "STEAM_0:1:33394693",
+                "ping": 137
+            },
+            {
+                "name": "jamek13",
+                "steamid": "STEAM_0:1:40122700",
+                "ping": 129
+            },
+            {
+                "name": "Danya Flomik",
+                "steamid": "STEAM_0:0:49118616",
+                "ping": 205
+            },
+            {
+                "name": "Shepherd of Fire",
+                "steamid": "STEAM_0:0:59568826",
+                "ping": 133
+            },
+            {
+                "name": "κöρεcικ",
+                "steamid": "STEAM_0:0:12345678",
+                "ping": 150
+            },
+            {
+                "name": "Player7",
+                "steamid": "STEAM_0:1:87654321",
+                "ping": 120
+            }
+        ],
+        "errstr": null
+    }
+}

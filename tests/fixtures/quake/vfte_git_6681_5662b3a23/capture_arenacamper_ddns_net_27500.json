@@ -1,0 +1,30 @@
+{
+    "ip": "arenacamper.ddns.net",
+    "port": 27500,
+    "protocol": "Quake",
+    "version": "FTE git-6681-5662b3a23",
+    "normalized_version": "vfte_git_6681_5662b3a23",
+    "timestamp": 1759099601,
+    "datetime": "2025-09-28T22:46:41+00:00",
+    "options": [],
+    "server_info": {
+        "address": "arenacamper.ddns.net",
+        "queryport": 27500,
+        "online": true,
+        "gamename": "Quake1",
+        "gameversion": "FTE git-6681-5662b3a23",
+        "servertitle": "FTE QuakeWorld Server",
+        "mapname": "unknown",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 16,
+        "rules": {
+            "protocol": "15",
+            "version": "FTE git-6681-5662b3a23"
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 1,
+    "total_bytes": 45
+}

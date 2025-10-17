@@ -1,0 +1,44 @@
+{
+    "metadata": {
+        "ip": "216.245.177.45",
+        "port": 5476,
+        "protocol": "ffow",
+        "timestamp": 1759296000
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "216.245.177.45",
+        "queryport": 5476,
+        "online": true,
+        "gamename": "FFOW",
+        "gameversion": "v1.0",
+        "servertitle": "Frontlines Fuel of War Server",
+        "mapname": "FFOW-Map01",
+        "gametype": "TeamDeathMatch",
+        "numplayers": 2,
+        "maxplayers": 16,
+        "rules": {
+            "hostname": "Frontlines Fuel of War Server",
+            "version": "1.0",
+            "mapname": "FFOW-Map01",
+            "gametype": "TeamDeathMatch",
+            "numplayers": "2",
+            "maxplayers": "16",
+            "timelimit": "20",
+            "fraglimit": "50"
+        },
+        "players": [
+            {
+                "name": "Player1",
+                "score": 25,
+                "ping": 50
+            },
+            {
+                "name": "Player2",
+                "score": 30,
+                "ping": 45
+            }
+        ],
+        "errstr": null
+    }
+}

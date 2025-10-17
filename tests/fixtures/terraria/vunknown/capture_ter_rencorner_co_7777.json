@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "ter.rencorner.co",
+        "port": 7777,
+        "protocol": "terraria",
+        "timestamp": 1759375967
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": null,
+        "queryport": null,
+        "online": true,
+        "gamename": null,
+        "gameversion": null,
+        "servertitle": null,
+        "mapname": null,
+        "gametype": null,
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": null
+    }
+}

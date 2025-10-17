@@ -1,0 +1,40 @@
+{
+    "metadata": {
+        "ip": "94.156.155.60",
+        "port": 31073,
+        "protocol": "dayz",
+        "timestamp": 1759259858
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "94.156.155.60",
+        "queryport": 31073,
+        "online": true,
+        "gamename": "DayZ",
+        "gameversion": "1.28.160123",
+        "servertitle": "5362 | EUROPE - SE",
+        "mapname": "chernarusplus",
+        "gametype": "",
+        "numplayers": 102,
+        "maxplayers": 127,
+        "rules": {
+            "IP": "",
+            "gamedir": "dayz",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 102,
+            "dedicated": "Yes",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": -32367,
+            "steam_id": 0,
+            "keywords": "battleye,external,privHive,shardABC123,lqs0,etm9.000000,entm8.000000,mod,09:57",
+            "game_id": 221100
+        },
+        "players": [],
+        "errstr": ""
+    }
+}

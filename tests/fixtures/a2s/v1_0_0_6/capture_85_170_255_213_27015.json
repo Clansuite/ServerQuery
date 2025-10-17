@@ -1,0 +1,41 @@
+{
+    "metadata": {
+        "ip": "85.170.255.213",
+        "port": 27015,
+        "protocol": "A2S",
+        "timestamp": 1759532625
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "85.170.255.213",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Abiotic Factor",
+        "gameversion": "1.0.0.6",
+        "servertitle": "Ozone",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 6,
+        "rules": {
+            "IP": "",
+            "gamedir": "AbioticFactor",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": 7777,
+            "steam_id": 90274961150269459,
+            "keywords": "BUILDID:1000012,OWNINGID:90274961150269459,OWNINGNAME:Ozone,SESSIONFLAGS:43,ShortCode_s:X8498,GamePort_i:7777,Locked_b:true",
+            "game_id": 2857200
+        },
+        "players": [],
+        "channels": [],
+        "errstr": ""
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "176.57.135.39",
+        "port": 28300,
+        "protocol": "conan",
+        "timestamp": 1759355191
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "176.57.135.39",
+        "queryport": 28300,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

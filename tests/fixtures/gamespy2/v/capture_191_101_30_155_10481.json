@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "191.101.30.155",
+        "port": 10481,
+        "protocol": "Gamespy2",
+        "timestamp": 1759356567
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "191.101.30.155",
+        "queryport": 10481,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

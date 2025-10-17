@@ -1,0 +1,6 @@
+TS3
+Welcome to the TeamSpeak 3 ServerQuery interface, type "help" for a list of commands and "help <command>" for information on a specific command.
+virtualserver_id=1 virtualserver_name=TestServer virtualserver_status=online virtualserver_clientsonline=2 virtualserver_queryclientsonline=1 virtualserver_maxclients=32 virtualserver_version=3.13.6
+error id=0 msg=ok
+clid=4 cid=1 client_database_id=38 client_nickname=Alice client_type=0|clid=6 cid=1 client_database_id=55 client_nickname=Bob client_type=0
+error id=0 msg=ok

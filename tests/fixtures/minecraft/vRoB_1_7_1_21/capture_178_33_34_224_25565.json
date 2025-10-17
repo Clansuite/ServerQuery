@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "178.33.34.224",
+        "port": 25565,
+        "protocol": "minecraft",
+        "timestamp": 1759257880
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "178.33.34.224",
+        "queryport": 25565,
+        "online": true,
+        "gamename": "",
+        "gameversion": "RoB 1.7-1.21",
+        "servertitle": "\u00a7f\u00a77     \u00a76\u2729 \u00a7e\u00a7lRebirth of Balkan \u00a7f| \u00a761.8 - 1.21\u00a76 \u2729\n     \u00a76\u00a7l\u22b2 \u00a7e1# \u00a76BALKANSKI MINECRAFT SERVER \u00a76\u00a7l \u22b3",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 48,
+        "maxplayers": 400,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

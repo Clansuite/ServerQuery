@@ -1,0 +1,43 @@
+{
+    "metadata": {
+        "ip": "85.30.248.242",
+        "port": 2502,
+        "protocol": "Gamespy2",
+        "timestamp": 1759355581
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "85.30.248.242",
+        "queryport": 2502,
+        "online": true,
+        "gamename": "",
+        "gameversion": "1.18",
+        "servertitle": "ACE\/CO\/10\/USSR_RED_ENGINEERS",
+        "mapname": "sara",
+        "gametype": "COOP",
+        "numplayers": 0,
+        "maxplayers": 16,
+        "rules": {
+            "numteams": "0",
+            "gamemode": "openplaying",
+            "timelimit": "15",
+            "password": "0",
+            "param1": "18",
+            "param2": "8",
+            "currentVersion": "118",
+            "requiredVersion": "118",
+            "mod": "CA;@ACE;@SIX_Pack3;@ai_spotting;@EditorUpdate",
+            "equalModRequired": "0",
+            "gameState": "7",
+            "dedicated": "1",
+            "platform": "win",
+            "language": "65561",
+            "difficulty": "1",
+            "mission": "co@10 Domination!ACE East [5.7+] RA",
+            "gamename": "armedass",
+            "sv_battleye": "0"
+        },
+        "players": [],
+        "errstr": ""
+    }
+}

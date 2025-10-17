@@ -1,0 +1,43 @@
+{
+    "ip": "162.248.88.25",
+    "port": 27015,
+    "protocol": "Kf2",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759180917,
+    "datetime": "2025-09-29T21:21:57+00:00",
+    "options": [],
+    "server_info": {
+        "address": "162.248.88.25",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Killing Floor 2",
+        "gameversion": "1150",
+        "servertitle": "SKW RPG Redux: Lvl 25-250",
+        "mapname": "kf-verticality",
+        "gametype": "",
+        "numplayers": 7,
+        "maxplayers": 32,
+        "rules": {
+            "IP": "",
+            "gamedir": "kf2",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 7,
+            "dedicated": "No",
+            "server_os": "Windows",
+            "secure": "No",
+            "port": 7777,
+            "steam_id": 90274815972583426,
+            "keywords": "d:23,e:23,a:1,l:0,m:1,k:0,i:3,n:3,h:0,b:0,c:0,p:0,f:0,q:0,r:-1,",
+            "game_id": 232090
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 4,
+    "total_bytes": 199
+}

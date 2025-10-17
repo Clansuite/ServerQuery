@@ -1,0 +1,121 @@
+{
+    "metadata": {
+        "ip": "94.250.199.7",
+        "port": 25200,
+        "protocol": "battlefield4",
+        "timestamp": 1759260165
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "94.250.199.7",
+        "queryport": 25200,
+        "online": false,
+        "gamename": "",
+        "gameversion": "BF3",
+        "servertitle": "[TNT]#2 TAKESHIS CASTLE | discord.tnt.community ",
+        "mapname": "MP_012",
+        "gametype": "ConquestSmall0",
+        "numplayers": 8,
+        "maxplayers": 24,
+        "rules": {
+            "targetscore": 0,
+            "status": "",
+            "isRanked": true,
+            "punkbuster": false,
+            "serveruptime": 1750912,
+            "roundTime": 3861,
+            "ip": "94.250.199.7:25200"
+        },
+        "players": [
+            {
+                "name": "74591d53a02f3974",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 0,
+                "deaths": 0,
+                "score": 0,
+                "rank": 54,
+                "ping": 92
+            },
+            {
+                "name": "The_Widdi",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 8,
+                "deaths": 13,
+                "score": 9796,
+                "rank": 145,
+                "ping": 15
+            },
+            {
+                "name": "MietaaaaGorzka",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 1,
+                "deaths": 9,
+                "score": 2820,
+                "rank": 145,
+                "ping": 43
+            },
+            {
+                "name": "Gerd_e5813",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 6,
+                "deaths": 5,
+                "score": 5094,
+                "rank": 57,
+                "ping": 21
+            },
+            {
+                "name": "hanyss2015",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 1,
+                "deaths": 3,
+                "score": 1602,
+                "rank": 145,
+                "ping": 27
+            },
+            {
+                "name": "RaNa-Rocxs",
+                "guid": "",
+                "team": 1,
+                "squad": 2,
+                "kills": 2,
+                "deaths": 1,
+                "score": 900,
+                "rank": 67,
+                "ping": 129
+            },
+            {
+                "name": "7n7udvlcowm2",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 0,
+                "deaths": 0,
+                "score": 0,
+                "rank": 0,
+                "ping": 65
+            },
+            {
+                "name": "powertech78",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 0,
+                "deaths": 0,
+                "score": 0,
+                "rank": 106,
+                "ping": 23
+            }
+        ],
+        "errstr": ""
+    }
+}

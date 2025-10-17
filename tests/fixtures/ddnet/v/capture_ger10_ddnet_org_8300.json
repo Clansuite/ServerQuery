@@ -1,0 +1,160 @@
+{
+    "metadata": {
+        "ip": "ger10.ddnet.org",
+        "port": 8300,
+        "protocol": "ddnet",
+        "timestamp": 1759419573
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": null,
+        "queryport": null,
+        "online": true,
+        "gamename": null,
+        "gameversion": null,
+        "servertitle": "0.6.4, 19.5",
+        "mapname": "DDNet GER - Novice (Tutorial) [16\/63]",
+        "gametype": null,
+        "numplayers": 15,
+        "maxplayers": 16,
+        "rules": {
+            "version": "",
+            "game_descr": "Tutorial",
+            "gamedir": "DDraceNetwork",
+            "flags": "0",
+            "num_players_total": 15,
+            "maxplayers_total": 16
+        },
+        "players": [
+            {
+                "name": "gg228",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "KOLOBOK1415",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "\u0441\u0443\u043f\u0435\u0440\u0441\u0438",
+                "clan": "",
+                "country": "-1",
+                "score": "-752",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "\u4f0a\u51e1\u00b7\u4f50\u6d1b",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "[D] glutek1234",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "volyadns",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "glutek1234",
+                "clan": "",
+                "country": "-1",
+                "score": "-757",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "demidnesteryuk2",
+                "clan": "",
+                "country": "-1",
+                "score": "-770",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "Golub",
+                "clan": "",
+                "country": "-1",
+                "score": "-213",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "West",
+                "clan": "",
+                "country": "-1",
+                "score": "-218",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "DIMA \u041fEPEK\u0423\u041f",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "kolhozn1k",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "\u041f\u0423\u041a\u041f\u0423\u041a",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "\u0430\u043d\u0430\u043b",
+                "clan": "",
+                "country": "-1",
+                "score": "-208",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "ivankovanoivank",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            },
+            {
+                "name": "Patrik|\u041f\u0430\u0442\u0440",
+                "clan": "",
+                "country": "-1",
+                "score": "-9999",
+                "team": "1",
+                "is_player": 1
+            }
+        ],
+        "errstr": null
+    }
+}

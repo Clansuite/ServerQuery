@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "54.38.195.127",
+        "port": 25565,
+        "protocol": "minecraft",
+        "timestamp": 1759257392
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "54.38.195.127",
+        "queryport": 25565,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": "No response from Minecraft server"
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "ip": "80.114.199.157",
+    "port": 44400,
+    "protocol": "Quake3a",
+    "version": "2.10",
+    "normalized_version": "v2_10",
+    "timestamp": 1759100287,
+    "datetime": "2025-09-28T22:58:07+00:00",
+    "options": [],
+    "server_info": {
+        "address": "80.114.199.157",
+        "queryport": 44400,
+        "online": true,
+        "gamename": "q3a_warsow",
+        "gameversion": "2.10 x86_64 Mar 26 2016 Linux",
+        "servertitle": "-=J=-'s Dedicated Warsow Server (incl. Community Map Pack)",
+        "mapname": "wda2",
+        "gametype": "Warsow",
+        "numplayers": 12,
+        "maxplayers": 44,
+        "rules": {
+            "challenge": "",
+            "fs_game": "basewsw",
+            "g_antilag": "1",
+            "g_gametypes_available": "dm tdm ",
+            "g_instagib": "0",
+            "g_match_score": " BOT: 37 BOT: 15",
+            "g_match_time": "03:54 \/ 15:00",
+            "g_race_gametype": "0",
+            "gamedate": "Mar 26 2016",
+            "protocol": "22",
+            "sv_cheats": "0",
+            "sv_http": "1",
+            "sv_maxclients": "44",
+            "sv_maxmvclients": "4",
+            "sv_mm_enable": "0",
+            "sv_mm_loginonly": "0",
+            "sv_pps": "20",
+            "sv_pure": "0",
+            "sv_skilllevel": "1",
+            "sv_skillRating": "0",
+            "gametype": "tdm",
+            "bots": "12",
+            "clients": "12"
+        },
+        "players": [
+            {
+                "name": "Athena",
+                "score": "5",
+                "ping": "0"
+            },
+            {
+                "name": "Porkalator",
+                "score": "4",
+                "ping": "0"
+            },
+            {
+                "name": "Athena^7(1)",
+                "score": "8",
+                "ping": "0"
+            },
+            {
+                "name": "Sid",
+                "score": "8",
+                "ping": "0"
+            },
+            {
+                "name": "Porkalator^7(1)",
+                "score": "5",
+                "ping": "0"
+            },
+            {
+                "name": "SisterClaw^7(1)",
+                "score": "10",
+                "ping": "0"
+            },
+            {
+                "name": "Sid^7(1)",
+                "score": "4",
+                "ping": "0"
+            },
+            {
+                "name": "Cathy",
+                "score": "9999",
+                "ping": "0"
+            },
+            {
+                "name": "Lord Hog",
+                "score": "9999",
+                "ping": "0"
+            },
+            {
+                "name": "Sick",
+                "score": "9999",
+                "ping": "0"
+            },
+            {
+                "name": "SisterClaw",
+                "score": "9999",
+                "ping": "0"
+            },
+            {
+                "name": "01011001",
+                "score": "9999",
+                "ping": "0"
+            }
+        ],
+        "errstr": ""
+    },
+    "packet_count": 1,
+    "total_bytes": 772
+}

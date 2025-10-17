@@ -1,0 +1,52 @@
+{
+    "ip": "185.249.196.10",
+    "port": 17777,
+    "protocol": "ArmaReforger",
+    "version": "1.0.0",
+    "normalized_version": "v1_0_0",
+    "timestamp": 1725148800,
+    "datetime": "2024-09-01T00:00:00+00:00",
+    "options": [],
+    "server_info": {
+        "address": "185.249.196.10",
+        "queryport": 2002,
+        "online": true,
+        "gamename": "ARMA: Reforger",
+        "gameversion": "1.0.0",
+        "servertitle": "Official ARMA Reforger Server",
+        "mapname": "Everon",
+        "gametype": "",
+        "numplayers": 10,
+        "maxplayers": 64,
+        "rules": {
+            "gamedir": "ArmaReforger",
+            "gamename": "",
+            "Type": "Source",
+            "NetworkVersion": 1,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Linux",
+            "secure": "Yes",
+            "port": 2001,
+            "steam_id": 12345678901234567,
+            "keywords": "reforger,bt,r1,n0,s7,i3,mf,lf,vt,dt,g65545,f0,c0-64,pw,e0,j0,k0,",
+            "game_id": 1874880
+        },
+        "players": [
+            {
+                "name": "Player1",
+                "score": 100,
+                "time": 3600
+            },
+            {
+                "name": "Player2",
+                "score": 200,
+                "time": 7200
+            }
+        ],
+        "errstr": ""
+    },
+    "packet_count": 3,
+    "total_bytes": 250
+}

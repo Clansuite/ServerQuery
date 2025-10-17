@@ -1,0 +1,31 @@
+{
+    "metadata": {
+        "ip": "85.215.163.158",
+        "port": 27888,
+        "protocol": "fear",
+        "timestamp": 1759296000
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "85.215.163.158",
+        "queryport": 27888,
+        "online": true,
+        "gamename": "FEAR",
+        "gameversion": "v1.08",
+        "servertitle": "=FEAR-R-FEAR=",
+        "mapname": "[SEC2] - Bypass",
+        "gametype": "TeamDeathMatch",
+        "numplayers": 0,
+        "maxplayers": 20,
+        "rules": {
+            "si_name": "=FEAR-R-FEAR=",
+            "si_version": "FEAR 1.08",
+            "si_maxPlayers": "20",
+            "si_map": "[SEC2] - Bypass",
+            "si_rules": "TeamDeathMatch",
+            "gamename": "FEAR"
+        },
+        "players": [],
+        "errstr": null
+    }
+}

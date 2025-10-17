@@ -1,0 +1,97 @@
+{
+    "metadata": {
+        "ip": "46.4.156.247",
+        "port": 3001,
+        "protocol": "eco",
+        "timestamp": 1759502014
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "46.4.156.247:3001",
+        "queryport": 3001,
+        "online": true,
+        "gamename": "Eco",
+        "gameversion": "0.11.1.13 beta release-887",
+        "servertitle": "[GER] Evergreen S13 | Eco 2.0 | Mods | Long Term ",
+        "mapname": "7,40 km\u00b2",
+        "gametype": "Established",
+        "numplayers": 6,
+        "maxplayers": 202,
+        "rules": {
+            "External": "",
+            "WebPort": "3001",
+            "IsLAN": "",
+            "Description": "<b><#858585>[<color=black>G<\/color><color=red>E<\/color><color=yellow>R<\/color><#858585>] <#1eff00>Evergreen S13 <#858585>| <#de0000>Eco 2.0 <#858585>| <#4a59ff>Mods <#858585>| <#8049de>Long Term <#ffffff><\/b>",
+            "DetailedDescription": "In Season 13 erwartet die Spieler eine Welt voller Innovationen und \u00dcberraschungen! Neue Technologien und seltene Erze, die \u00fcberall entdeckt werden k\u00f6nnen, er\u00f6ffnen ungeahnte M\u00f6glichkeiten beim Ausbau eurer Kolonie. Stellt euch brandneuen Herausforderungen, meistert spannende Events und taucht \u2013 wenn ihr m\u00f6chtet \u2013 in eine fesselnde Storyline ein, die noch mehr Abenteuer und Geheimnisse bietet. Setzt eure Kreativit\u00e4t ein, um euer \u00dcberleben zu sichern und gemeinsam mit anderen Pionieren das Unbeka",
+            "Category": "Established",
+            "OnlinePlayers": "6",
+            "TotalPlayers": "202",
+            "AdminOnline": "1",
+            "DaysRunning": "61",
+            "DaysUntilMeteor": "58",
+            "Animals": "11966",
+            "Plants": "1337154",
+            "Laws": "6",
+            "WorldSize": "7,40 km\u00b2",
+            "Version": "0.11.1.13 beta release-887",
+            "EconomyDesc": "2144 H\u00e4ndel, 1 Vertrag",
+            "Language": "German",
+            "HasPassword": "",
+            "HasMeteor": "",
+            "DistributionStationItems": "Keine",
+            "Playtimes": "000011111122222222222221000011111122222222222221000011111122222222222221000011111122222222222221000011111122222222222221100011222222222222222221100011222222222222222221",
+            "DiscordAddress": "https:\/\/discord.gg\/RgFq5XgyAv",
+            "IsPaused": "",
+            "ActiveAndOnlinePlayers": "22",
+            "PeakActivePlayers": "41",
+            "ShelfLifeMultiplier": "1",
+            "ExhaustionAfterHours": "6",
+            "ExhaustionActive": "",
+            "ExhaustionAllowPlaytimeSaving": "1",
+            "ExhaustionMaxSavedHours": "15",
+            "ExhaustionBonusHoursOnExhaustionEnabled": "2",
+            "ExhaustionBonusRetroactiveHoursAfterStart": "1",
+            "CollaborationLevel": "MediumCollaboration",
+            "GameSpeed": "Normal",
+            "SimulationLevel": "Normal",
+            "TotalCulture": "68.90206",
+            "PremiumItemUseRestrictions": "",
+            "PremiumItemsBlocked": "",
+            "Access": "public"
+        },
+        "players": [
+            {
+                "name": "Aljenna",
+                "score": 0,
+                "time": 0
+            },
+            {
+                "name": "Labrador84",
+                "score": 0,
+                "time": 0
+            },
+            {
+                "name": "Shiwa Icy",
+                "score": 0,
+                "time": 0
+            },
+            {
+                "name": "Soul",
+                "score": 0,
+                "time": 0
+            },
+            {
+                "name": "David",
+                "score": 0,
+                "time": 0
+            },
+            {
+                "name": "taker",
+                "score": 0,
+                "time": 0
+            }
+        ],
+        "channels": [],
+        "errstr": null
+    }
+}

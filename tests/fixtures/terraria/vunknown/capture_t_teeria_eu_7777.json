@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "t.teeria.eu",
+        "port": 7777,
+        "protocol": "terraria",
+        "timestamp": 1759376093
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": null,
+        "queryport": null,
+        "online": false,
+        "gamename": null,
+        "gameversion": null,
+        "servertitle": null,
+        "mapname": null,
+        "gametype": null,
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": null
+    }
+}

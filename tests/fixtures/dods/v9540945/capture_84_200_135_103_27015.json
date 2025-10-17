@@ -1,0 +1,42 @@
+{
+    "metadata": {
+        "ip": "84.200.135.103",
+        "port": 27015,
+        "protocol": "dods",
+        "timestamp": 1759259257
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "84.200.135.103",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Counter-Strike: Source",
+        "gameversion": "9540945",
+        "servertitle": "[XL] Oldies || No Pro || No AWP || NEU ||",
+        "mapname": "de_rose",
+        "gametype": "",
+        "numplayers": 34,
+        "maxplayers": 50,
+        "rules": {
+            "IP": "",
+            "gamedir": "cstrike",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 240,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Linux",
+            "secure": "No",
+            "port": 27015,
+            "steam_id": 90274844497721347,
+            "sourcetv_port": 27022,
+            "sourcetv_name": "The Eye",
+            "keywords": "alltalk,bots,friendlyfire,increased_maxplayers",
+            "game_id": 240
+        },
+        "players": [],
+        "errstr": ""
+    }
+}

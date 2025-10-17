@@ -1,0 +1,43 @@
+{
+    "ip": "216.39.240.160",
+    "port": 28015,
+    "protocol": "Steam",
+    "version": "unknown",
+    "normalized_version": "vunknown",
+    "timestamp": 1759166272,
+    "datetime": "2025-09-29T17:17:52+00:00",
+    "options": [],
+    "server_info": {
+        "address": "216.39.240.160",
+        "queryport": 28015,
+        "online": true,
+        "gamename": "Rust",
+        "gameversion": "2597",
+        "servertitle": "Rusty Moose |US Small|",
+        "mapname": "Moose Maps",
+        "gametype": "",
+        "numplayers": 62,
+        "maxplayers": 200,
+        "rules": {
+            "IP": "",
+            "gamedir": "rust",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 0,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Linux",
+            "secure": "No",
+            "port": 28010,
+            "steam_id": 90274808338232320,
+            "keywords": "mp200,cp54,ptrak,qp0,$r?,v2597,^m,^v,NA,born1757008870,gmrust,cs130842,ts8",
+            "game_id": 252490
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "packet_count": 3,
+    "total_bytes": 184
+}

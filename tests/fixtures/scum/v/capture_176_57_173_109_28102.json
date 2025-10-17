@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "176.57.173.109",
+        "port": 28102,
+        "protocol": "scum",
+        "timestamp": 1759374747
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "176.57.173.109",
+        "queryport": 28102,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

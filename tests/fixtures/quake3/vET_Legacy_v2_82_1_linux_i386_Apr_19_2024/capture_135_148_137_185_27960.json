@@ -1,0 +1,276 @@
+{
+    "metadata": {
+        "ip": "135.148.137.185",
+        "port": 27960,
+        "protocol": "Quake3",
+        "timestamp": 1759357193
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "135.148.137.185",
+        "queryport": 27960,
+        "online": true,
+        "gamename": "q3a_jaymod",
+        "gameversion": "ET Legacy v2.82.1 linux-i386 Apr 19 2024",
+        "servertitle": "^1F^7|^1A ^7RECRUITING ^1XP SAVE",
+        "mapname": "teuthonia_final",
+        "gametype": "jaymod",
+        "numplayers": 44,
+        "maxplayers": 60,
+        "rules": {
+            "omnibot_playing": "0",
+            "P": "222222122213123222211112311131-2-112----21-2---11-1-11---21",
+            "voteFlags": "507903",
+            "g_balancedteams": "1",
+            "g_bluelimbotime": "10000",
+            "g_redlimbotime": "14000",
+            "mod_version": "2.2.0",
+            "mod_url": "http:\/\/jaymod.clanfu.org",
+            "mod_binary": "linux-release",
+            "sv_uptime": "00d15h19m",
+            "sv_cpu": "AMD Ryzen 5 5600X 6-Core Proces",
+            "g_axismaxlives": "0",
+            "g_alliedmaxlives": "0",
+            "g_voteFlags": "0",
+            "g_minGameClients": "8",
+            "sv_maxPing": "0",
+            "sv_minPing": "0",
+            "sv_minRate": "0",
+            "sv_privateClients": "0",
+            "protocol": "84",
+            "g_gametype": "2",
+            "timelimit": "30",
+            "sv_maxRate": "45000",
+            "sv_dlRate": "100000",
+            "g_friendlyFire": "0",
+            "g_maxlives": "0",
+            "g_antilag": "1",
+            "g_heavyWeaponRestriction": "100",
+            "omnibot_enable": "1",
+            "sv_maxclients": "60"
+        },
+        "players": [
+            {
+                "name": "^bPolar",
+                "score": "53121",
+                "ping": "34"
+            },
+            {
+                "name": "Manic",
+                "score": "132592",
+                "ping": "48"
+            },
+            {
+                "name": "^zi^fc^de^0&^8s^,u^zn^7",
+                "score": "2179",
+                "ping": "148"
+            },
+            {
+                "name": "Roger_Swaf",
+                "score": "2471",
+                "ping": "98"
+            },
+            {
+                "name": "^2L^4izord^2.",
+                "score": "112779",
+                "ping": "143"
+            },
+            {
+                "name": "R^44^7T^2O^h[^3<^4O^3>^h]",
+                "score": "15267",
+                "ping": "148"
+            },
+            {
+                "name": "^4Kami^6kaze",
+                "score": "464",
+                "ping": "148"
+            },
+            {
+                "name": "^DEFT^?\/\/^3Ana^2tolian^dWolf^0MUSTi",
+                "score": "456896",
+                "ping": "160"
+            },
+            {
+                "name": "  dffyy",
+                "score": "1882",
+                "ping": "148"
+            },
+            {
+                "name": "-|PS|-Doubl*",
+                "score": "0",
+                "ping": "48"
+            },
+            {
+                "name": "^8X^7und",
+                "score": "303111",
+                "ping": "148"
+            },
+            {
+                "name": "^1=^0F^7|^0A^1=^1A^?p^1i",
+                "score": "0",
+                "ping": "150"
+            },
+            {
+                "name": "Edu20",
+                "score": "1572823",
+                "ping": "98"
+            },
+            {
+                "name": "Novelle",
+                "score": "2018757",
+                "ping": "148"
+            },
+            {
+                "name": "=F|A=wink",
+                "score": "0",
+                "ping": "51"
+            },
+            {
+                "name": "^9=^:F^7|^5A^9=^7D^5e^7s^:t!^9Ny",
+                "score": "37605",
+                "ping": "118"
+            },
+            {
+                "name": "Zero",
+                "score": "26195",
+                "ping": "156"
+            },
+            {
+                "name": "^9Khatun Ankhsar",
+                "score": "1485196",
+                "ping": "151"
+            },
+            {
+                "name": "Your Grandmothers ^1DigBick ^7^4Typ",
+                "score": "387520",
+                "ping": "48"
+            },
+            {
+                "name": "GRvW Never More Ammo From Me",
+                "score": "1426201",
+                "ping": "118"
+            },
+            {
+                "name": "llll",
+                "score": "2446",
+                "ping": "53"
+            },
+            {
+                "name": "Fallencherub",
+                "score": "6375",
+                "ping": "88"
+            },
+            {
+                "name": "KILLTRO",
+                "score": "142362",
+                "ping": "155"
+            },
+            {
+                "name": "Gibas",
+                "score": "15671",
+                "ping": "148"
+            },
+            {
+                "name": "^2L^7ady^1Kaka77^d.ITA",
+                "score": "132592",
+                "ping": "160"
+            },
+            {
+                "name": "r0adrunne^3r",
+                "score": "67796",
+                "ping": "121"
+            },
+            {
+                "name": "cer^80K^9illL",
+                "score": "6008045",
+                "ping": "54"
+            },
+            {
+                "name": "^81^h7^98^k9",
+                "score": "953",
+                "ping": "148"
+            },
+            {
+                "name": "^9Fin^&esto",
+                "score": "2471",
+                "ping": "137"
+            },
+            {
+                "name": "ETLegacyPlayer",
+                "score": "49785",
+                "ping": "128"
+            },
+            {
+                "name": "^4SE^7p^4I",
+                "score": "88166",
+                "ping": "155"
+            },
+            {
+                "name": "^1OLD^2FART",
+                "score": "218331",
+                "ping": "100"
+            },
+            {
+                "name": "Erich Topp auf See",
+                "score": "2520",
+                "ping": "148"
+            },
+            {
+                "name": "dragin",
+                "score": "23411",
+                "ping": "98"
+            },
+            {
+                "name": "Annie Position",
+                "score": "0",
+                "ping": "61"
+            },
+            {
+                "name": "[xJFFx]_=NOIR=_",
+                "score": "1293843",
+                "ping": "118"
+            },
+            {
+                "name": "^7=^1F^7|^1A^7=^1Audie ^4Murphy",
+                "score": "1938385",
+                "ping": "48"
+            },
+            {
+                "name": "^1=^7F^1|^7A^1=Dogpatch",
+                "score": "1070196",
+                "ping": "98"
+            },
+            {
+                "name": "^1Unknown^4Grave^7Stone",
+                "score": "650833",
+                "ping": "98"
+            },
+            {
+                "name": "^1*^0Anarchy^1...^0*",
+                "score": "216304",
+                "ping": "105"
+            },
+            {
+                "name": "Nove1122",
+                "score": "2018942",
+                "ping": "148"
+            },
+            {
+                "name": "^1D^3V^4R",
+                "score": "1254138",
+                "ping": "90"
+            },
+            {
+                "name": "^hW U ^jA N ^lA ^4C^7H^1L^3****",
+                "score": "2369119",
+                "ping": "210"
+            },
+            {
+                "name": "^0rolst^3*",
+                "score": "708616",
+                "ping": "106"
+            }
+        ],
+        "errstr": null
+    }
+}

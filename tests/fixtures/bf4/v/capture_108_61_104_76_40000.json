@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "108.61.104.76",
+        "port": 40000,
+        "protocol": "bf4",
+        "timestamp": 1759294723
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "108.61.104.76",
+        "queryport": 40000,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": "Unable to open TCP socket to BF4 query port"
+    }
+}

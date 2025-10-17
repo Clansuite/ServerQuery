@@ -1,0 +1,77 @@
+{
+    "ip": "84.200.135.103",
+    "port": 27015,
+    "protocol": "CounterStrikeSource",
+    "version": "unknown",
+    "normalized_version": "v9540945",
+    "timestamp": 1759232266,
+    "datetime": "2025-09-30T11:37:46+00:00",
+    "options": [],
+    "server_info": {
+        "address": "84.200.135.103",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Counter-Strike: Source",
+        "gameversion": "9540945",
+        "servertitle": "[XL] Oldies || No Pro || No AWP || NEU ||",
+        "mapname": "de_meknes",
+        "gametype": "",
+        "numplayers": 17,
+        "maxplayers": 50,
+        "rules": {
+            "IP": "",
+            "gamedir": "cstrike",
+            "gamename": "",
+            "mod_url": "",
+            "Type": "Source",
+            "NetworkVersion": 17,
+            "appid": 240,
+            "botplayers": 0,
+            "dedicated": "Yes",
+            "server_os": "Linux",
+            "secure": "No",
+            "port": 27015,
+            "steam_id": 90274844497721347,
+            "sourcetv_port": 27022,
+            "sourcetv_name": "The Eye",
+            "keywords": "alltalk,bots,friendlyfire,increased_maxplayers",
+            "game_id": 240
+        },
+        "players": [],
+        "errstr": ""
+    },
+    "captures": [
+        {
+            "sent": "\/\/\/\/\/1RTb3VyY2UgRW5naW5lIFF1ZXJ5AA==",
+            "received": "\/\/\/\/\/0GaOQZx",
+            "timestamp": 1759232266.664242
+        },
+        {
+            "sent": "\/\/\/\/\/1RTb3VyY2UgRW5naW5lIFF1ZXJ5AJo5BnE=",
+            "received": "\/\/\/\/\/0kRW1hMXSBPbGRpZXMgfHwgTm8gUHJvIHx8IE5vIEFXUCB8fCBORVUgfHwAZGVfbWVrbmVzAGNzdHJpa2UAQ291bnRlci1TdHJpa2U6IFNvdXJjZQDwABEyAGRsAAE5NTQwOTQ1APGHaQO4cCZ+uEABjmlUaGUgRXllAGFsbHRhbGssYm90cyxmcmllbmRseWZpcmUsaW5jcmVhc2VkX21heHBsYXllcnMA8AAAAAAAAAA=",
+            "timestamp": 1759232266.664244
+        },
+        {
+            "sent": "\/\/\/\/\/1c=",
+            "received": "\/\/\/\/\/0FBGZ96",
+            "timestamp": 1759232266.664246
+        },
+        {
+            "sent": "\/\/\/\/\/1ZBGZ96",
+            "received": "\/\/\/\/\/0HaxqDU",
+            "timestamp": 1759232266.664247
+        },
+        {
+            "sent": "\/\/\/\/\/1c=",
+            "received": "\/\/\/\/\/0HTOyjH",
+            "timestamp": 1759232266.664248
+        },
+        {
+            "sent": "\/\/\/\/\/1XTOyjH",
+            "received": "\/\/\/\/\/0FmQTXu",
+            "timestamp": 1759232266.664249
+        }
+    ],
+    "packet_count": 6,
+    "total_bytes": 227
+}

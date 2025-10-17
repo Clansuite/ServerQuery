@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "136.243.0.86",
+        "port": 7082,
+        "protocol": "ut3",
+        "timestamp": 1759374418
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "136.243.0.86",
+        "queryport": 7082,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "metadata": {
+        "ip": "104.53.58.9",
+        "port": 12203,
+        "protocol": "quake",
+        "timestamp": 1759304196
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "104.53.58.9",
+        "queryport": 12203,
+        "online": true,
+        "gamename": "mohaa",
+        "gameversion": "Medal of Honor Allied Assault 1.11 linux-i386 Jul 22 2004",
+        "servertitle": "Public Server : All Welcome",
+        "mapname": "mohdm3",
+        "gametype": "Team-Match",
+        "numplayers": 3,
+        "maxplayers": 31,
+        "rules": {
+            "cheats": "0",
+            "deathmatch": "1",
+            "skill": "0",
+            "dmflags": "0",
+            "fraglimit": "50",
+            "timelimit": "10",
+            "protocol": "8",
+            "sv_privateClients": "0",
+            "sv_maxclients": "31",
+            "sv_maxRate": "25000",
+            "sv_minPing": "0",
+            "sv_maxPing": "0",
+            "sv_floodProtect": "1",
+            "g_gametype": "2",
+            "sv_fps": "20",
+            "sv_allowDownload": "0",
+            "+Admin": "Todesengel",
+            "+Teamspeak3": "teamspeak.todesplace.org",
+            "+Location": "US",
+            "+Hosted By": "www.ezwind.net",
+            "+webiste": "www.todesplace.org",
+            "+Email": "admin@todesplace.org",
+            "g_forcerespawn": "1",
+            "g_allowjointime": "20",
+            "g_maxintermission": "8",
+            "roundlimit": "5",
+            "sv_info": "MoH:AA 1.12 Reborn Patch RC3.5 (NIX)",
+            "nomonsters": "0",
+            "sv_friction": "4",
+            "sv_stopspeed": "100",
+            "sv_waterfriction": "1",
+            "sv_waterspeed": "400",
+            "sv_cinematic": "0",
+            "g_forceready": "1",
+            "g_obj_alliedtext1": "Remagen",
+            "g_obj_alliedtext2": "Map DM\/MOHDM3",
+            "g_obj_axistext3": "Script by Todesengel",
+            "g_scoreboardpic": "mohdm3"
+        },
+        "players": [
+            {
+                "name": "Cpl Newkirk",
+                "ping": "12"
+            },
+            {
+                "name": "Frauline Helga",
+                "ping": "1"
+            },
+            {
+                "name": "Todes",
+                "ping": "6"
+            }
+        ],
+        "errstr": null
+    }
+}

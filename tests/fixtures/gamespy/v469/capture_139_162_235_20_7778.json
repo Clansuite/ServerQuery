@@ -1,0 +1,234 @@
+{
+    "metadata": {
+        "ip": "139.162.235.20",
+        "port": 7778,
+        "protocol": "Gamespy",
+        "timestamp": 1759450616
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "139.162.235.20",
+        "queryport": 7778,
+        "online": true,
+        "gamename": "",
+        "gameversion": "469",
+        "servertitle": " --- ComboGib CTF (Grapple) -- London --- EatSleepUT.com",
+        "mapname": "CTF-LiandriDocks",
+        "gametype": "CTFGame",
+        "numplayers": 18,
+        "maxplayers": 18,
+        "rules": {
+            "gamename": "ut",
+            "gamerevision": "d - Release",
+            "minnetver": "432",
+            "location": "0",
+            "hostport": "7777",
+            "maptitle": "Liandri Docks",
+            "gamemode": "openplaying",
+            "worldlog": "false",
+            "wantworldlog": "false",
+            "mutators": "NDdj4, NDgrap49c, Revenge 2, Player Commands V01a, ZeroPingPlus: ZeroPing, cgzpp22a ComboGib, NoSelfDamage, Hit Sounds, UserMute Mutator, MapVoteLAv2 Big21a, Auto Team Balance, SmartCTF 4E ESU2",
+            "listenserver": "False",
+            "password": "False",
+            "timelimit": "20",
+            "goalteamscore": "7",
+            "minplayers": "6",
+            "changelevels": "True",
+            "maxteams": "2",
+            "balanceteams": "True",
+            "playersbalanceteams": "True",
+            "friendlyfire": "0%",
+            "tournament": "False",
+            "gamestyle": "Hardcore",
+            "botskill": "Skilled",
+            "AdminName": "snowguy",
+            "AdminEMail": "negruler@gmail.com",
+            "team_0": "1",
+            "mesh_0": "Female Commando",
+            "skin_0": "FCommandoSkins.aphe",
+            "face_0": "FCommandoSkins.Indina",
+            "ngsecret_0": "true",
+            "queryid": "6.4",
+            "team_1": "0",
+            "mesh_1": "Female Soldier",
+            "skin_1": "SGirlSkins.Garf",
+            "face_1": "SGirlSkins.Isis",
+            "ngsecret_1": "true",
+            "team_2": "255",
+            "mesh_2": "Spectator",
+            "skin_2": "None",
+            "face_2": "",
+            "ngsecret_2": "true",
+            "team_3": "255",
+            "mesh_3": "Spectator",
+            "skin_3": "None",
+            "face_3": "",
+            "ngsecret_3": "true",
+            "team_4": "1",
+            "mesh_4": "Male Soldier",
+            "skin_4": "SoldierSkins.sldr",
+            "face_4": "SoldierSkins.Johnson",
+            "ngsecret_4": "true",
+            "team_5": "1",
+            "mesh_5": "Male Commando",
+            "skin_5": "CommandoSkins.cmdo",
+            "face_5": "CommandoSkins.Blake",
+            "ngsecret_5": "true",
+            "team_6": "1",
+            "mesh_6": "Male Commando",
+            "skin_6": "CommandoSkins.cmdo",
+            "face_6": "CommandoSkins.Blake",
+            "ngsecret_6": "true",
+            "team_7": "0",
+            "mesh_7": "Male Commando",
+            "skin_7": "CommandoSkins.daco",
+            "face_7": "CommandoSkins.Boris",
+            "ngsecret_7": "true",
+            "team_8": "1",
+            "mesh_8": "Male Soldier",
+            "skin_8": "SoldierSkins.hkil",
+            "face_8": "SoldierSkins.matrix",
+            "ngsecret_8": "true",
+            "team_9": "255",
+            "mesh_9": "Spectator",
+            "skin_9": "None",
+            "face_9": "",
+            "ngsecret_9": "true",
+            "team_10": "0",
+            "mesh_10": "Female Commando",
+            "skin_10": "FCommandoSkins.goth",
+            "face_10": "FCommandoSkins.Freylis",
+            "ngsecret_10": "true",
+            "team_11": "1",
+            "mesh_11": "Female Commando",
+            "skin_11": "FCommandoSkins.daco",
+            "face_11": "FCommandoSkins.Jayce",
+            "ngsecret_11": "true",
+            "team_12": "255",
+            "mesh_12": "Spectator",
+            "skin_12": "None",
+            "face_12": "",
+            "ngsecret_12": "true",
+            "team_13": "0",
+            "mesh_13": "Female Commando",
+            "skin_13": "FCommandoSkins.goth",
+            "face_13": "FCommandoSkins.Malise",
+            "ngsecret_13": "true",
+            "team_14": "1",
+            "mesh_14": "Male Soldier",
+            "skin_14": "SoldierSkins.hkil",
+            "face_14": "SoldierSkins.matrix",
+            "ngsecret_14": "true",
+            "team_15": "0",
+            "mesh_15": "Female Soldier",
+            "skin_15": "SGirlSkins.Garf",
+            "face_15": "SGirlSkins.Vixen",
+            "ngsecret_15": "true",
+            "team_16": "0",
+            "mesh_16": "Male Commando",
+            "skin_16": "CommandoSkins.cmdo",
+            "face_16": "CommandoSkins.Whitman",
+            "ngsecret_16": "true",
+            "team_17": "0",
+            "mesh_17": "Male Soldier",
+            "skin_17": "SoldierSkins.Blkt",
+            "face_17": "SoldierSkins.Othello",
+            "ngsecret_17": "true",
+            "final": ""
+        },
+        "players": [
+            {
+                "name": "Nu..",
+                "score": "2",
+                "ping": " 60"
+            },
+            {
+                "name": "z0rke",
+                "score": "28",
+                "ping": " 38"
+            },
+            {
+                "name": "Chris",
+                "score": "0",
+                "ping": " 148"
+            },
+            {
+                "name": "jerc",
+                "score": "0",
+                "ping": " 103"
+            },
+            {
+                "name": "Doc_Taylor",
+                "score": "46",
+                "ping": " 150"
+            },
+            {
+                "name": "AIscripts.lu",
+                "score": "132",
+                "ping": " 138"
+            },
+            {
+                "name": "Wazap!!!",
+                "score": "50",
+                "ping": " 278"
+            },
+            {
+                "name": "HunkerDown",
+                "score": "97",
+                "ping": " 133"
+            },
+            {
+                "name": "M_NOE",
+                "score": "47",
+                "ping": " 179"
+            },
+            {
+                "name": "Natural_Causes",
+                "score": "0",
+                "ping": " 128"
+            },
+            {
+                "name": "Antonio",
+                "score": "118",
+                "ping": " 225"
+            },
+            {
+                "name": "\u00a7\u00f8ul~C\u00f8llect\u00f8r",
+                "score": "129",
+                "ping": " 88"
+            },
+            {
+                "name": "OS",
+                "score": "0",
+                "ping": " 128"
+            },
+            {
+                "name": "Coll@",
+                "score": "144",
+                "ping": " 65"
+            },
+            {
+                "name": "Yahirogane",
+                "score": "318",
+                "ping": " 40"
+            },
+            {
+                "name": "Kurogane",
+                "score": "201",
+                "ping": " 61"
+            },
+            {
+                "name": "LucaToni",
+                "score": "109",
+                "ping": " 45"
+            },
+            {
+                "name": "Named",
+                "score": "133",
+                "ping": " 56"
+            }
+        ],
+        "channels": [],
+        "errstr": ""
+    }
+}

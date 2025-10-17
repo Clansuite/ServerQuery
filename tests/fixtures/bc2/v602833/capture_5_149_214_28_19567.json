@@ -1,0 +1,176 @@
+{
+    "metadata": {
+        "ip": "5.149.214.28",
+        "port": 19567,
+        "protocol": "bc2",
+        "timestamp": 1759251505
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "5.149.214.28",
+        "queryport": 19567,
+        "online": true,
+        "gamename": "",
+        "gameversion": "602833",
+        "servertitle": "#1 VANILLA ONSLAUGHT 24\/7 + BOTS",
+        "mapname": "Levels\/BC1_Oasis_CQ",
+        "gametype": "CONQUEST",
+        "numplayers": 25,
+        "maxplayers": 32,
+        "rules": {
+            "targetscore": 0,
+            "ranked": false,
+            "punkbuster": false,
+            "password": false,
+            "uptime": 0,
+            "roundtime": 0,
+            "mod": ""
+        },
+        "players": [
+            {
+                "clanTag": "",
+                "name": "ARAM_ARM",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "2",
+                "kills": "0",
+                "deaths": "0",
+                "score": "0",
+                "ping": "0"
+            },
+            {
+                "clanTag": "pzdc",
+                "name": "Borov99",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "1",
+                "kills": "59",
+                "deaths": "16",
+                "score": "4930",
+                "ping": "152"
+            },
+            {
+                "clanTag": "Bavonet",
+                "name": "Tca_11a",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "1",
+                "kills": "31",
+                "deaths": "17",
+                "score": "3295",
+                "ping": "163"
+            },
+            {
+                "clanTag": "*oZ",
+                "name": "HOSTenG",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "2",
+                "kills": "22",
+                "deaths": "11",
+                "score": "2500",
+                "ping": "129"
+            },
+            {
+                "clanTag": "",
+                "name": "suzum1",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "2",
+                "kills": "18",
+                "deaths": "6",
+                "score": "1638",
+                "ping": "141"
+            },
+            {
+                "clanTag": "fighter",
+                "name": "mihman",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "1",
+                "kills": "37",
+                "deaths": "16",
+                "score": "2854",
+                "ping": "149"
+            },
+            {
+                "clanTag": "",
+                "name": "Acubens",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "1",
+                "kills": "33",
+                "deaths": "20",
+                "score": "2890",
+                "ping": "49"
+            },
+            {
+                "clanTag": "*Y*",
+                "name": "One4me",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "1",
+                "kills": "33",
+                "deaths": "18",
+                "score": "2185",
+                "ping": "144"
+            },
+            {
+                "clanTag": "",
+                "name": "BOT2025",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "1",
+                "kills": "45",
+                "deaths": "8",
+                "score": "3475",
+                "ping": "208"
+            },
+            {
+                "clanTag": "CCCC",
+                "name": "Mrav",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "1",
+                "kills": "26",
+                "deaths": "10",
+                "score": "1952",
+                "ping": "120"
+            },
+            {
+                "clanTag": "",
+                "name": "DrakkoT9",
+                "guid": "",
+                "teamId": "2",
+                "squadId": "2",
+                "kills": "12",
+                "deaths": "9",
+                "score": "810",
+                "ping": "186"
+            },
+            {
+                "clanTag": "",
+                "name": "acitapple",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "2",
+                "kills": "7",
+                "deaths": "6",
+                "score": "460",
+                "ping": "118"
+            },
+            {
+                "clanTag": "SAS",
+                "name": "SargeDornan2241",
+                "guid": "",
+                "teamId": "1",
+                "squadId": "2",
+                "kills": "11",
+                "deaths": "4",
+                "score": "930",
+                "ping": "95"
+            }
+        ],
+        "errstr": ""
+    }
+}

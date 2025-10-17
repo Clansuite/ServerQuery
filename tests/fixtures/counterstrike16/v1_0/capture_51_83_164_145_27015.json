@@ -1,0 +1,55 @@
+{
+    "ip": "51.83.164.145",
+    "port": 27015,
+    "protocol": "CounterStrike16",
+    "version": "1.0",
+    "normalized_version": "v1_0",
+    "timestamp": 1759242196,
+    "datetime": "2025-09-30T14:23:16+00:00",
+    "options": [],
+    "server_info": {
+        "address": "51.83.164.145",
+        "queryport": 27015,
+        "online": true,
+        "gamename": "Condition Zero",
+        "gameversion": "1.0.0.3\/Stdio",
+        "servertitle": "[PL]  Weterani Czero FFA",
+        "mapname": "fy_buzzkill",
+        "gametype": "Counter-Strike 1.6",
+        "numplayers": 1,
+        "maxplayers": 24,
+        "rules": [],
+        "players": [
+            {
+                "name": "HLTV Weterani Czero",
+                "score": 0,
+                "time": "08:22:40"
+            }
+        ],
+        "errstr": ""
+    },
+    "captures": [
+        {
+            "sent": "\/\/\/\/\/1RTb3VyY2UgRW5naW5lIFF1ZXJ5AA==",
+            "received": "\/\/\/\/\/0kwW1BMXSAgV2V0ZXJhbmkgQ3plcm8gRkZBAGZ5X2J1enpraWxsAGN6ZXJvAENvbmRpdGlvbiBaZXJvAFAAARgAZGwAATEuMC4wLjMvU3RkaW8AkYdpGwASwX64QAFQAAAAAAAAAA==",
+            "timestamp": 1759242196.800834
+        },
+        {
+            "sent": "\/\/\/\/\/1X\/\/\/\/\/",
+            "received": "\/\/\/\/\/0GmhAgG",
+            "timestamp": 1759242196.800836
+        },
+        {
+            "sent": "\/\/\/\/\/1WmhAgG",
+            "received": "\/\/\/\/\/0QBAEhMVFYgV2V0ZXJhbmkgQ3plcm8AAAAAABOg60Y=",
+            "timestamp": 1759242196.800837
+        },
+        {
+            "sent": "\/\/\/\/\/3J1bGVzAAA=",
+            "received": "KG5vIHJlc3BvbnNlKQ==",
+            "timestamp": 1759242196.800838
+        }
+    ],
+    "packet_count": 4,
+    "total_bytes": 163
+}

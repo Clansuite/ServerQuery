@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "ip": "24.91.54.97",
+        "port": 1716,
+        "protocol": "gamespy2",
+        "timestamp": 1759303798
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "24.91.54.97",
+        "queryport": 1716,
+        "online": false,
+        "gamename": "",
+        "gameversion": "",
+        "servertitle": "",
+        "mapname": "",
+        "gametype": "",
+        "numplayers": 0,
+        "maxplayers": 0,
+        "rules": [],
+        "players": [],
+        "errstr": ""
+    }
+}

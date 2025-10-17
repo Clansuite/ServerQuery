@@ -1,0 +1,126 @@
+{
+    "ip": "172.104.253.108",
+    "port": 27980,
+    "protocol": "Quake3a",
+    "version": "1.32e",
+    "normalized_version": "v1_32e",
+    "timestamp": 1759099295,
+    "datetime": "2025-09-28T22:41:35+00:00",
+    "options": [],
+    "server_info": {
+        "address": "172.104.253.108",
+        "queryport": 27980,
+        "online": true,
+        "gamename": "q3a_baseq3",
+        "gameversion": "Q3 1.32e linux-x86_64 Sep 14 2025",
+        "servertitle": "^7-=^3*^1A51^3*^7=- ^2FFA",
+        "mapname": "q3dm9",
+        "gametype": "baseq3",
+        "numplayers": 17,
+        "maxplayers": 64,
+        "rules": {
+            "bot_minplayers": "0",
+            "fraglimit": "30",
+            "g_gametype": "0",
+            "protocol": "68",
+            "sv_allowDownload": "1",
+            "sv_dlURL": "http:\/\/maps.q3a51.com",
+            "sv_maxclients": "64",
+            "timelimit": "10",
+            "Score_Time": "9:08",
+            "address": "ffa.q3a51.com",
+            "capturelimit": "0",
+            "g_unlagged": "1"
+        },
+        "players": [
+            {
+                "name": "^4null^5pointer",
+                "score": "0",
+                "ping": "11"
+            },
+            {
+                "name": "^0Soul^1|^7eNdo^1!",
+                "score": "0",
+                "ping": "11"
+            },
+            {
+                "name": "Paganini",
+                "score": "0",
+                "ping": "12"
+            },
+            {
+                "name": "56k^1decoy",
+                "score": "0",
+                "ping": "22"
+            },
+            {
+                "name": "^2t^6e^5kr^6o^2s",
+                "score": "0",
+                "ping": "11"
+            },
+            {
+                "name": "^3JO^7SH^5UA",
+                "score": "0",
+                "ping": "10"
+            },
+            {
+                "name": "^2warped^4spider",
+                "score": "0",
+                "ping": "13"
+            },
+            {
+                "name": "^1^^0Deft^3*^1A51^3*",
+                "score": "0",
+                "ping": "10"
+            },
+            {
+                "name": "^0qog^5!^7wallab^1i",
+                "score": "0",
+                "ping": "11"
+            },
+            {
+                "name": "^1Tezcatlipoca",
+                "score": "0",
+                "ping": "14"
+            },
+            {
+                "name": "EnDU^1R^7AnCE",
+                "score": "0",
+                "ping": "16"
+            },
+            {
+                "name": "^2LUAP",
+                "score": "0",
+                "ping": "11"
+            },
+            {
+                "name": "^4D^8@^4ve",
+                "score": "3",
+                "ping": "19"
+            },
+            {
+                "name": "^4Unnamed^7*^4[^71bit^4]",
+                "score": "0",
+                "ping": "46"
+            },
+            {
+                "name": "HXX",
+                "score": "4",
+                "ping": "42"
+            },
+            {
+                "name": "GU5",
+                "score": "3",
+                "ping": "11"
+            },
+            {
+                "name": "Emma",
+                "score": "1",
+                "ping": "49"
+            }
+        ],
+        "errstr": ""
+    },
+    "packet_count": 1,
+    "total_bytes": 691
+}

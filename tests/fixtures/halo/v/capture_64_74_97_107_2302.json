@@ -1,0 +1,115 @@
+{
+    "metadata": {
+        "ip": "64.74.97.107",
+        "port": 2302,
+        "protocol": "halo",
+        "timestamp": 1759299719
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "64.74.97.107",
+        "queryport": 2302,
+        "online": true,
+        "gamename": "Halo: Combat Evolved",
+        "gameversion": "01.00.10.0621",
+        "servertitle": "POQclan.com PC16",
+        "mapname": "bloodgulch",
+        "gametype": "CTF",
+        "numplayers": 13,
+        "maxplayers": 16,
+        "rules": {
+            "dedicated": "1",
+            "fraglimit": "10",
+            "game_classic": "0",
+            "game_flags": "65",
+            "gamemode": "openplaying",
+            "gamevariant": "POQclan.com PC16",
+            "hostport": "2302",
+            "num_teams": "2",
+            "password": "0",
+            "player_flags": "1372606472,1091",
+            "teamplay": "1"
+        },
+        "players": [
+            {
+                "player": "Hooded_Claw",
+                "score": "1",
+                "ping": "79",
+                "team": "1"
+            },
+            {
+                "player": "_",
+                "score": "0",
+                "ping": "100",
+                "team": "0"
+            },
+            {
+                "player": "HAWK",
+                "score": "0",
+                "ping": "61",
+                "team": "1"
+            },
+            {
+                "player": "el oso",
+                "score": "0",
+                "ping": "130",
+                "team": "0"
+            },
+            {
+                "player": "OMEGA",
+                "score": "0",
+                "ping": "139",
+                "team": "1"
+            },
+            {
+                "player": "ÑE»McCáf",
+                "score": "1",
+                "ping": "71",
+                "team": "1"
+            },
+            {
+                "player": "Thanos",
+                "score": "0",
+                "ping": "112",
+                "team": "0"
+            },
+            {
+                "player": "WILL",
+                "score": "0",
+                "ping": "120",
+                "team": "0"
+            },
+            {
+                "player": "MIRA P TRAS",
+                "score": "0",
+                "ping": "61",
+                "team": "1"
+            },
+            {
+                "player": "AOK",
+                "score": "0",
+                "ping": "130",
+                "team": "0"
+            },
+            {
+                "player": "BanderaRey",
+                "score": "0",
+                "ping": "40",
+                "team": "0"
+            },
+            {
+                "player": "erickson",
+                "score": "0",
+                "ping": "258",
+                "team": "1"
+            },
+            {
+                "player": "tibiri",
+                "score": "2",
+                "ping": "68",
+                "team": "1"
+            }
+        ],
+        "errstr": null
+    }
+}

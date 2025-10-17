@@ -1,0 +1,297 @@
+{
+    "metadata": {
+        "ip": "94.250.199.7",
+        "port": 47200,
+        "protocol": "bf3",
+        "timestamp": 1759248139
+    },
+    "packets": "YTowOnt9",
+    "server_info": {
+        "address": "94.250.199.7",
+        "queryport": 47200,
+        "online": true,
+        "gamename": "",
+        "gameversion": "BF3",
+        "servertitle": "[TNT]#2 TAKESHIS CASTLE | discord.tnt.community ",
+        "mapname": "MP_012",
+        "gametype": "ConquestSmall0",
+        "numplayers": 24,
+        "maxplayers": 24,
+        "rules": {
+            "targetscore": 0,
+            "status": "",
+            "ranked": true,
+            "punkbuster": false,
+            "uptime": 1738886,
+            "roundtime": 2508,
+            "ip": "94.250.199.7:25200"
+        },
+        "players": [
+            {
+                "name": "EnnE281",
+                "guid": "",
+                "team": 1,
+                "squad": 4,
+                "kills": 12,
+                "deaths": 9,
+                "score": 13250,
+                "rank": 6,
+                "ping": 17
+            },
+            {
+                "name": "dzugasvili76",
+                "guid": "",
+                "team": 2,
+                "squad": 2,
+                "kills": 0,
+                "deaths": 0,
+                "score": 0,
+                "rank": 100,
+                "ping": 20
+            },
+            {
+                "name": "RAKETE1A",
+                "guid": "",
+                "team": 2,
+                "squad": 2,
+                "kills": 17,
+                "deaths": 25,
+                "score": 10178,
+                "rank": 145,
+                "ping": 19
+            },
+            {
+                "name": "CPAHb_C_HEbA",
+                "guid": "",
+                "team": 1,
+                "squad": 4,
+                "kills": 25,
+                "deaths": 9,
+                "score": 15091,
+                "rank": 145,
+                "ping": 82
+            },
+            {
+                "name": "Porgey_XD",
+                "guid": "",
+                "team": 1,
+                "squad": 4,
+                "kills": 10,
+                "deaths": 19,
+                "score": 10700,
+                "rank": 61,
+                "ping": 26
+            },
+            {
+                "name": "GerardHHH",
+                "guid": "",
+                "team": 2,
+                "squad": 2,
+                "kills": 2,
+                "deaths": 6,
+                "score": 3252,
+                "rank": 72,
+                "ping": 17
+            },
+            {
+                "name": "Gefreiter1980_03",
+                "guid": "",
+                "team": 1,
+                "squad": 4,
+                "kills": 7,
+                "deaths": 8,
+                "score": 8851,
+                "rank": 145,
+                "ping": 19
+            },
+            {
+                "name": "chakenzai",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 30,
+                "deaths": 7,
+                "score": 16058,
+                "rank": 145,
+                "ping": 63
+            },
+            {
+                "name": "sff1963",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 11,
+                "deaths": 37,
+                "score": 9044,
+                "rank": 145,
+                "ping": 124
+            },
+            {
+                "name": "74591d53a02f3974",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 19,
+                "deaths": 31,
+                "score": 9868,
+                "rank": 54,
+                "ping": 74
+            },
+            {
+                "name": "aleximax2022",
+                "guid": "",
+                "team": 1,
+                "squad": 3,
+                "kills": 23,
+                "deaths": 7,
+                "score": 16310,
+                "rank": 103,
+                "ping": 69
+            },
+            {
+                "name": "GermanBratwurst",
+                "guid": "",
+                "team": 1,
+                "squad": 3,
+                "kills": 23,
+                "deaths": 17,
+                "score": 12594,
+                "rank": 91,
+                "ping": 13
+            },
+            {
+                "name": "magnetron_de",
+                "guid": "",
+                "team": 2,
+                "squad": 2,
+                "kills": 18,
+                "deaths": 16,
+                "score": 9996,
+                "rank": 145,
+                "ping": 40
+            },
+            {
+                "name": "3xum2vox2esm",
+                "guid": "",
+                "team": 2,
+                "squad": 3,
+                "kills": 0,
+                "deaths": 20,
+                "score": 810,
+                "rank": 1,
+                "ping": 35
+            },
+            {
+                "name": "PRO100_eWON_BY",
+                "guid": "",
+                "team": 2,
+                "squad": 3,
+                "kills": 43,
+                "deaths": 19,
+                "score": 15134,
+                "rank": 64,
+                "ping": 61
+            },
+            {
+                "name": "longzottel",
+                "guid": "",
+                "team": 1,
+                "squad": 3,
+                "kills": 8,
+                "deaths": 15,
+                "score": 7540,
+                "rank": 145,
+                "ping": 30
+            },
+            {
+                "name": "WanSan84",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 13,
+                "deaths": 13,
+                "score": 8214,
+                "rank": 125,
+                "ping": 46
+            },
+            {
+                "name": "3PhasenKalle",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 1,
+                "deaths": 18,
+                "score": 1666,
+                "rank": 37,
+                "ping": 19
+            },
+            {
+                "name": "HARON24RUS",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 12,
+                "deaths": 6,
+                "score": 4148,
+                "rank": 145,
+                "ping": 90
+            },
+            {
+                "name": "lordpanda006",
+                "guid": "",
+                "team": 2,
+                "squad": 0,
+                "kills": 13,
+                "deaths": 6,
+                "score": 4682,
+                "rank": 145,
+                "ping": 25
+            },
+            {
+                "name": "RaNa-Rocxs",
+                "guid": "",
+                "team": 2,
+                "squad": 0,
+                "kills": 4,
+                "deaths": 5,
+                "score": 1492,
+                "rank": 67,
+                "ping": 131
+            },
+            {
+                "name": "SGRAVOSKYhn",
+                "guid": "",
+                "team": 2,
+                "squad": 1,
+                "kills": 0,
+                "deaths": 7,
+                "score": 700,
+                "rank": 2,
+                "ping": 36
+            },
+            {
+                "name": "Bumbaizzda",
+                "guid": "",
+                "team": 1,
+                "squad": 1,
+                "kills": 1,
+                "deaths": 5,
+                "score": 1018,
+                "rank": 31,
+                "ping": 14
+            },
+            {
+                "name": "JohnRambo82",
+                "guid": "",
+                "team": 1,
+                "squad": 3,
+                "kills": 0,
+                "deaths": 0,
+                "score": 0,
+                "rank": 145,
+                "ping": 15
+            }
+        ],
+        "errstr": ""
+    }
+}
