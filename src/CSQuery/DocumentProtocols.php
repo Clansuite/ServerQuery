@@ -197,7 +197,7 @@ class DocumentProtocols
         $markdown = "## Clansuite Server Query\n";
         $markdown .= "### Table of Contents\n\n";
         $markdown .= "1. [Supported Server Protocols](#supported-server-protocols)\n";
-        $markdown .= "2. [Supported Game Servers](#supported-game-servers)\n";
+        $markdown .= "2. [Supported Game and Voice Servers](#supported-game-and-voice-servers)\n";
         $markdown .= "3. [Game Series](#game-series)\n\n";
         $markdown .= "\n";
         $markdown .= "---\n";
@@ -225,8 +225,8 @@ class DocumentProtocols
             $i++;
         }
         $markdown .= "```\n\n";
-        $markdown .= "### Supported Game Servers\n\n";
-        $markdown .= "This is a table of all supported games with their corresponding protocols.\n\n";
+        $markdown .= "### Supported Game and Voice Servers\n\n";
+        $markdown .= "This is a table of all supported games with their corresponding protocols, including voice servers.\n\n";
         $markdown .= "| Number | Game Name | Server Protocol |\n";
         $markdown .= "|--------|-----------|-----------------|\n";
 

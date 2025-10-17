@@ -2,7 +2,7 @@
 ### Table of Contents
 
 1. [Supported Server Protocols](#supported-server-protocols)
-2. [Supported Game Servers](#supported-game-servers)
+2. [Supported Game and Voice Servers](#supported-game-and-voice-servers)
 3. [Game Series](#game-series)
 
 
@@ -199,9 +199,9 @@ Server Query Protocols
 └── palworld
 ```
 
-### Supported Game Servers
+### Supported Game and Voice Servers
 
-This is a table of all supported games with their corresponding protocols.
+This is a table of all supported games with their corresponding protocols, including voice servers.
 
 | Number | Game Name | Server Protocol |
 |--------|-----------|-----------------|
