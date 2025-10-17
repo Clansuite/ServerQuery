@@ -195,10 +195,17 @@ class DocumentProtocols
     public function renderMarkdown(): string
     {
         $markdown = "## Clansuite Server Query\n";
+        $markdown .= "## Table of Contents\n\n";
+        $markdown .= "1. [Supported Server Protocols](#supported-server-protocols)\n";
+        $markdown .= "2. [Supported Game Servers](#supported-game-servers)\n";
+        $markdown .= "3. [Game Series](#game-series)\n\n";
+        $markdown .= "4. [Game List](./game_list.md)\n\n";
+        $markdown .= "\n";
         $markdown .= "### Supported Server Protocols\n\n";
         $markdown .= "Total Protocols: {$this->totalProtocols}\n";
         $markdown .= "Total Games: {$this->totalGames}\n\n";
-        $markdown .= "This document lists the server protocols supported, organized in a hierarchical tree structure. Each protocol serves as a top-level category, with the games they support listed underneath.\n\n";
+        $markdown .= "This document lists the server protocols supported, organized in a hierarchical tree structure.\n";
+        $markdown .= "Each protocol serves as a top-level category, with the games they support listed underneath.\n\n";
         $markdown .= "```\n";
         $markdown .= "Server Query Protocols\n";
         $totalBases = count($this->protocols);
@@ -324,9 +331,15 @@ class DocumentProtocols
         $markdown = $this->renderMarkdown();
         $html     = $this->renderHtml();
 
+        $gameList = '';
+        foreach ($this->gameList as $index => $game) {
+            $number = $index + 1;
+            $gameList .= sprintf("%d. %s\n", $number, $game);
+        }
+
         file_put_contents($outputDir . '/protocols.md', $markdown);
         file_put_contents($outputDir . '/protocols.html', $html);
-        file_put_contents($outputDir . '/game_list.md', implode("\n", $this->gameList));
+        file_put_contents($outputDir . '/game_list.md', $gameList);
 
         print "Generated protocols.md and protocols.html\n";
         print "Generated game_list.md\n";
