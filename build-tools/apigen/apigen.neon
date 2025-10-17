@@ -1,0 +1,57 @@
+# ApiGen configuration file for Clansuite Server Query
+# NEON format configuration for ApiGen v7
+
+# Destination directory for generated documentation
+destination: build/apigen
+
+# Title of the generated documentation
+title: "Clansuite Server Query -"
+
+# Base URL for the documentation (used for canonical URLs)
+#baseUrl: "https://api.clansuite.com"
+
+# Include private and protected methods/properties
+visibility: "public,protected,private"
+
+# Generate documentation for elements marked with @api
+annotationGroups: "api"
+
+# Exclude certain files or directories
+exclude:
+	- "*/vendor/*"
+	- "*/tests/*"
+	- "*/build/*"
+	- "*/node_modules/*"
+
+# Additional options
+charset: "UTF-8"
+main: "Clansuite Server Query"
+googleAnalytics: null
+googleCseId: null
+
+# Generate tree view
+tree: true
+
+# Generate deprecated elements
+deprecated: true
+
+# Generate todo elements
+todo: true
+
+# Generate source code links
+sourceCode: true
+
+# bool, should protected members be excluded?
+excludeProtected: false
+
+# bool, should private members be excluded?
+excludePrivate: false
+
+# Base path for source code links (GitHub repository)
+sourceCodeBaseUrl: "https://github.com/Clansuite/ServerQuery/blob/main/"
+
+# int, --workers in CLI, number of processes that will be forked for parallel rendering
+workerCount: 2
+
+# string, --memory-limit in CLI
+memoryLimit: '512M'

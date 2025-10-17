@@ -1,0 +1,71 @@
+parameters:
+    level: 8
+    phpVersion: 80200
+
+    excludePaths:
+        - ../../vendor/
+    paths:
+        - ../../bin
+        - ../../examples/
+        - ../../src/
+        #- ../../tests/
+    scanDirectories:
+      - ../../vendor
+
+    parallel:
+        processTimeout: 300.0
+        jobSize: 10
+        maximumNumberOfProcesses: 8
+        minimumNumberOfJobsPerProcess: 2
+
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    reportAlwaysTrueInLastCondition: true
+    reportPossiblyNonexistentConstantArrayOffset: true
+    reportPossiblyNonexistentGeneralArrayOffset: true
+
+    # what the fuck is this rule for? its close to pointless.
+    # stuff like this needs dynamic and not static analysis.
+    treatPhpDocTypesAsCertain: false
+
+    strictRules:
+        allRules: false
+        booleansInConditions: true
+        closureUsesThis: true
+        disallowedBacktick: true
+        disallowedEmpty: true
+        disallowedImplicitArrayCreation: true
+        disallowedLooseComparison: true
+        disallowedShortTernary: true
+        illegalConstructorMethodCall: true
+        matchingInheritedMethodNames: true
+        noVariableVariables: true
+        numericOperandsInArithmeticOperators: true
+        overwriteVariablesWithLoop: true
+        requireParentConstructorCall: true
+        strictArrayFilter: true
+        strictFunctionCalls: true
+        switchConditionsMatchingType: true
+        uselessCast: true
+
+    ergebnis:
+        allRules: false
+        #final:
+        #    enabled: true
+        #    classesNotRequiredToBeAbstractOrFinal:
+        #        - PHPUnit\Framework\Constraint\Count
+        #        - PHPUnit\Framework\AssertionFailedError
+        #        - PHPUnit\Framework\Exception
+        #        - PHPUnit\Framework\TestSuite
+        privateInFinalClass:
+            enabled: true
+
+    type_coverage:
+        declare: 100
+        return: 100
+        param: 100
+        property: 100
+        constant: 0
+        # constant type coverage is 0, because
+        # this cannot be fixed
+        # as PHP does not support typed constants
+        # in the project's PHP version

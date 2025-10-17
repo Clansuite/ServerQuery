@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<psalm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config config.xsd"
+    name = "Psalm for Clansuite Server Query"
+    errorLevel                    = "5"
+    throwExceptionOnError         = "0"
+    cacheDirectory                = "./build/cache/psalm"
+    resolveFromConfigFile         = "false"
+    findUnusedBaselineEntry       = "true"
+    findUnusedCode                = "false"
+    findUnusedPsalmSuppress       = "true"
+    limitMethodComplexity         = "true"
+    ensureArrayStringOffsetsExist = "true"
+    ensureArrayIntOffsetsExist    = "true"
+    checkForThrowsDocblock        = "true"
+    checkForThrowsInGlobalScope   = "true"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+    <issueHandlers>
+        <RedundantIdentityWithTrue errorLevel="suppress"/> <!-- Causes trouble with `match(true)` -->
+        <MissingThrowsDocblock errorLevel="suppress"/> <!-- prefer PHPStan: @throws void -->
+        <ClassMustBeFinal errorLevel="suppress" /> <!-- Holy shit. The final inserts are so broken! -->
+    </issueHandlers>
+
+    <forbiddenFunctions>
+        <function name="empty"/>
+    </forbiddenFunctions>
+</psalm>

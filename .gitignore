@@ -26,3 +26,11 @@ composer.lock
 
 vendor/
 build/
+
+# PHPStan isolated install folder
+build-tools/.phpstan/composer.lock
+build-tools/.phpstan/vendor/
+
+# Apigen isolated install folder
+build-tools/apigen/composer.lock
+build-tools/apigen/vendor/

@@ -9,7 +9,7 @@
   "require-dev": {
     "phpunit/phpunit": "^12.4",
     "friendsofphp/php-cs-fixer": "^3.88",
-    "rector/rector": "^2.1.7",
+    "rector/rector": "^2.2.3",
     "vimeo/psalm": "^6.13"
   },
   "autoload": {
