@@ -12,7 +12,7 @@ Also inspired by projects like hlsw, kquery, squery, GameQ and phgstats.
 
 ## Installation
 
-`composer require clansuite/gameserverquery`
+`composer require clansuite/ServerQuery`
 
 ## Usage
 

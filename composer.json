@@ -1,5 +1,5 @@
 {
-  "name": "clansuite/gameserverquery",
+  "name": "clansuite/serverquery",
   "description": "A PHP library to query game and voice servers for their status and player information (e.g. CSGO, Quake3, TeamSpeak).",
   "type": "library",
   "license": "MIT",
@@ -29,10 +29,10 @@
       "phpstan/extension-installer": true
     }
   },
-  "homepage": "https://github.com/Clansuite/GameServerQuery",
+  "homepage": "https://github.com/Clansuite/ServerQuery",
   "support": {
     "issues": "https://github.com/Clansuite/ServerQuery/issues",
-    "source": "https://github.com/Clansuite/GameServerQuery"
+    "source": "https://github.com/Clansuite/ServerQuery"
   },
   "funding": [
     {
