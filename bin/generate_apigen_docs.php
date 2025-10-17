@@ -39,7 +39,7 @@ $command = \sprintf(
     '%s ' .
     '--output build/apigen ' .
     '--title "Clansuite Server Query -" ' .
-    '--workers 1 ' .
+    '--workers 2 ' .
     'src',
     \escapeshellarg($apigenBinary),
 );

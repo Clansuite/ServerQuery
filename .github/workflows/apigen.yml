@@ -38,6 +38,7 @@ jobs:
 
     - name: Move generated docs into subfolder
       run: |
+        mkdir -p ./build/apigen/apigen
         mv ./build-tools/apigen/* ./build/apigen/apigen
 
     - name: Create top-level Index file
