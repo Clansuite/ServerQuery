@@ -258,6 +258,7 @@ class Terraria extends CSQuery implements ProtocolInterface
      * Open a socket while keeping errno/errstr as variables (avoids passing expressions by reference).
      *
      * @return false|resource
+     *
      * @phpstan-ignore typeCoverage.returnTypeCoverage
      */
     private function openSocket(string $host, int $port, int $timeout)

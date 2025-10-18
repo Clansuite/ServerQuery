@@ -601,6 +601,7 @@ class Steam extends CSQuery implements ProtocolInterface
             // unpacking player's score and time
             $unpacked  = unpack('@' . ($endPlayerName + 1) . $format, $data);
             $curPlayer = $unpacked !== false ? $unpacked : [];
+
             /** @var array<string, mixed> $curPlayer */
 
             // format time

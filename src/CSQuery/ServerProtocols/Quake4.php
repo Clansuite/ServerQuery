@@ -172,8 +172,6 @@ class Quake4 extends Quake
      * Parse player information from si_players.
      *
      * @param string $playersData The si_players string containing player info
-     *
-     * @return void
      */
     protected function parsePlayers(string $playersData): void
     {

@@ -105,10 +105,10 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
         $queryPort = ($this->queryport ?? 0) + $this->port_diff;
 
         // Attempt TCP query to client_port + 22000 (BF3/BF4 convention)
-        $errno  = 0;
-        $errstr = '';
+        $errno   = 0;
+        $errstr  = '';
         $address = $this->address ?? '';
-        $fp     = @fsockopen($address, $queryPort, $errno, $errstr, 5);
+        $fp      = @fsockopen($address, $queryPort, $errno, $errstr, 5);
 
         if ($fp === false) {
             $this->errstr = 'Unable to open TCP socket to BF4 query port';

@@ -24,6 +24,7 @@ use function stream_set_timeout;
 use function strlen;
 use function substr;
 use function unpack;
+use function usleep;
 
 /**
  * UDP Client for game server queries.
@@ -114,6 +115,70 @@ class UdpClient
     }
 
     /**
+     * Send a UDP query and receive multiple packets.
+     *
+     * @param string $address            Server address
+     * @param int    $port               Server port
+     * @param string $packet             Packet to send
+     * @param int    $maxPackets         Maximum number of packets to receive (0 for unlimited)
+     * @param float  $interPacketTimeout Timeout between packets
+     *
+     * @return string[] Array of received packets
+     */
+    public function queryMultiPacket(string $address, int $port, string $packet, int $maxPackets = 0, float $interPacketTimeout = 0.1): array
+    {
+        $fp = $this->createSocket($address, $port);
+
+        if ($fp === false) {
+            return [];
+        }
+
+        stream_set_blocking($fp, true);
+        stream_set_timeout($fp, $this->timeout, 0);
+
+        // Send packet
+        if (fwrite($fp, $packet, strlen($packet)) === false) {
+            fclose($fp);
+
+            return [];
+        }
+
+        $packets     = [];
+        $packetCount = 0;
+
+        while ($maxPackets === 0 || $packetCount < $maxPackets) {
+            $result       = '';
+            $socketstatus = stream_get_meta_data($fp);
+
+            while (!$socketstatus['timed_out'] && !$socketstatus['eof']) {
+                $data = fread($fp, 128);
+
+                if ($data === false || $data === '') {
+                    break;
+                }
+                $result .= $data;
+                $socketstatus = stream_get_meta_data($fp);
+            }
+
+            if ($result === '' || $result === '0') {
+                break;
+            }
+
+            $packets[] = $result;
+            $packetCount++;
+
+            // Wait for inter-packet timeout
+            if ($interPacketTimeout > 0) {
+                usleep((int) ($interPacketTimeout * 1000000));
+            }
+        }
+
+        fclose($fp);
+
+        return $packets;
+    }
+
+    /**
      * Create a UDP socket connection.
      *
      * @return false|resource returns a socket resource on success, or false on failure
@@ -195,67 +260,5 @@ class UdpClient
         }
 
         return $players;
-    }
-
-    /**
-     * Send a UDP query and receive multiple packets.
-     *
-     * @param string $address Server address
-     * @param int    $port    Server port
-     * @param string $packet  Packet to send
-     * @param int    $maxPackets Maximum number of packets to receive (0 for unlimited)
-     * @param float  $interPacketTimeout Timeout between packets
-     *
-     * @return string[] Array of received packets
-     */
-    public function queryMultiPacket(string $address, int $port, string $packet, int $maxPackets = 0, float $interPacketTimeout = 0.1): array
-    {
-        $fp = $this->createSocket($address, $port);
-
-        if ($fp === false) {
-            return [];
-        }
-
-        stream_set_blocking($fp, true);
-        stream_set_timeout($fp, $this->timeout, 0);
-
-        // Send packet
-        if (fwrite($fp, $packet, strlen($packet)) === false) {
-            fclose($fp);
-            return [];
-        }
-
-        $packets = [];
-        $packetCount = 0;
-
-        while ($maxPackets === 0 || $packetCount < $maxPackets) {
-            $result = '';
-            $socketstatus = stream_get_meta_data($fp);
-
-            while (!$socketstatus['timed_out'] && !$socketstatus['eof']) {
-                $data = fread($fp, 128);
-                if ($data === false || $data === '') {
-                    break;
-                }
-                $result .= $data;
-                $socketstatus = stream_get_meta_data($fp);
-            }
-
-            if ($result === '' || $result === '0') {
-                break;
-            }
-
-            $packets[] = $result;
-            $packetCount++;
-
-            // Wait for inter-packet timeout
-            if ($interPacketTimeout > 0) {
-                usleep((int) ($interPacketTimeout * 1000000));
-            }
-        }
-
-        fclose($fp);
-
-        return $packets;
     }
 }

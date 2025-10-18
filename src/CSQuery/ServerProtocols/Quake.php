@@ -23,7 +23,6 @@ use function array_shift;
 use function array_slice;
 use function count;
 use function explode;
-use function is_array;
 use function preg_split;
 use function trim;
 use Clansuite\Capture\Protocol\ProtocolInterface;
@@ -288,15 +287,15 @@ class Quake extends CSQuery implements ProtocolInterface
             $player = [
                 'score' => (int) $parts[0],
                 /** @phpstan-ignore offsetAccess.notFound */
-                'ping'  => (int) $parts[1],
+                'ping' => (int) $parts[1],
                 /** @phpstan-ignore offsetAccess.notFound */
-                'name'  => trim($parts[2], '"'),
+                'name' => trim($parts[2], '"'),
                 /** @phpstan-ignore offsetAccess.notFound */
-                'skin'  => trim($parts[3], '"'),
+                'skin' => trim($parts[3], '"'),
                 /** @phpstan-ignore offsetAccess.notFound */
-                'team'  => (int) $parts[4],
+                'team' => (int) $parts[4],
                 /** @phpstan-ignore offsetAccess.notFound */
-                'time'  => (float) $parts[5],
+                'time' => (float) $parts[5],
             ];
 
             $players[] = $player;

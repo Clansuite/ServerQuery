@@ -12,8 +12,6 @@
 
 namespace Clansuite\ServerQuery\ServerProtocols;
 
-use function is_int;
-use function is_string;
 use Clansuite\Capture\Protocol\ProtocolInterface;
 use Override;
 

@@ -15,7 +15,6 @@ namespace Clansuite\ServerQuery\ServerProtocols;
 use function count;
 use function explode;
 use function htmlentities;
-use function is_array;
 use function is_string;
 use function preg_match;
 use function preg_replace;
@@ -173,6 +172,7 @@ class Quake3Arena extends Quake
 
             for ($i = 1; $i < count($allplayers) - 1; $i++) {
                 $line = $allplayers[$i] ?? '';
+
                 // match with team info
                 if (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) !== false) {
                     // ignore spectators (team > 2)
@@ -180,29 +180,38 @@ class Quake3Arena extends Quake
                     if ((int) $curplayer[3] > 2) {
                         // ignore spectators
                     }
+
                     /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['name']  = $curplayer[3];
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['score'] = (int) $curplayer[1];
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['ping']  = (int) $curplayer[2];
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['team']  = $curplayer[3];
-                    $teamInfo                 = true;
-                    $pingOnly                 = false;
-                } /** @phpstan-ignore notIdentical.alwaysFalse */ elseif (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) !== false) {
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['name']  = $curplayer[3];
+                    $players[$i - 1]['name'] = $curplayer[3];
+
                     /** @phpstan-ignore offsetAccess.notFound */
                     $players[$i - 1]['score'] = (int) $curplayer[1];
+
                     /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['ping']  = (int) $curplayer[2];
-                    $pingOnly                 = false;
-                    $teamInfo                 = false;
+                    $players[$i - 1]['ping'] = (int) $curplayer[2];
+
+                    /** @phpstan-ignore offsetAccess.notFound */
+                    $players[$i - 1]['team'] = $curplayer[3];
+                    $teamInfo                = true;
+                    $pingOnly                = false;
+                }
+
+                /** @phpstan-ignore notIdentical.alwaysFalse */ elseif (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) !== false) {
+                    /** @phpstan-ignore offsetAccess.notFound */
+                    $players[$i - 1]['name'] = $curplayer[3];
+
+                    /** @phpstan-ignore offsetAccess.notFound */
+                    $players[$i - 1]['score'] = (int) $curplayer[1];
+
+                    /** @phpstan-ignore offsetAccess.notFound */
+                    $players[$i - 1]['ping'] = (int) $curplayer[2];
+                    $pingOnly                = false;
+                    $teamInfo                = false;
                 } else {
                     if (preg_match("/(\d+).\"(.*)\"/", $line, $curplayer) !== false) {
                         /** @phpstan-ignore offsetAccess.notFound */
                         $players[$i - 1]['name'] = $curplayer[2];
+
                         /** @phpstan-ignore offsetAccess.notFound */
                         $players[$i - 1]['ping'] = (int) $curplayer[1];
                         $pingOnly                = true; // for MoHAA

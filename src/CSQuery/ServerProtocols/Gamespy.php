@@ -17,7 +17,6 @@ use function count;
 use function explode;
 use function is_int;
 use function is_numeric;
-use function is_scalar;
 use function is_string;
 use function max;
 use function preg_match;

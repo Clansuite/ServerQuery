@@ -23,7 +23,6 @@ use function count;
 use function explode;
 use function file_put_contents;
 use function glob;
-use function implode;
 use function is_array;
 use function sort;
 use function strcasecmp;

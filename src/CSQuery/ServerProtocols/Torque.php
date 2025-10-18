@@ -256,11 +256,13 @@ class Torque extends CSQuery implements ProtocolInterface
         }
 
         if (count($strings) >= 3) {
-            $this->gametype              = $strings[0];
+            $this->gametype = $strings[0];
+
             /** @phpstan-ignore offsetAccess.notFound */
             $this->rules['mission_type'] = $strings[1];
+
             /** @phpstan-ignore offsetAccess.notFound */
-            $this->mapname               = $strings[2];
+            $this->mapname = $strings[2];
         }
 
         // Read status byte

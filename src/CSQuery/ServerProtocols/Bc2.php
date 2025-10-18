@@ -98,10 +98,10 @@ class Bc2 extends CSQuery implements ProtocolInterface
         $queryPort = ($this->queryport ?? 0) + $this->port_diff;
 
         // Attempt TCP query to client_port + 29321 (BC2 convention)
-        $errno  = 0;
-        $errstr = '';
+        $errno   = 0;
+        $errstr  = '';
         $address = $this->address ?? '';
-        $fp = @fsockopen($address, $queryPort, $errno, $errstr, 5);
+        $fp      = @fsockopen($address, $queryPort, $errno, $errstr, 5);
 
         if ($fp === false) {
             $this->errstr = 'Unable to open TCP socket to BC2 query port';

@@ -323,6 +323,7 @@ class Halflife extends CSQuery
 
             $this->playerkeys['name']  = true;
             $this->playerkeys['score'] = true;
+
             // normalize players to a sequential array of arrays to match property type
             /** @phpstan-ignore typeCoverage.paramTypeCoverage */
             $this->players = array_values(array_map(static function ($p)

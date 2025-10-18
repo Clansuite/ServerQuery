@@ -12,10 +12,9 @@
 
 namespace Clansuite\ServerQuery\ServerProtocols;
 
+use function count;
 use function dechex;
 use function is_array;
-use function is_int;
-use function is_numeric;
 use function ord;
 use function str_replace;
 use function strlen;
@@ -98,14 +97,15 @@ class Arma3 extends Steam
         $players = $this->udpClient->queryPlayers($this->address ?? '', $this->queryport ?? 0);
 
         if ($players !== null) {
-            $this->players = [];
+            $this->players    = [];
             $this->playerkeys = [];
 
             foreach ($players as $player) {
                 if (is_array($player)) {
                     $playerData = [];
+
                     foreach ($player as $key => $value) {
-                        $playerData[$key] = $value;
+                        $playerData[$key]       = $value;
                         $this->playerkeys[$key] = true;
                     }
                     $this->players[] = $playerData;
@@ -120,7 +120,7 @@ class Arma3 extends Steam
     private function query_rules(): void
     {
         // Similar to players, get challenge first
-        $challengePacket = "\xFF\xFF\xFF\xFF\x56\xFF\xFF\xFF\xFF";
+        $challengePacket   = "\xFF\xFF\xFF\xFF\x56\xFF\xFF\xFF\xFF";
         $challengeResponse = $this->udpClient->query($this->address ?? '', $this->queryport ?? 0, $challengePacket);
 
         if ($challengeResponse === null || strlen($challengeResponse) < 9) {
@@ -130,7 +130,7 @@ class Arma3 extends Steam
         $challenge = substr($challengeResponse, 5, 4);
 
         // Query rules with challenge
-        $rulesPacket = "\xFF\xFF\xFF\xFF\x56" . $challenge;
+        $rulesPacket   = "\xFF\xFF\xFF\xFF\x56" . $challenge;
         $rulesResponse = $this->udpClient->query($this->address ?? '', $this->queryport ?? 0, $rulesPacket);
 
         if ($rulesResponse === null || strlen($rulesResponse) < 6) {
@@ -159,6 +159,7 @@ class Arma3 extends Steam
         }
 
         $numRulesData = unpack('v', substr($data, $offset, 2));
+
         if ($numRulesData === false) {
             return;
         }
@@ -168,6 +169,7 @@ class Arma3 extends Steam
         for ($i = 0; $i < $numRules; $i++) {
             // Read key until \x00
             $key = '';
+
             while ($offset < strlen($data) && $data[$offset] !== "\x00") {
                 $key .= $data[$offset++];
             }
@@ -175,6 +177,7 @@ class Arma3 extends Steam
 
             // Read value until \x00
             $value = '';
+
             while ($offset < strlen($data) && $data[$offset] !== "\x00") {
                 $value .= $data[$offset++];
             }
@@ -202,18 +205,18 @@ class Arma3 extends Steam
 
         $offset = 0;
 
-        $dlcByte = ord($data[$offset++]);
+        $dlcByte  = ord($data[$offset++]);
         $dlcByte2 = ord($data[$offset++]);
-        $dlcBits = ($dlcByte2 << 8) | $dlcByte;
+        $dlcBits  = ($dlcByte2 << 8) | $dlcByte;
 
         $difficulty = ord($data[$offset++]);
 
-        $this->rules['3rd_person'] = $difficulty >> 7;
+        $this->rules['3rd_person']           = $difficulty >> 7;
         $this->rules['advanced_flight_mode'] = ($difficulty >> 6) & 1;
-        $this->rules['difficulty_ai'] = ($difficulty >> 3) & 3;
-        $this->rules['difficulty_level'] = $difficulty & 3;
+        $this->rules['difficulty_ai']        = ($difficulty >> 3) & 3;
+        $this->rules['difficulty_level']     = $difficulty & 3;
 
-        $crosshair = ord($data[$offset++]);
+        $crosshair                = ord($data[$offset++]);
         $this->rules['crosshair'] = $crosshair;
 
         // DLC flags
@@ -223,6 +226,7 @@ class Arma3 extends Steam
         ];
 
         $this->rules['dlcs'] = [];
+
         foreach ($dlcFlags as $flag => $name) {
             if (($dlcBits & $flag) === $flag) {
                 $this->rules['dlcs'][] = $name;
@@ -233,15 +237,17 @@ class Arma3 extends Steam
             }
         }
 
-        $modCount = ord($data[$offset++]);
+        $modCount                 = ord($data[$offset++]);
         $this->rules['mod_count'] = $modCount;
 
         $this->rules['mods'] = [];
+
         for ($i = 0; $i < $modCount; $i++) {
             if ($offset + 4 > strlen($data)) {
                 break;
             }
             $hashData = unpack('N', substr($data, $offset, 4));
+
             if ($hashData === false) {
                 break;
             }
@@ -252,18 +258,20 @@ class Arma3 extends Steam
             if ($offset >= strlen($data)) {
                 break;
             }
-            $infoByte = ord($data[$offset++]);
-            $isDlc = ($infoByte & 0b00010000) === 0b00010000;
+            $infoByte   = ord($data[$offset++]);
+            $isDlc      = ($infoByte & 0b00010000) === 0b00010000;
             $steamIdLen = $infoByte & 0x0F;
 
             if ($offset + 4 > strlen($data)) {
                 break;
             }
             $steamIdData = unpack('N', substr($data, $offset, 4));
+
             if ($steamIdData === false) {
                 break;
             }
             $steamId = $steamIdData[1] ?? 0;
+
             if ($steamIdLen > 0) {
                 $steamId &= ((1 << ($steamIdLen * 8)) - 1);
             }
@@ -273,29 +281,32 @@ class Arma3 extends Steam
                 break;
             }
             $nameLen = ord($data[$offset++]);
+
             if ($offset + $nameLen > strlen($data)) {
                 break;
             }
             $name = substr($data, $offset, $nameLen);
             $offset += $nameLen;
 
-            $this->rules['mods'][count($this->rules['mods']) - 1]['dlc'] = $isDlc;
+            $this->rules['mods'][count($this->rules['mods']) - 1]['dlc']      = $isDlc;
             $this->rules['mods'][count($this->rules['mods']) - 1]['steam_id'] = $steamId;
-            $this->rules['mods'][count($this->rules['mods']) - 1]['name'] = $name;
+            $this->rules['mods'][count($this->rules['mods']) - 1]['name']     = $name;
         }
 
         if ($offset >= strlen($data)) {
             return;
         }
-        $signatureCount = ord($data[$offset++]);
+        $signatureCount                 = ord($data[$offset++]);
         $this->rules['signature_count'] = $signatureCount;
 
         $this->rules['signatures'] = [];
+
         for ($i = 0; $i < $signatureCount; $i++) {
             if ($offset >= strlen($data)) {
                 break;
             }
             $sigLen = ord($data[$offset++]);
+
             if ($offset + $sigLen > strlen($data)) {
                 break;
             }

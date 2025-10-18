@@ -22,11 +22,11 @@ use function fsockopen;
 use function fwrite;
 use function in_array;
 use function is_array;
-use function is_int;
 use function is_numeric;
 use function is_string;
 use function pack;
 use function str_contains;
+use function str_starts_with;
 use function stream_set_blocking;
 use function stream_set_timeout;
 use function strlen;
@@ -111,10 +111,10 @@ class Bf3 extends CSQuery implements ProtocolInterface
         $queryPort = ($this->queryport ?? 0) + $this->port_diff;
 
         // Attempt TCP query to client_port + 22000 (BF3/BF4 convention)
-        $errno  = 0;
-        $errstr = '';
+        $errno   = 0;
+        $errstr  = '';
         $address = $this->address ?? '';
-        $fp = @fsockopen($address, $queryPort, $errno, $errstr, 5);
+        $fp      = @fsockopen($address, $queryPort, $errno, $errstr, 5);
 
         if ($fp === false) {
             $this->errstr = 'Unable to open TCP socket to BF4 query port';
@@ -319,8 +319,9 @@ class Bf3 extends CSQuery implements ProtocolInterface
      */
     public function parseCaptured(string $data): array
     {
-        $ptr     = 0;
-        $len     = strlen($data);
+        $ptr = 0;
+        $len = strlen($data);
+
         /** @var string[] $packets */
         $packets = [];
 
@@ -365,7 +366,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
         $si                         = $packets[0];
         $result['serverInfoParams'] = $si;
 
-        if (strlen($si) > 0 && str_starts_with($si, 'OK')) {
+        if ($si !== '' && str_starts_with($si, 'OK')) {
             $info                  = explode("\t", $si);
             $mapped                = [];
             $st                    = $info[1] ?? null;
@@ -434,11 +435,12 @@ class Bf3 extends CSQuery implements ProtocolInterface
         // Find players packet (look for a packet that starts with OK and appears to contain fields)
         foreach ($packets as $p) {
             /** @var string $p */
-            if (strlen($p) === 0) {
+            if ($p === '') {
                 continue;
             }
 
             $p = explode("\t", $p);
+
             if (count($p) === 0) {
                 continue;
             }
@@ -462,6 +464,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
             for ($i = 0; $i < $fieldCount; $i++, $pos++) {
                 $fields[] = $p[$pos] ?? '';
             }
+
             if (!isset($p[$pos])) {
                 continue;
             }
