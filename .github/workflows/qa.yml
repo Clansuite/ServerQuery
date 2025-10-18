@@ -1,0 +1,54 @@
+name: QA
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PHP_VERSION: 8.4
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          coverage: none
+          tools: none
+
+      - name: Lint all PHP source files
+        run: find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
+
+      - name: Ensure that composer.json is valid using Composer Validate
+        run: composer validate --no-ansi --strict composer.json
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: PHP CS Fixer - Validate coding guidelines
+        run: ./vendor/bin/php-cs-fixer check --show-progress=dots --using-cache=no --verbose
+
+      #- name: Run static analysis using phpstan
+      #  run: ./tools/phpstan analyse --no-progress --error-format=github
+
+      #- name: Run test with code coverage report generation
+      #  run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      #- name: Upload code coverage report
+      #  uses: codecov/codecov-action@v3
+      #  with:
+      #    file: ./coverage.xml
