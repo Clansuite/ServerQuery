@@ -1,6 +1,8 @@
 name: Deploy combined Pages
 
 on:
+  # This workflow is triggered when both the "coverage" and "apigen" workflows complete.
+  # It ensures that the artifacts from both workflows are available for deployment.
   workflow_run:
     workflows: ["coverage", "apigen"]
     types:
@@ -12,6 +14,11 @@ jobs:
   deploy:
 
 # ---------------------------------------------------------------------------------------
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
 
     runs-on: ubuntu-latest
 

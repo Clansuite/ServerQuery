@@ -44,7 +44,7 @@ final class BeamMPFixtureReplayTest extends TestCase
 
         // Verify parsed values
         $this->assertEquals('Rac3cont3nt', $protocol->servertitle);
-        $this->assertEquals('/levels/hirochi_raceway/info.json', $protocol->mapname);
+        $this->assertEquals('/levels/west_coast_usa/info.json', $protocol->mapname);
         $this->assertEquals(0, $protocol->numplayers);
         $this->assertEquals(25, $protocol->maxplayers);
         $this->assertIsArray($protocol->players);
