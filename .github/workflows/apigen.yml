@@ -27,48 +27,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5 # https://github.com/actions/checkout/
+      - name: Checkout
+        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2 # https://github.com/shivammathur/setup-php
-      with:
-        php-version: '8.2'
-        extensions: mbstring, intl, zip
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2 # https://github.com/shivammathur/setup-php
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, zip
 
-    - name: Install dependencies
-      run: |
-        cd build-tools/apigen
-        composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: Install dependencies
+        run: |
+          cd build-tools/apigen
+          composer install --no-progress --prefer-dist --optimize-autoloader
 
-    - name: Generate API documentation
-      run: |
-        php bin/generate_apigen_docs.php
+      - name: Generate API documentation
+        run: |
+          php bin/generate_apigen_docs.php
 
-    - name: Move generated docs into subfolder
-      run: |
-        mkdir -p ./build/apigen/apigen
-        mv ./build-tools/apigen/* ./build/apigen/apigen
+      - name: Move generated docs into subfolder
+        run: |
+          mkdir -p ./build/apigen/apigen
+          mv ./build-tools/apigen/* ./build/apigen/apigen
 
-    - name: Create top-level Index file
-      run: |
-        cat > build/apigen/index.md <<'EOF'
-        ---
-        layout: none
-        ---
-        <meta http-equiv="refresh" content="0; url=./apigen/">
-        <p>Redirecting to <a href="./apigen/">API documentation</a>.</p>
-        EOF
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact/
+        with:
+          name: apigen
+          path: ./build/apigen
 
-    - name: Create .nojekyll file to disable Jekyll processing
-      run: |
-        touch build/apigen/.nojekyll
-
-    - name: Upload pages artifact
-      uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact/
-      with:
-        path: ./build/apigen
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4 # https://github.com/actions/deploy-pages/
+      #- name: Deploy to GitHub Pages
+      #  id: deployment
+      #  uses: actions/deploy-pages@v4 # https://github.com/actions/deploy-pages/

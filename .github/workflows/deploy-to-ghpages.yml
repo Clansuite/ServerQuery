@@ -1,0 +1,62 @@
+name: Deploy combined Pages
+
+on:
+  workflow_run:
+    workflows: ["coverage", "apigen"]
+    types:
+      - completed
+
+jobs:
+# ---------------------------------------------------------------------------------------
+
+  deploy:
+
+# ---------------------------------------------------------------------------------------
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        with:
+          fetch-depth: 1
+          ref: ${{ github.sha }}
+
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
+        with:
+          name: coverage
+          path: ./pages
+
+      - name: Download apigen artifact
+        uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
+        with:
+          name: apigen
+          path: ./pages
+
+      - name: Verify artifacts
+        run: |
+          ls ./pages/coverage
+          ls ./pages/apigen
+
+      - name: Create top-level Index file
+        run: |
+          cat > ./pages/index.md <<'EOF'
+          ---
+          layout: none
+          ---
+          <p>
+            <a href="./coverage/">Code Coverage Report</a>
+            <br>
+            <a href="./apigen/">API documentation</a>
+          </p>
+          EOF
+
+      - name: Create .nojekyll file to disable Jekyll processing
+        run: |
+          touch ./pages/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          path: ./pages
