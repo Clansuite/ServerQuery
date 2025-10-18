@@ -21,6 +21,7 @@
     ".git/!(COMMIT_EDITMSG)",
     ".vscode/**",
     "build-tools/**",
+    "tests/**",
     ".clang-format",
     "*.bat",
     "*.cmake",
