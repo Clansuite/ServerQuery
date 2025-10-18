@@ -12,6 +12,13 @@
 
 namespace Clansuite\ServerQuery\ServerProtocols;
 
+use Clansuite\Capture\Protocol\ProtocolInterface;
+use Clansuite\Capture\ServerAddress;
+use Clansuite\Capture\ServerInfo;
+use Clansuite\ServerQuery\CSQuery;
+use Exception;
+use Override;
+use RuntimeException;
 use function array_combine;
 use function array_pad;
 use function chr;
@@ -38,13 +45,6 @@ use function strtolower;
 use function substr;
 use function trim;
 use function unpack;
-use Clansuite\Capture\Protocol\ProtocolInterface;
-use Clansuite\Capture\ServerAddress;
-use Clansuite\Capture\ServerInfo;
-use Clansuite\ServerQuery\CSQuery;
-use Exception;
-use Override;
-use RuntimeException;
 
 /**
  * Queries Ventrilo voice communication servers.
