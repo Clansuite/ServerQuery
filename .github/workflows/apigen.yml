@@ -5,9 +5,9 @@ on:
   push:
     branches: [ main ]
     # This workflows runs only when files in 'src' or 'bin' directories are changed.
-    paths:
-      - 'src/**'
-      - 'bin/**'
+    #paths:
+    #  - 'src/**'
+    #  - 'bin/**'
   # You can manually run this workflow.
   workflow_dispatch:
 

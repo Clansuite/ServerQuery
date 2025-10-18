@@ -4,11 +4,12 @@ on:
   # This workflow is triggered when both the "coverage" and "apigen" workflows complete.
   # It ensures that the artifacts from both workflows are available for deployment.
   workflow_run:
-    workflows: ["coverage", "apigen"]
+    workflows: ["apigen", "code-coverage"]
     types:
       - completed
 
 jobs:
+
 # ---------------------------------------------------------------------------------------
 
   deploy:
