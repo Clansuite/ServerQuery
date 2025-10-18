@@ -43,7 +43,7 @@ final class WorkerCaptureStrategyTest extends TestCase
 
     public function testCaptureReturnsCaptureResult(): void
     {
-        $strategy = new WorkerCaptureStrategy;
+        $strategy = new WorkerCaptureStrategy(1); // Use short timeout to fail quickly
 
         $protocol = $this->createMock(ProtocolInterface::class);
         $protocol->expects($this->once())
@@ -68,7 +68,7 @@ final class WorkerCaptureStrategyTest extends TestCase
 
     public function testCaptureWithDefaultProtocolName(): void
     {
-        $strategy = new WorkerCaptureStrategy;
+        $strategy = new WorkerCaptureStrategy(1); // Use short timeout to fail quickly
 
         $protocol = $this->createMock(ProtocolInterface::class);
         $protocol->expects($this->once())
@@ -86,7 +86,7 @@ final class WorkerCaptureStrategyTest extends TestCase
 
     public function testCaptureMetadataStructure(): void
     {
-        $strategy = new WorkerCaptureStrategy;
+        $strategy = new WorkerCaptureStrategy(1); // Use short timeout to fail quickly instead of making real network calls
 
         $protocol = $this->createMock(ProtocolInterface::class);
         $protocol->expects($this->once())
