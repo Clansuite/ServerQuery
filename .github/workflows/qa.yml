@@ -173,6 +173,18 @@ jobs:
           name: apigen
           path: ./pages/apigen
 
+      - name: Extract coverage artifact
+        run: |
+          cd ./pages/coverage
+          tar -xf artifact.tar
+          rm artifact.tar
+
+      - name: Extract apigen artifact
+        run: |
+          cd ./pages/apigen
+          tar -xf artifact.tar
+          rm artifact.tar
+
       - name: Verify artifacts
         run: |
           ls ./pages/coverage
