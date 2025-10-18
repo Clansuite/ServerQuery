@@ -2,18 +2,6 @@
 # .gitattributes
 #
 
-# Auto-detect text files, ensure they use LF.
-* text=auto eol=lf
-
-# Define custom diff drivers for specific file types.
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
-#
-# .gitattributes
-#
-
 #
 # Define text file attributes.
 #

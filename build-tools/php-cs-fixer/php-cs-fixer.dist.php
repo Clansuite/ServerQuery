@@ -379,6 +379,7 @@ $finder = (new Finder())
     ->in($workspace_root . '/examples')
     ->in($workspace_root . '/src')
     ->in($workspace_root . '/tests')
+    ->notPath('CSQuery/ServerProtocols/Ventrilo.php'); // 👈 ignore this file, php-cs-fixer can not fix it
 ;
 
 // Create and return a Config instance expected by php-cs-fixer
