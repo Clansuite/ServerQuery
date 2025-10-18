@@ -196,16 +196,16 @@ jobs:
           <!DOCTYPE html>
           <html lang="en">
           <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Clansuite Server Query</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Clansuite Server Query</title>
           </head>
           <body>
-              <p>
-                  <a href="./coverage/">Code Coverage Report</a>
-                  <br>
-                  <a href="./apigen/">API documentation</a>
-              </p>
+            <h2>Clansuite Server Query - QA Reports</h2>
+            <p>
+              <a href="./coverage/">• Code Coverage Report</a>
+              <a href="./apigen/">• API documentation</a>
+            </p>
           </body>
           </html>
           EOF
