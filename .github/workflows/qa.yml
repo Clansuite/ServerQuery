@@ -195,6 +195,11 @@ jobs:
         run: |
           touch ./pages/.nojekyll
 
+      - name: Upload combined site as a "github-pages" artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./pages
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
