@@ -134,6 +134,7 @@ gmod
 gtmurmur
 Hardline
 hasbo\'s
+Hasbo\'s
 headrchaltail
 hirochi
 hlns
