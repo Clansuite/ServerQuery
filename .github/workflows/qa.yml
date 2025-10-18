@@ -165,13 +165,13 @@ jobs:
         uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
         with:
           name: coverage
-          path: ./pages
+          path: ./pages/coverage
 
       - name: Download apigen artifact
         uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
         with:
           name: apigen
-          path: ./pages
+          path: ./pages/apigen
 
       - name: Verify artifacts
         run: |
