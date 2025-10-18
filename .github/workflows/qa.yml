@@ -61,19 +61,53 @@ jobs:
         run: |
           ./vendor/bin/psalm -c ./build-tools/psalm/psalm.xml --show-info=true
 
+
+# ---------------------------------------------------------------------------------------
+
+  apigen:
+
+# ---------------------------------------------------------------------------------------
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2 # https://github.com/shivammathur/setup-php
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, zip
+
+      - name: Install dependencies
+        run: |
+          cd build-tools/apigen
+          composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Generate API documentation
+        run: |
+          php bin/generate_apigen_docs.php
+
+      - name: Move generated docs into subfolder
+        run: |
+          mkdir -p ./build/apigen/apigen
+          mv ./build-tools/apigen/* ./build/apigen/apigen
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact/
+        with:
+          name: apigen
+          path: ./build/apigen
+
 # ---------------------------------------------------------------------------------------
 
   code-coverage:
 
 # ---------------------------------------------------------------------------------------
-
-    # If using standalone uncomment this job to deploy directly to GitHub Pages.
-    # This is commented out, because a collector workflow is used here.
-    # Also see last step in this job.
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    #permissions:
-    #  pages: write      # to deploy to Pages
-    #  id-token: write   # to verify the deployment originates from an appropriate source
 
     runs-on: ubuntu-latest
     needs: qa
@@ -105,12 +139,63 @@ jobs:
           name: coverage
           path: ./build/coverage
 
-      # If using standalone uncomment this job to deploy directly to GitHub Pages.
-      #- name: Deploy to GitHub Pages
-      #  id: deployment
-      #  uses: actions/deploy-pages@v4 # https://github.com/actions/deploy-pages/
+# ---------------------------------------------------------------------------------------
 
-      #- name: Upload code coverage report
-      #  uses: codecov/codecov-action@v5
-      #  with:
-      #    file: ./coverage.xml
+  deploy:
+
+# ---------------------------------------------------------------------------------------
+
+    needs: [apigen, code-coverage]
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        with:
+          fetch-depth: 1
+          ref: ${{ github.sha }}
+
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
+        with:
+          name: coverage
+          path: ./pages
+
+      - name: Download apigen artifact
+        uses: actions/download-artifact@v5 # https://github.com/actions/download-artifact
+        with:
+          name: apigen
+          path: ./pages
+
+      - name: Verify artifacts
+        run: |
+          ls ./pages/coverage
+          ls ./pages/apigen
+
+      - name: Create top-level Index file
+        run: |
+          cat > ./pages/index.md <<'EOF'
+          ---
+          layout: none
+          ---
+          <p>
+            <a href="./coverage/">Code Coverage Report</a>
+            <br>
+            <a href="./apigen/">API documentation</a>
+          </p>
+          EOF
+
+      - name: Create .nojekyll file to disable Jekyll processing
+        run: |
+          touch ./pages/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          path: ./pages
