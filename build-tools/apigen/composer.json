@@ -1,5 +1,8 @@
 {
     "require-dev": {
        "apigen/apigen": "dev-master"
+    },
+    "config": {
+      "optimize-autoloader": true
     }
 }
