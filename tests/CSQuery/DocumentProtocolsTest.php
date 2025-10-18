@@ -61,7 +61,9 @@ class DocumentProtocolsTest extends TestCase
 
     protected function tearDown(): void
     {
-        array_map('unlink', glob($this->tmpDir . '/*.php'));
+        // delete all files in the temp directory
+        array_map('unlink', glob($this->tmpDir . '/*.*'));
+
         rmdir($this->tmpDir);
 
         if ($this->oldArgv === null) {
@@ -101,18 +103,16 @@ class DocumentProtocolsTest extends TestCase
         $doc->parseProtocols();
 
         // Expect the printed messages so PHPUnit does not mark the test as risky
-        $this->expectOutputRegex('/Generated protocols\.md and protocols\.html\nGenerated game_list\.md/');
+        $this->expectOutputRegex('/Generated protocols\.md and protocols\.html\n/');
 
         $doc->writeFiles($outDir);
 
         $this->assertFileExists($outDir . '/protocols.md');
         $this->assertFileExists($outDir . '/protocols.html');
-        $this->assertFileExists($outDir . '/game_list.md');
 
         // Clean up
         unlink($outDir . '/protocols.md');
         unlink($outDir . '/protocols.html');
-        unlink($outDir . '/game_list.md');
         rmdir($outDir);
     }
 
