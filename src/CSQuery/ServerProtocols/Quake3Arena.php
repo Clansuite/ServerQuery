@@ -86,7 +86,7 @@ class Quake3Arena extends Quake
 
         // get rules and basic infos
         for ($i = 0; $i < count($rawdata); $i++) {
-            $key = $rawdata[$i] ?? '';
+            $key = $rawdata[$i];
             $i++;
 
             switch ($key) {
