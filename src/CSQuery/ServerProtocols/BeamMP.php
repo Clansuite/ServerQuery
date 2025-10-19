@@ -180,6 +180,8 @@ class BeamMP extends CSQuery implements ProtocolInterface
 
     /**
      * Parse a server entry from the BeamMP backend response.
+     *
+     * @param array<string, mixed> $found
      */
     protected function parseServerEntry(array $found): void
     {
