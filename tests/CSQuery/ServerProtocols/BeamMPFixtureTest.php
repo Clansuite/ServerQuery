@@ -28,19 +28,10 @@ final class BeamMPFixtureTest extends TestCase
         // Simulate what the protocol does when it finds an entry in the backend
         $protocol = new BeamMP($raw['ip'] ?? '127.0.0.1', (int) ($raw['port'] ?? 0));
 
-        // Manually inject the parsed logic by calling query_server on a fake match.
-        // We'll emulate the internal behavior: set $found to $raw and then assert
-        // the parsing results by calling the same parsing paths.
-
-        // Use reflection to call the internal query-related behavior by copying minimal steps
+        // Use reflection to call the parseServerEntry method directly with fixture data
         $reflection = new ReflectionClass($protocol);
-        $reflection->getMethod('query');
-
-        // Create a ServerAddress object and call query() which will call query_server().
-        $addrClass = new ReflectionClass(ServerAddress::class);
-        $addr      = $addrClass->newInstanceArgs([$raw['ip'], (int) $raw['port']]);
-
-        $protocol->query($addr);
+        $parseMethod = $reflection->getMethod('parseServerEntry');
+        $parseMethod->invoke($protocol, $raw);
 
         // Verify parsed values
         $this->assertEquals('Rac3cont3nt', $protocol->servertitle);

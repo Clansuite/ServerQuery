@@ -155,6 +155,16 @@ class BeamMP extends CSQuery implements ProtocolInterface
             return false;
         }
 
+        $this->parseServerEntry($found);
+
+        return true;
+    }
+
+    /**
+     * Parse a server entry from the BeamMP backend response.
+     */
+    protected function parseServerEntry(array $found): void
+    {
         // Parse basic info (BeamMP backend uses keys like sname, playerslist, maxplayers)
         $this->online      = true;
         $this->gamename    = 'BeamNG.drive';
@@ -256,8 +266,6 @@ class BeamMP extends CSQuery implements ProtocolInterface
                 $this->rules['mods'] = $mods;
             }
         }
-
-        return true;
     }
 
     /**
