@@ -161,6 +161,24 @@ class BeamMP extends CSQuery implements ProtocolInterface
     }
 
     /**
+     * getProtocolName method.
+     */
+    #[Override]
+    public function getProtocolName(): string
+    {
+        return $this->protocol;
+    }
+
+    /**
+     * getVersion method.
+     */
+    #[Override]
+    public function getVersion(ServerInfo $info): string
+    {
+        return $info->gameversion ?? 'unknown';
+    }
+
+    /**
      * Parse a server entry from the BeamMP backend response.
      */
     protected function parseServerEntry(array $found): void
@@ -266,23 +284,5 @@ class BeamMP extends CSQuery implements ProtocolInterface
                 $this->rules['mods'] = $mods;
             }
         }
-    }
-
-    /**
-     * getProtocolName method.
-     */
-    #[Override]
-    public function getProtocolName(): string
-    {
-        return $this->protocol;
-    }
-
-    /**
-     * getVersion method.
-     */
-    #[Override]
-    public function getVersion(ServerInfo $info): string
-    {
-        return $info->gameversion ?? 'unknown';
     }
 }

@@ -10,7 +10,6 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-use Clansuite\Capture\ServerAddress;
 use Clansuite\ServerQuery\ServerProtocols\BeamMP;
 use PHPUnit\Framework\TestCase;
 
@@ -29,7 +28,7 @@ final class BeamMPFixtureTest extends TestCase
         $protocol = new BeamMP($raw['ip'] ?? '127.0.0.1', (int) ($raw['port'] ?? 0));
 
         // Use reflection to call the parseServerEntry method directly with fixture data
-        $reflection = new ReflectionClass($protocol);
+        $reflection  = new ReflectionClass($protocol);
         $parseMethod = $reflection->getMethod('parseServerEntry');
         $parseMethod->invoke($protocol, $raw);
 
