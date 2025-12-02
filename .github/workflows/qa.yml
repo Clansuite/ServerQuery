@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        uses: actions/checkout@v6 # https://github.com/actions/checkout
         with:
           fetch-depth: 1
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
@@ -72,7 +72,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        uses: actions/checkout@v6 # https://github.com/actions/checkout
         with:
           fetch-depth: 1
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
@@ -114,7 +114,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        uses: actions/checkout@v6 # https://github.com/actions/checkout
         with:
           fetch-depth: 1
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
@@ -156,7 +156,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5 # https://github.com/actions/checkout
+        uses: actions/checkout@v6 # https://github.com/actions/checkout
         with:
           fetch-depth: 1
           ref: ${{ github.sha }}
