@@ -162,13 +162,13 @@ jobs:
           ref: ${{ github.sha }}
 
       - name: Download coverage artifact
-        uses: actions/download-artifact@v6 # https://github.com/actions/download-artifact
+        uses: actions/download-artifact@v7 # https://github.com/actions/download-artifact
         with:
           name: coverage
           path: ./pages/coverage
 
       - name: Download apigen artifact
-        uses: actions/download-artifact@v6 # https://github.com/actions/download-artifact
+        uses: actions/download-artifact@v7 # https://github.com/actions/download-artifact
         with:
           name: apigen
           path: ./pages/apigen
