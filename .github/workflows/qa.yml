@@ -220,4 +220,4 @@ jobs:
           path: ./pages
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4 # https://github.com/actions/deploy-pages/
+        uses: actions/deploy-pages@v5 # https://github.com/actions/deploy-pages/
