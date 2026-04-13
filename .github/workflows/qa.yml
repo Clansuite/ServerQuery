@@ -98,7 +98,7 @@ jobs:
           mv ./build-tools/apigen/* ./build/apigen/apigen
 
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact/
+        uses: actions/upload-pages-artifact@v5 # https://github.com/actions/upload-pages-artifact/
         with:
           name: apigen
           path: ./build/apigen
@@ -134,7 +134,7 @@ jobs:
           ./vendor/bin/phpunit --config ./build-tools/phpunit/phpunit.coverage.xml --coverage-html build/coverage
 
       - name: Upload coverage to Pages artifact
-        uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact/
+        uses: actions/upload-pages-artifact@v5 # https://github.com/actions/upload-pages-artifact/
         with:
           name: coverage
           path: ./build/coverage
@@ -215,7 +215,7 @@ jobs:
           touch ./pages/.nojekyll
 
       - name: Upload combined site as a "github-pages" artifact
-        uses: actions/upload-pages-artifact@v4 # https://github.com/actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v5 # https://github.com/actions/upload-pages-artifact
         with:
           path: ./pages
 
