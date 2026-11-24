@@ -255,7 +255,7 @@ class Quake3Arena extends Quake
 
         $csstype = match ($this->gamename) {
             'q3a_Call_of_Duty', 'q3a_sof2' => 'q3a_exdended',
-            default => 'q3a',
+            default                        => 'q3a',
         };
 
         for ($i = 0; $i < $len; $i++) {
