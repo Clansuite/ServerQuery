@@ -15,6 +15,7 @@ namespace Clansuite\ServerQuery\ServerProtocols;
 use function preg_match;
 use function strlen;
 use function substr;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -87,7 +88,7 @@ class Doom3 extends Quake4
         $this->servertitle = $info['si_name'] ?? '';
         $this->mapname     = $info['si_map'] ?? '';
         $this->gametype    = $info['si_gameType'] ?? '';
-        $this->maxplayers  = (int) ($info['si_maxplayers'] ?? 0);
+        $this->maxplayers  = ScalarCaster::toInt($info['si_maxplayers'] ?? 0);
         $this->numplayers  = 0; // Will be calculated from players
 
         // Store all rules

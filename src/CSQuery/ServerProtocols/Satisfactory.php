@@ -22,6 +22,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -324,7 +325,7 @@ class Satisfactory extends CSQuery implements ProtocolInterface
 
             return false;
         }
-        $serverNameLength = $tmp[1];
+        $serverNameLength = ScalarCaster::toInt($tmp[1]);
         $offset += 2;
 
         // ServerName (UTF-8)
@@ -352,7 +353,7 @@ class Satisfactory extends CSQuery implements ProtocolInterface
         // Now set the properties
         $this->servertitle = $serverName;
         $this->gamename    = 'Satisfactory';
-        $this->gameversion = (string) $serverNetCL; // Use changelist as version
+        $this->gameversion = ScalarCaster::toString($serverNetCL); // Use changelist as version
 
         // Map server state to online status
         // 0: Offline, 1: Idle, 2: Loading, 3: Playing

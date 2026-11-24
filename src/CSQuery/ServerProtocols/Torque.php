@@ -24,6 +24,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -202,15 +203,15 @@ class Torque extends CSQuery implements ProtocolInterface
         // Read protocol versions
         if ($offset + 8 <= strlen($buffer)) {
             $tmp                = @unpack('N', substr($buffer, $offset, 4));
-            $protocolVersion    = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+            $protocolVersion    = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
             $tmp                = @unpack('N', substr($buffer, $offset + 4, 4));
-            $minProtocolVersion = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+            $minProtocolVersion = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
             $offset += 8;
 
             // Read build version
             if ($offset + 4 <= strlen($buffer)) {
                 $tmp          = @unpack('N', substr($buffer, $offset, 4));
-                $buildVersion = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+                $buildVersion = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
                 $offset += 4;
 
                 // Read server name (up to 24 chars, null terminated)
@@ -288,7 +289,7 @@ class Torque extends CSQuery implements ProtocolInterface
         // Read CPU speed
         if ($offset + 2 <= strlen($buffer)) {
             $tmp                      = @unpack('n', substr($buffer, $offset, 2));
-            $cpuSpeed                 = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+            $cpuSpeed                 = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
             $this->rules['cpu_speed'] = $cpuSpeed;
             $offset += 2;
         }

@@ -29,6 +29,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -266,7 +267,7 @@ class Quake extends CSQuery implements ProtocolInterface
         $players = [];
 
         foreach ($playerLines as $line) {
-            $line = trim((string) $line);
+            $line = trim(ScalarCaster::toString($line));
 
             if ($line === '') {
                 continue;

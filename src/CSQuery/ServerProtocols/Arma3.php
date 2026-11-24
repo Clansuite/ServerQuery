@@ -20,6 +20,7 @@ use function str_replace;
 use function strlen;
 use function substr;
 use function unpack;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -102,9 +103,11 @@ class Arma3 extends Steam
 
             foreach ($players as $player) {
                 if (is_array($player)) {
+                    /** @var array<string, mixed> $playerData */
                     $playerData = [];
 
                     foreach ($player as $key => $value) {
+                        $key                    = ScalarCaster::toString($key);
                         $playerData[$key]       = $value;
                         $this->playerkeys[$key] = true;
                     }
@@ -253,7 +256,7 @@ class Arma3 extends Steam
             }
             $hash = $hashData[1] ?? 0;
             $offset += 4;
-            $this->rules['mods'][] = ['hash' => dechex($hash)];
+            $this->rules['mods'][] = ['hash' => dechex(ScalarCaster::toInt($hash))];
 
             if ($offset >= strlen($data)) {
                 break;
@@ -273,6 +276,7 @@ class Arma3 extends Steam
             $steamId = $steamIdData[1] ?? 0;
 
             if ($steamIdLen > 0) {
+                $steamId = ScalarCaster::toInt($steamId);
                 $steamId &= ((1 << ($steamIdLen * 8)) - 1);
             }
             $offset += 4;

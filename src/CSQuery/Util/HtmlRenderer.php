@@ -200,7 +200,7 @@ class HtmlRenderer
      */
     private function renderRules(array $data): string
     {
-        if (!isset($data['rules']) || count($data['rules']) === 0) {
+        if (!isset($data['rules']) || !is_array($data['rules']) || $data['rules'] === []) {
             return '<div class="table-container"><h2>Server Rules</h2><p>No server rules available.</p></div>';
         }
 
@@ -211,7 +211,7 @@ class HtmlRenderer
 
         foreach ($data['rules'] as $key => $value) {
             $html .= '<tr>';
-            $keyStr   = (string) $key;
+            $keyStr   = ScalarCaster::toString($key);
             $valueStr = is_scalar($value) ? (string) $value : (is_object($value) || is_array($value) ? (json_encode($value) !== false ? json_encode($value) : '') : '');
             $html .= '<td>' . htmlentities($keyStr) . '</td>';
             $html .= '<td>' . htmlentities($valueStr) . '</td>';

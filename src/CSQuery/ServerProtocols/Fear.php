@@ -15,6 +15,7 @@ namespace Clansuite\ServerQuery\ServerProtocols;
 use function preg_match;
 use function strlen;
 use function substr;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -85,12 +86,12 @@ class Fear extends Quake4
         $info = $this->parseDoom3Info($data);
 
         // Extract basic server information
-        $this->gamename    = (string) ($info['gamename'] ?? 'FEAR');
-        $this->gameversion = $this->translateProtocolVersion((string) ($info['protocol'] ?? $info['si_version'] ?? ''));
-        $this->servertitle = (string) ($info['si_name'] ?? '');
-        $this->mapname     = (string) ($info['si_map'] ?? '');
-        $this->gametype    = (string) ($info['si_rules'] ?? '');
-        $this->maxplayers  = (int) ($info['si_maxPlayers'] ?? 0);
+        $this->gamename    = ScalarCaster::toString($info['gamename'] ?? 'FEAR');
+        $this->gameversion = $this->translateProtocolVersion(ScalarCaster::toString($info['protocol'] ?? $info['si_version'] ?? ''));
+        $this->servertitle = ScalarCaster::toString($info['si_name'] ?? '');
+        $this->mapname     = ScalarCaster::toString($info['si_map'] ?? '');
+        $this->gametype    = ScalarCaster::toString($info['si_rules'] ?? '');
+        $this->maxplayers  = ScalarCaster::toInt($info['si_maxPlayers'] ?? 0);
         $this->numplayers  = 0; // Will be calculated from players
 
         // Store all rules
@@ -98,7 +99,7 @@ class Fear extends Quake4
 
         // Get players if requested
         if ($getPlayers && isset($info['si_players'])) {
-            $this->parsePlayers((string) $info['si_players']);
+            $this->parsePlayers(ScalarCaster::toString($info['si_players']));
         }
 
         $this->online = true;

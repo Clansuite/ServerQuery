@@ -24,6 +24,7 @@ use function str_repeat;
 use function strlen;
 use function strtolower;
 use function substr;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -157,7 +158,7 @@ class Quake3Arena extends Quake
         $this->mapname = preg_replace('/.*\//', '', $this->mapname) ?? $this->mapname;
 
         $this->hostport   = $this->queryport ?? 0;
-        $this->maxplayers = (int) ($this->rules['sv_maxclients'] ?? 0) - (int) ($this->rules['sv_privateClients'] ?? 0);
+        $this->maxplayers = ScalarCaster::toInt($this->rules['sv_maxclients'] ?? 0) - ScalarCaster::toInt($this->rules['sv_privateClients'] ?? 0);
 
         // get playerdata
         $temp             = substr($result, strlen($temp[0] ?? '') + strlen($temp[1] ?? '') + 1, strlen($result));

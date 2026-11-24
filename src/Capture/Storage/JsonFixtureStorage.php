@@ -126,6 +126,12 @@ final readonly class JsonFixtureStorage implements FixtureStorageInterface
             $metadata = [];
         }
 
+        /** @var array<string, mixed> $rules */
+        $rules = isset($serverInfoData['rules']) && is_array($serverInfoData['rules']) ? $serverInfoData['rules'] : [];
+
+        /** @var array<array<string, mixed>> $players */
+        $players = isset($serverInfoData['players']) && is_array($serverInfoData['players']) ? $serverInfoData['players'] : [];
+
         $serverInfoData = [
             'address'         => isset($serverInfoData['address']) && is_string($serverInfoData['address']) ? $serverInfoData['address'] : null,
             'queryport'       => isset($serverInfoData['queryport']) && is_int($serverInfoData['queryport']) ? $serverInfoData['queryport'] : null,
@@ -137,8 +143,8 @@ final readonly class JsonFixtureStorage implements FixtureStorageInterface
             'gametype'        => isset($serverInfoData['gametype']) && is_string($serverInfoData['gametype']) ? $serverInfoData['gametype'] : null,
             'numplayers'      => isset($serverInfoData['numplayers']) && is_int($serverInfoData['numplayers']) ? $serverInfoData['numplayers'] : 0,
             'maxplayers'      => isset($serverInfoData['maxplayers']) && is_int($serverInfoData['maxplayers']) ? $serverInfoData['maxplayers'] : 0,
-            'rules'           => isset($serverInfoData['rules']) && is_array($serverInfoData['rules']) ? $serverInfoData['rules'] : [],
-            'players'         => isset($serverInfoData['players']) && is_array($serverInfoData['players']) ? $serverInfoData['players'] : [],
+            'rules'           => $rules,
+            'players'         => $players,
             'channels'        => isset($serverInfoData['channels']) && is_array($serverInfoData['channels']) ? $serverInfoData['channels'] : [],
             'errstr'          => isset($serverInfoData['errstr']) && is_string($serverInfoData['errstr']) ? $serverInfoData['errstr'] : null,
             'password'        => isset($serverInfoData['password']) && is_bool($serverInfoData['password']) ? $serverInfoData['password'] : null,

@@ -21,6 +21,7 @@ use function strlen;
 use function substr;
 use function unpack;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -247,7 +248,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $pktLen = $tmp[1];
+        $pktLen = ScalarCaster::toInt($tmp[1]);
         $pos += 2;
 
         if ($curPkt > $lastPkt) {
@@ -308,7 +309,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $this->challengeID = $tmp[1];
+        $this->challengeID = ScalarCaster::toInt($tmp[1]);
         $pos += 4;
 
         if ($pos + 2 > strlen($data)) {
@@ -319,7 +320,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $this->numplayers = $tmp[1];
+        $this->numplayers = ScalarCaster::toInt($tmp[1]);
         $pos += 2;
 
         if ($pos + 2 > strlen($data)) {
@@ -330,7 +331,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $this->maxplayers = $tmp[1];
+        $this->maxplayers = ScalarCaster::toInt($tmp[1]);
         $pos += 2;
 
         $this->servertitle = $this->readString($data, $pos);
@@ -346,7 +347,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $this->hostport = $tmp[1];
+        $this->hostport = ScalarCaster::toInt($tmp[1]);
         $pos += 2;
 
         return $pos - $startPos;
@@ -365,7 +366,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $chunkLen = $tmp[1];
+        $chunkLen = ScalarCaster::toInt($tmp[1]);
         $pos += 4;
 
         $endPos = $startPos + 4 + $chunkLen;
@@ -392,7 +393,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $chunkLen = $tmp[1];
+        $chunkLen = ScalarCaster::toInt($tmp[1]);
         $pos += 4;
 
         if ($pos + 2 > strlen($data)) {
@@ -403,7 +404,7 @@ class SQP extends CSQuery
         if (!is_array($tmp) || !isset($tmp[1])) {
             return false;
         }
-        $playerCount = $tmp[1];
+        $playerCount = ScalarCaster::toInt($tmp[1]);
         $pos += 2;
 
         if ($playerCount === 0) {

@@ -38,6 +38,7 @@ use function strtolower;
 use function substr;
 use function trim;
 use function unpack;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
@@ -139,7 +140,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
             $fromPort = 0;
             $recv     = @socket_recvfrom($sock, $buf, 8192, 0, $from, $fromPort);
 
-            if ($recv === false || $recv === 0 || $buf === '') {
+            if ($recv === false || $recv === 0 || !is_string($buf) || $buf === '') {
                 break;
             }
             $packets[] = $buf;
@@ -170,8 +171,13 @@ class Ventrilo extends CSQuery implements ProtocolInterface
         $this->servertitle = isset($result['name']) && is_string($result['name']) ? $result['name'] : (isset($result['gq_name']) && is_string($result['gq_name']) ? $result['gq_name'] : $this->address ?? '');
         $this->numplayers  = isset($result['clientcount']) && is_int($result['clientcount']) ? $result['clientcount'] : (isset($result['client_count']) && is_int($result['client_count']) ? $result['client_count'] : 0);
         $this->maxplayers  = isset($result['maxclients']) && is_int($result['maxclients']) ? $result['maxclients'] : (isset($result['max_players']) && is_int($result['max_players']) ? $result['max_players'] : 0);
-        $this->players     = isset($result['players']) && is_array($result['players']) ? $result['players'] : [];
-        $this->channels    = isset($result['teams']) && is_array($result['teams']) ? $result['teams'] : [];
+        $players           = isset($result['players']) && is_array($result['players']) ? $result['players'] : [];
+        $channels          = isset($result['teams']) && is_array($result['teams']) ? $result['teams'] : [];
+
+        /** @var array<array<string, mixed>> $players */
+        /** @var array<string> $channels */
+        $this->players     = $players;
+        $this->channels    = $channels;
         $this->online      = true;
 
         return true;
@@ -234,7 +240,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
      * Process and decrypt raw Ventrilo packets (array of binary strings)
      * and return parsed associative array.
      *
-     * @param array<mixed> $packets
+     * @param array<string> $packets
      *
      * @throws RuntimeException
      *
@@ -345,7 +351,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
     /**
      * Decrypt Ventrilo header/data packets and return combined plaintext string.
      *
-     * @param array<mixed> $packets
+     * @param array<string> $packets
      *
      * @throws RuntimeException
      */
@@ -406,7 +412,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
             if (!is_array($tmp) || !isset($tmp[1])) {
                 throw new RuntimeException('Invalid header unpack');
             }
-            $u = (int) $tmp[1];
+            $u = ScalarCaster::toInt($tmp[1]);
 
             $unpacked = @unpack('C*', substr($header, 2));
             $chars    = is_array($unpacked) ? $unpacked : [];
@@ -424,17 +430,17 @@ class Ventrilo extends CSQuery implements ProtocolInterface
             $key            = 0;
 
             for ($index = 1; $index <= $characterCount; $index++) {
-                $chars[$index] = (($chars[$index] ?? 0) - (($table[$a2] ?? 0) + (($index - 1) % 5))) & 0xFF;
+                $chars[$index] = (ScalarCaster::toInt($chars[$index] ?? 0) - (ScalarCaster::toInt($table[$a2] ?? 0) + (($index - 1) % 5))) & 0xFF;
                 $a2            = ($a2 + $a1) & 0xFF;
 
                 if (($index % 2) === 0) {
-                    $b1          = $chars[$index - 1] ?? 0;
-                    $b2          = $chars[$index] ?? 0;
+                    $b1          = ScalarCaster::toInt($chars[$index - 1] ?? 0);
+                    $b2          = ScalarCaster::toInt($chars[$index] ?? 0);
                     $packed      = chr($b1) . chr($b2);
                     $short_array = @unpack('n', $packed);
 
                     if (is_array($short_array) && isset($short_array[1])) {
-                        $header_items[$key] = (int) $short_array[1];
+                        $header_items[$key] = ScalarCaster::toInt($short_array[1]);
                         $key++;
                     }
                 }
@@ -464,8 +470,8 @@ class Ventrilo extends CSQuery implements ProtocolInterface
             $characterCount    = count($charsData);
 
             for ($index = 1; $index <= $characterCount; $index++) {
-                $byte              = ($charsData[$index] ?? 0);
-                $byte              = ($byte - (($table[$a2] ?? 0) + (($index - 1) % 72))) & 0xFF;
+                $byte              = ScalarCaster::toInt($charsData[$index] ?? 0);
+                $byte              = ($byte - (ScalarCaster::toInt($table[$a2] ?? 0) + (($index - 1) % 72))) & 0xFF;
                 $charsData[$index] = $byte;
                 $a2                = ($a2 + $a1) & 0xFF;
                 $data .= chr($byte);

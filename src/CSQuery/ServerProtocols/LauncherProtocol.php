@@ -23,6 +23,7 @@ use function time;
 use function unpack;
 use Clansuite\ServerQuery\CSQuery;
 use Clansuite\ServerQuery\Util\HuffmanDecoder;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Exception;
 use Override;
 use RuntimeException;
@@ -65,7 +66,7 @@ abstract class LauncherProtocol extends CSQuery
         $info = $this->queryLauncherServer((string) $this->address, (int) $this->queryport, $getPlayers);
 
         if ($info === [] || isset($info['error'])) {
-            $this->errstr = (string) ($info['error'] ?? 'No response received');
+            $this->errstr = ScalarCaster::toString($info['error'] ?? 'No response received');
 
             return false;
         }
@@ -85,28 +86,28 @@ abstract class LauncherProtocol extends CSQuery
     protected function parseResponseData(array $info, bool $getPlayers): void
     {
         $this->gamename    = $this->gameName;
-        $this->gameversion = (string) ($info['version'] ?? '');
+        $this->gameversion = ScalarCaster::toString($info['version'] ?? '');
 
         if (isset($info['name'])) {
-            $this->servertitle = (string) $info['name'];
+            $this->servertitle = ScalarCaster::toString($info['name']);
         }
 
         if (isset($info['numPlayers'])) {
-            $this->numplayers = (int) $info['numPlayers'];
+            $this->numplayers = ScalarCaster::toInt($info['numPlayers']);
             $this->maxplayers = 64; // Default max, could be parsed from server info if available
         }
 
-        if ($getPlayers && isset($info['players'])) {
+        if ($getPlayers && isset($info['players']) && is_array($info['players'])) {
             $this->players = [];
 
             foreach ($info['players'] as $player) {
                 if (is_array($player)) {
                     $this->players[] = [
-                        'name'           => (string) ($player['name'] ?? ''),
-                        'score'          => (int) ($player['frags'] ?? 0),
-                        'ping'           => (int) ($player['ping'] ?? 0),
-                        'team'           => (string) ($player['team'] ?? ''),
-                        'time_in_server' => (int) ($player['time_in_server'] ?? 0),
+                        'name'           => ScalarCaster::toString($player['name'] ?? ''),
+                        'score'          => ScalarCaster::toInt($player['frags'] ?? 0),
+                        'ping'           => ScalarCaster::toInt($player['ping'] ?? 0),
+                        'team'           => ScalarCaster::toString($player['team'] ?? ''),
+                        'time_in_server' => ScalarCaster::toInt($player['time_in_server'] ?? 0),
                         'spectator'      => (bool) ($player['spectator'] ?? false),
                         'bot'            => (bool) ($player['bot'] ?? false),
                     ];
@@ -255,7 +256,7 @@ abstract class LauncherProtocol extends CSQuery
         if (!is_array($unpacked) || !isset($unpacked[1])) {
             throw new RuntimeException('Invalid data for getLong');
         }
-        $val = (int) $unpacked[1];
+        $val = ScalarCaster::toInt($unpacked[1]);
         $offset += 4;
 
         return $val;
@@ -271,7 +272,7 @@ abstract class LauncherProtocol extends CSQuery
         if (!is_array($unpacked) || !isset($unpacked[1])) {
             throw new RuntimeException('Invalid data for getShort');
         }
-        $val = (int) $unpacked[1];
+        $val = ScalarCaster::toInt($unpacked[1]);
         $offset += 2;
 
         return $val;

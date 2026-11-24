@@ -19,6 +19,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -47,8 +48,8 @@ class FarmingSimulator extends CSQuery implements ProtocolInterface
     public function __construct(mixed $address = null, mixed $queryport = null)
     {
         parent::__construct();
-        $this->address   = $address !== null ? (string) $address : null;
-        $this->queryport = $queryport !== null ? (int) $queryport : null;
+        $this->address   = $address !== null ? ScalarCaster::toString($address) : null;
+        $this->queryport = $queryport !== null ? ScalarCaster::toInt($queryport) : null;
     }
 
     /**

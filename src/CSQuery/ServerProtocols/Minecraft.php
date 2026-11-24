@@ -33,6 +33,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -307,14 +308,14 @@ class Minecraft extends CSQuery implements ProtocolInterface
             // Handle formatted text objects
             $this->servertitle = $this->parseFormattedText($description);
         } else {
-            $this->servertitle = (string) $description;
+            $this->servertitle = ScalarCaster::toString($description);
         }
 
         $playersData = $data['players'] ?? [];
 
         if (is_array($playersData)) {
-            $this->numplayers = (int) ($playersData['online'] ?? 0);
-            $this->maxplayers = (int) ($playersData['max'] ?? 0);
+            $this->numplayers = ScalarCaster::toInt($playersData['online'] ?? 0);
+            $this->maxplayers = ScalarCaster::toInt($playersData['max'] ?? 0);
 
             if (isset($playersData['sample']) && is_array($playersData['sample'])) {
                 $this->players = [];
@@ -322,8 +323,8 @@ class Minecraft extends CSQuery implements ProtocolInterface
                 foreach ($playersData['sample'] as $player) {
                     if (is_array($player)) {
                         $this->players[] = [
-                            'name' => (string) ($player['name'] ?? ''),
-                            'id'   => (string) ($player['id'] ?? ''),
+                            'name' => ScalarCaster::toString($player['name'] ?? ''),
+                            'id'   => ScalarCaster::toString($player['id'] ?? ''),
                         ];
                     }
                 }
@@ -333,7 +334,7 @@ class Minecraft extends CSQuery implements ProtocolInterface
         $versionData = $data['version'] ?? [];
 
         if (is_array($versionData)) {
-            $this->gameversion = (string) ($versionData['name'] ?? '');
+            $this->gameversion = ScalarCaster::toString($versionData['name'] ?? '');
         }
     }
 
@@ -488,14 +489,14 @@ class Minecraft extends CSQuery implements ProtocolInterface
      */
     private function parseFormattedText(array $textObject): string
     {
-        $text = (string) ($textObject['text'] ?? '');
+        $text = ScalarCaster::toString($textObject['text'] ?? '');
 
         $extra = $textObject['extra'] ?? null;
 
         if (is_array($extra)) {
             foreach ($extra as $item) {
                 if (is_array($item) && isset($item['text'])) {
-                    $text .= (string) ($item['text'] ?? '');
+                    $text .= ScalarCaster::toString($item['text'] ?? '');
                 } elseif (is_string($item)) {
                     $text .= $item;
                 }

@@ -13,6 +13,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 
 // Satisfactory server example - replace with actual server details
 $serverAddress = '127.0.0.1'; // Replace with actual server IP
@@ -42,7 +43,7 @@ try {
                     $name  = $player['name'] ?? 'Unknown';
                     $level = $player['level'] ?? '0';
                     $ping  = $player['ping'] ?? '0';
-                    \printf("  - %s (Level: %s, Ping: %s)\n", (string) $name, (string) $level, (string) $ping);
+                    \printf("  - %s (Level: %s, Ping: %s)\n", ScalarCaster::toString($name), ScalarCaster::toString($level), ScalarCaster::toString($ping));
                 }
             }
         }
@@ -51,7 +52,7 @@ try {
             print 'Server Rules/Variables:' . \PHP_EOL;
 
             foreach ($server->rules as $key => $value) {
-                \printf("  %s: %s\n", (string) $key, (string) $value);
+                \printf("  %s: %s\n", ScalarCaster::toString($key), ScalarCaster::toString($value));
             }
         }
     } else {
