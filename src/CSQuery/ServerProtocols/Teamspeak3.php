@@ -29,6 +29,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -182,10 +183,10 @@ class Teamspeak3 extends CSQuery implements ProtocolInterface
         $props = $this->parseProperties($details);
 
         $info->online      = true;
-        $info->servertitle = (string) ($props['virtualserver_name'] ?? '');
-        $info->gameversion = (string) ($props['virtualserver_version'] ?? '');
-        $info->numplayers  = isset($props['virtualserver_clientsonline']) ? (int) $props['virtualserver_clientsonline'] - (int) ($props['virtualserver_queryclientsonline'] ?? 0) : 0;
-        $info->maxplayers  = isset($props['virtualserver_maxclients']) ? (int) $props['virtualserver_maxclients'] : 0;
+        $info->servertitle = ScalarCaster::toString($props['virtualserver_name'] ?? '');
+        $info->gameversion = ScalarCaster::toString($props['virtualserver_version'] ?? '');
+        $info->numplayers  = isset($props['virtualserver_clientsonline']) ? ScalarCaster::toInt($props['virtualserver_clientsonline']) - ScalarCaster::toInt($props['virtualserver_queryclientsonline'] ?? 0) : 0;
+        $info->maxplayers  = isset($props['virtualserver_maxclients']) ? ScalarCaster::toInt($props['virtualserver_maxclients']) : 0;
         $info->mapname     = '';
 
         // Parse clients
@@ -195,9 +196,9 @@ class Teamspeak3 extends CSQuery implements ProtocolInterface
         foreach ($clients as $client) {
             if (is_array($client)) {
                 $info->players[] = [
-                    'name' => (string) ($client['client_nickname'] ?? ''),
-                    'id'   => (string) ($client['clid'] ?? ''),
-                    'team' => (string) ($client['cid'] ?? ''),
+                    'name' => ScalarCaster::toString($client['client_nickname'] ?? ''),
+                    'id'   => ScalarCaster::toString($client['clid'] ?? ''),
+                    'team' => ScalarCaster::toString($client['cid'] ?? ''),
                 ];
             }
         }

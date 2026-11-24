@@ -62,7 +62,7 @@ final class PacketReader
             return null;
         }
 
-        $v = (int) $data[1];
+        $v = ScalarCaster::toInt($data[1]);
         $this->pos += 4;
 
         return $v;
@@ -82,7 +82,7 @@ final class PacketReader
             return null;
         }
 
-        $v = (int) $data[1];
+        $v = ScalarCaster::toInt($data[1]);
         $this->pos += 4;
 
         return $v;
@@ -102,7 +102,7 @@ final class PacketReader
             return null;
         }
 
-        $v = (int) $data[1];
+        $v = ScalarCaster::toInt($data[1]);
         $this->pos += 2;
 
         return $v;
@@ -136,7 +136,7 @@ final class PacketReader
             return null;
         }
 
-        $v = (float) $data[1];
+        $v = ScalarCaster::toFloat($data[1]);
         $this->pos += 4;
 
         return $v;

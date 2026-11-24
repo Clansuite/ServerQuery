@@ -20,20 +20,20 @@ final class ServerInfo
     /**
      * Initializes server information with the provided data.
      *
-     * @param null|string  $address     Server IP address
-     * @param null|int     $queryport   Query port number
-     * @param bool         $online      Whether the server is online
-     * @param null|string  $gamename    Name of the game
-     * @param null|string  $gameversion Game version
-     * @param null|string  $servertitle Server title
-     * @param null|string  $mapname     Current map name
-     * @param null|string  $gametype    Game type/mode
-     * @param int          $numplayers  Current number of players
-     * @param int          $maxplayers  Maximum number of players
-     * @param array<mixed> $rules       Server rules/configuration
-     * @param array<mixed> $players     List of players
-     * @param array<mixed> $channels    Voice channels (for applicable games)
-     * @param null|string  $errstr      Error message if query failed
+     * @param null|string                 $address     Server IP address
+     * @param null|int                    $queryport   Query port number
+     * @param bool                        $online      Whether the server is online
+     * @param null|string                 $gamename    Name of the game
+     * @param null|string                 $gameversion Game version
+     * @param null|string                 $servertitle Server title
+     * @param null|string                 $mapname     Current map name
+     * @param null|string                 $gametype    Game type/mode
+     * @param int                         $numplayers  Current number of players
+     * @param int                         $maxplayers  Maximum number of players
+     * @param array<string, mixed>        $rules       Server rules/configuration
+     * @param array<array<string, mixed>> $players     List of players
+     * @param array<mixed>                $channels    Voice channels (for applicable games)
+     * @param null|string                 $errstr      Error message if query failed
      */
     public function __construct(
         public ?string $address = null,

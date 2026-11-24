@@ -29,6 +29,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -208,47 +209,49 @@ class Quake extends CSQuery implements ProtocolInterface
         $rules = [];
 
         for ($i = 0; $i < count($parts) - 1; $i += 2) {
-            if (isset($parts[$i], $parts[$i + 1])) {
-                $key   = $parts[$i];
-                $value = $parts[$i + 1];
+            if (!isset($parts[$i + 1])) {
+                break;
+            }
 
-                // Map common keys to properties
-                switch ($key) {
-                    case 'hostname':
-                        $this->servertitle = $value;
+            $key   = $parts[$i];
+            $value = $parts[$i + 1];
 
-                        break;
+            // Map common keys to properties
+            switch ($key) {
+                case 'hostname':
+                    $this->servertitle = $value;
 
-                    case 'mapname':
-                        $this->mapname = $value;
+                    break;
 
-                        break;
+                case 'mapname':
+                    $this->mapname = $value;
 
-                    case 'maxclients':
-                        $this->maxplayers = (int) $value;
+                    break;
 
-                        break;
+                case 'maxclients':
+                    $this->maxplayers = (int) $value;
 
-                    case 'clients':
-                        $this->numplayers = (int) $value;
+                    break;
 
-                        break;
+                case 'clients':
+                    $this->numplayers = (int) $value;
 
-                    case 'protocol':
-                        // Protocol version
-                        break;
+                    break;
 
-                    case 'version':
-                        $this->gameversion = $value;
+                case 'protocol':
+                    // Protocol version
+                    break;
 
-                        break;
+                case 'version':
+                    $this->gameversion = $value;
 
-                    default:
-                        // Store as rule
-                        $rules[$key] = $value;
+                    break;
 
-                        break;
-                }
+                default:
+                    // Store as rule
+                    $rules[$key] = $value;
+
+                    break;
             }
         }
 
@@ -266,7 +269,7 @@ class Quake extends CSQuery implements ProtocolInterface
         $players = [];
 
         foreach ($playerLines as $line) {
-            $line = trim((string) $line);
+            $line = trim(ScalarCaster::toString($line));
 
             if ($line === '') {
                 continue;
@@ -286,16 +289,11 @@ class Quake extends CSQuery implements ProtocolInterface
 
             $player = [
                 'score' => (int) $parts[0],
-                /** @phpstan-ignore offsetAccess.notFound */
-                'ping' => (int) $parts[1],
-                /** @phpstan-ignore offsetAccess.notFound */
-                'name' => trim($parts[2], '"'),
-                /** @phpstan-ignore offsetAccess.notFound */
-                'skin' => trim($parts[3], '"'),
-                /** @phpstan-ignore offsetAccess.notFound */
-                'team' => (int) $parts[4],
-                /** @phpstan-ignore offsetAccess.notFound */
-                'time' => (float) $parts[5],
+                'ping'  => (int) $parts[1],
+                'name'  => trim($parts[2], '"'),
+                'skin'  => trim($parts[3], '"'),
+                'team'  => (int) $parts[4],
+                'time'  => (float) $parts[5],
             ];
 
             $players[] = $player;

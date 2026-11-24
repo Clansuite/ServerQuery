@@ -248,10 +248,10 @@ $info  = $proto->query(new ServerAddress($address, $port));
 
 if ($info->online) {
     print 'Server: ' . ($info->servertitle ?? $address) . "\n";
-    print 'Players: ' . ($info->numplayers ?? 0) . '/' . ($info->maxplayers ?? 0) . "\n";
+    print 'Players: ' . $info->numplayers . '/' . $info->maxplayers . "\n";
 
     // If channel data is present, build and print as a tree (defensive checks)
-    if (isset($info->channels) && \is_iterable($info->channels) && $info->channels !== []) {
+    if ($info->channels !== []) {
         $channels = [];
 
         foreach ($info->channels as $ch) {
@@ -305,7 +305,7 @@ if ($info->online) {
         }
         unset($ch);
 
-        if (isset($info->players) && \is_iterable($info->players)) {
+        if ($info->players !== []) {
             foreach ($info->players as $p) {
                 if (!\is_object($p) && !\is_array($p)) {
                     continue;
@@ -384,7 +384,7 @@ if ($info->online) {
     } else {
         print "--- PLAYERS ---\n";
 
-        if (isset($info->players) && \is_iterable($info->players)) {
+        if ($info->players !== []) {
             foreach ($info->players as $p) {
                 $pname = 'unknown';
 

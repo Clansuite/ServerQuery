@@ -20,6 +20,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -165,7 +166,7 @@ class Unreal2 extends CSQuery implements ProtocolInterface
             // leave serverID null on malformed response
             $this->serverID = null;
         } else {
-            $this->serverID = $tmp[1];
+            $this->serverID = ScalarCaster::toInt($tmp[1]);
         }
         $data = substr($data, 4);
 
@@ -180,7 +181,7 @@ class Unreal2 extends CSQuery implements ProtocolInterface
             // malformed, default to 0
             $this->hostport = 0;
         } else {
-            $this->hostport = (int) $tmp[1];
+            $this->hostport = ScalarCaster::toInt($tmp[1]);
         }
         $data = substr($data, 4);
 
@@ -208,7 +209,7 @@ class Unreal2 extends CSQuery implements ProtocolInterface
         if (!is_array($tmp) || !isset($tmp[1])) {
             $this->numplayers = 0;
         } else {
-            $this->numplayers = (int) $tmp[1];
+            $this->numplayers = ScalarCaster::toInt($tmp[1]);
         }
         $data = substr($data, 4);
 
@@ -218,7 +219,7 @@ class Unreal2 extends CSQuery implements ProtocolInterface
         if (!is_array($tmp) || !isset($tmp[1])) {
             $this->maxplayers = 0;
         } else {
-            $this->maxplayers = (int) $tmp[1];
+            $this->maxplayers = ScalarCaster::toInt($tmp[1]);
         }
 
         // Ping (4 bytes, skip)
@@ -266,7 +267,7 @@ class Unreal2 extends CSQuery implements ProtocolInterface
                 // malformed, stop parsing players
                 break;
             }
-            $id   = (int) $tmp[1];
+            $id   = ScalarCaster::toInt($tmp[1]);
             $data = substr($data, 4);
 
             if ($id === 0) {
@@ -280,12 +281,12 @@ class Unreal2 extends CSQuery implements ProtocolInterface
 
             // Ping (4 bytes)
             $tmp  = @unpack('V', substr($data, 0, 4));
-            $ping = (is_array($tmp) && isset($tmp[1])) ? (int) $tmp[1] : 0;
+            $ping = (is_array($tmp) && isset($tmp[1])) ? ScalarCaster::toInt($tmp[1]) : 0;
             $data = substr($data, 4);
 
             // Score (4 bytes)
             $tmp   = @unpack('V', substr($data, 0, 4));
-            $score = (is_array($tmp) && isset($tmp[1])) ? (int) $tmp[1] : 0;
+            $score = (is_array($tmp) && isset($tmp[1])) ? ScalarCaster::toInt($tmp[1]) : 0;
             $data  = substr($data, 4);
 
             // Skip 4 unknown bytes

@@ -22,6 +22,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -50,8 +51,8 @@ class Eco extends CSQuery implements ProtocolInterface
     public function __construct(mixed $address = null, mixed $queryport = null)
     {
         parent::__construct();
-        $this->address   = $address !== null ? (string) $address : null;
-        $this->queryport = $queryport !== null ? (int) $queryport : null;
+        $this->address   = $address !== null ? ScalarCaster::toString($address) : null;
+        $this->queryport = $queryport !== null ? ScalarCaster::toInt($queryport) : null;
     }
 
     /**
@@ -146,19 +147,19 @@ class Eco extends CSQuery implements ProtocolInterface
         $info->address     = $addr->ip . ':' . $addr->port;
         $info->queryport   = $addr->port;
         $info->gamename    = 'Eco';
-        $info->gameversion = (string) ($data['Version'] ?? '');
-        $info->servertitle = $this->stripTags((string) ($data['Description'] ?? ''));
-        $info->mapname     = (string) ($data['WorldSize'] ?? '');
-        $info->gametype    = (string) ($data['Category'] ?? '');
-        $info->numplayers  = (int) ($data['OnlinePlayers'] ?? 0);
-        $info->maxplayers  = (int) ($data['TotalPlayers'] ?? 0);
+        $info->gameversion = ScalarCaster::toString($data['Version'] ?? '');
+        $info->servertitle = $this->stripTags(ScalarCaster::toString($data['Description'] ?? ''));
+        $info->mapname     = ScalarCaster::toString($data['WorldSize'] ?? '');
+        $info->gametype    = ScalarCaster::toString($data['Category'] ?? '');
+        $info->numplayers  = ScalarCaster::toInt($data['OnlinePlayers'] ?? 0);
+        $info->maxplayers  = ScalarCaster::toInt($data['TotalPlayers'] ?? 0);
 
         // Players
         $players = [];
 
         if (isset($data['OnlinePlayersNames']) && is_array($data['OnlinePlayersNames'])) {
             foreach ($data['OnlinePlayersNames'] as $name) {
-                $players[] = ['name' => (string) $name, 'score' => 0, 'time' => 0];
+                $players[] = ['name' => ScalarCaster::toString($name), 'score' => 0, 'time' => 0];
             }
         }
         $info->players = $players;

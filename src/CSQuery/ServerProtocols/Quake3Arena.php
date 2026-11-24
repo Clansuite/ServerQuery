@@ -24,6 +24,7 @@ use function str_repeat;
 use function strlen;
 use function strtolower;
 use function substr;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -157,7 +158,7 @@ class Quake3Arena extends Quake
         $this->mapname = preg_replace('/.*\//', '', $this->mapname) ?? $this->mapname;
 
         $this->hostport   = $this->queryport ?? 0;
-        $this->maxplayers = (int) ($this->rules['sv_maxclients'] ?? 0) - (int) ($this->rules['sv_privateClients'] ?? 0);
+        $this->maxplayers = ScalarCaster::toInt($this->rules['sv_maxclients'] ?? 0) - ScalarCaster::toInt($this->rules['sv_privateClients'] ?? 0);
 
         // get playerdata
         $temp             = substr($result, strlen($temp[0] ?? '') + strlen($temp[1] ?? '') + 1, strlen($result));
@@ -171,55 +172,30 @@ class Quake3Arena extends Quake
             $teamInfo = false;
 
             for ($i = 1; $i < count($allplayers) - 1; $i++) {
-                $line = $allplayers[$i] ?? '';
+                $line = $allplayers[$i];
 
                 // match with team info
-                if (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) !== false) {
+                if (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) === 1) {
                     // ignore spectators (team > 2)
-                    /** @phpstan-ignore offsetAccess.notFound */
                     if ((int) $curplayer[3] > 2) {
                         // ignore spectators
                     }
 
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['name'] = $curplayer[3];
-
-                    /** @phpstan-ignore offsetAccess.notFound */
+                    $players[$i - 1]['name']  = $curplayer[3];
                     $players[$i - 1]['score'] = (int) $curplayer[1];
-
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['ping'] = (int) $curplayer[2];
-
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['team'] = $curplayer[3];
-                    $teamInfo                = true;
-                    $pingOnly                = false;
-                }
-
-                /** @phpstan-ignore notIdentical.alwaysFalse */ elseif (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) !== false) {
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['name'] = $curplayer[3];
-
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['score'] = (int) $curplayer[1];
-
-                    /** @phpstan-ignore offsetAccess.notFound */
-                    $players[$i - 1]['ping'] = (int) $curplayer[2];
-                    $pingOnly                = false;
+                    $players[$i - 1]['ping']  = (int) $curplayer[2];
+                    $players[$i - 1]['team']  = $curplayer[3];
+                    $teamInfo                 = true;
+                    $pingOnly                 = false;
+                } elseif (preg_match("/(\d+).\"(.*)\"/", $line, $curplayer) === 1) {
+                    $players[$i - 1]['name'] = $curplayer[2];
+                    $players[$i - 1]['ping'] = (int) $curplayer[1];
+                    $pingOnly                = true; // for MoHAA
                     $teamInfo                = false;
                 } else {
-                    if (preg_match("/(\d+).\"(.*)\"/", $line, $curplayer) !== false) {
-                        /** @phpstan-ignore offsetAccess.notFound */
-                        $players[$i - 1]['name'] = $curplayer[2];
+                    $this->errstr = 'Could not extract player infos!';
 
-                        /** @phpstan-ignore offsetAccess.notFound */
-                        $players[$i - 1]['ping'] = (int) $curplayer[1];
-                        $pingOnly                = true; // for MoHAA
-                    } else {
-                        $this->errstr = 'Could not extract player infos!';
-
-                        return false;
-                    }
+                    return false;
                 }
             }
             $this->playerkeys['name'] = true;

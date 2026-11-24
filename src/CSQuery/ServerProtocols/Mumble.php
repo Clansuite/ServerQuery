@@ -27,6 +27,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -135,17 +136,17 @@ class Mumble extends CSQuery implements ProtocolInterface
         }
 
         // Determine server title from common keys
-        $this->servertitle = (string) ($data['name'] ?? $data['hostname'] ?? $data['x_connecturl'] ?? ($addr->ip . ':' . $queryPort));
+        $this->servertitle = ScalarCaster::toString($data['name'] ?? $data['hostname'] ?? $data['x_connecturl'] ?? ($addr->ip . ':' . $queryPort));
 
         // Extract players and channels
         $channels = [];
         $players  = [];
 
-        $extract = static function (array &$node, ?int $parentId = null) use (&$extract, &$channels, &$players): void
+        $extract = static function (array $node, ?int $parentId = null) use (&$extract, &$channels, &$players): void
         {
             // If node contains 'id' and 'name' treat it as a channel
             if (isset($node['id'], $node['name'])) {
-                $cid            = $node['id'];
+                $cid            = ScalarCaster::toInt($node['id']);
                 $channels[$cid] = [
                     'id'     => $cid,
                     'name'   => $node['name'] ?? 'unknown',
@@ -187,7 +188,7 @@ class Mumble extends CSQuery implements ProtocolInterface
         };
 
         // Murmur usually encloses channels/users under 'root'
-        if (isset($data['root'])) {
+        if (isset($data['root']) && is_array($data['root'])) {
             $extract($data['root']);
         } else {
             $extract($data);
@@ -196,6 +197,10 @@ class Mumble extends CSQuery implements ProtocolInterface
         // Fallback: some providers include players at top-level 'users'
         if ($players === [] && isset($data['users']) && is_array($data['users'])) {
             foreach ($data['users'] as $u) {
+                if (!is_array($u)) {
+                    continue;
+                }
+
                 $players[] = [
                     'name'    => $u['name'] ?? 'unknown',
                     'id'      => $u['userid'] ?? $u['session'] ?? null,
@@ -206,7 +211,7 @@ class Mumble extends CSQuery implements ProtocolInterface
 
         // set info
         $this->numplayers = count($players);
-        $this->maxplayers = isset($data['x_gtmurmur_max_users']) ? (int) $data['x_gtmurmur_max_users'] : ($this->maxplayers ?? 0);
+        $this->maxplayers = isset($data['x_gtmurmur_max_users']) ? ScalarCaster::toInt($data['x_gtmurmur_max_users']) : ($this->maxplayers ?? 0);
         $this->players    = $players;
         $this->channels   = array_values($channels);
         $this->online     = true;
@@ -232,9 +237,9 @@ class Mumble extends CSQuery implements ProtocolInterface
 
         $this->online      = $info->online;
         $this->servertitle = $info->servertitle ?? '';
-        $this->numplayers  = $info->numplayers ?? 0;
-        $this->maxplayers  = $info->maxplayers ?? 0;
-        $this->players     = $info->players ?? [];
+        $this->numplayers  = $info->numplayers;
+        $this->maxplayers  = $info->maxplayers;
+        $this->players     = $info->players;
 
         return $this->online;
     }

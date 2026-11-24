@@ -35,6 +35,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -262,7 +263,7 @@ class Steam extends CSQuery implements ProtocolInterface
             $i++;
 
             while ($i < $len && (($result[$i] ?? "\0") !== chr(0))) {
-                $this->rules['gamedir'] = $this->rules['gamedir'] . $result[$i++];
+                $this->rules['gamedir'] = ScalarCaster::toString($this->rules['gamedir'] ?? '') . $result[$i++];
             }
 
             if ($i >= $len) {
@@ -363,7 +364,7 @@ class Steam extends CSQuery implements ProtocolInterface
             }
         } else { // For HL 1
             while ($i < $len && $result[$i] !== chr(0)) {
-                $this->rules['IP'] = ($this->rules['IP'] ?? '') . $result[$i++];
+                $this->rules['IP'] = ScalarCaster::toString($this->rules['IP'] ?? '') . $result[$i++];
             }
 
             if ($i >= $len) {
@@ -396,7 +397,7 @@ class Steam extends CSQuery implements ProtocolInterface
             $i++;
 
             while ($i < $len && $result[$i] !== chr(0)) {
-                $this->rules['gamedir'] = ($this->rules['gamedir'] ?? '') . $result[$i++];
+                $this->rules['gamedir'] = ScalarCaster::toString($this->rules['gamedir'] ?? '') . $result[$i++];
             }
 
             if ($i >= $len) {
@@ -407,7 +408,7 @@ class Steam extends CSQuery implements ProtocolInterface
             $i++;
 
             while ($i < $len && $result[$i] !== chr(0)) {
-                $this->rules['gamename'] = ($this->rules['gamename'] ?? '') . $result[$i++];
+                $this->rules['gamename'] = ScalarCaster::toString($this->rules['gamename'] ?? '') . $result[$i++];
             }
 
             if ($i >= $len) {
@@ -473,7 +474,7 @@ class Steam extends CSQuery implements ProtocolInterface
             $this->rules['secure'] = ($result[$i++] === '1' ? 'Yes' : 'No');
 
             while ($i < $len && $result[$i] !== chr(0)) {
-                $this->rules['mod_url'] = ($this->rules['mod_url'] ?? '') . $result[$i++];
+                $this->rules['mod_url'] = ScalarCaster::toString($this->rules['mod_url'] ?? '') . $result[$i++];
             }
 
             if ($i >= $len) {

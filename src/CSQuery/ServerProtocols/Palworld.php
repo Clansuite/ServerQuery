@@ -23,6 +23,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -109,15 +110,15 @@ class Palworld extends CSQuery implements ProtocolInterface
         $info->address     = $host . ':' . $port;
         $info->queryport   = $port;
         $info->gamename    = 'Palworld';
-        $info->servertitle = (string) ($infoData['servername'] ?? '');
+        $info->servertitle = ScalarCaster::toString($infoData['servername'] ?? '');
         $info->mapname     = ''; // Palworld doesn't have traditional maps
         $info->gametype    = '';
-        $info->gameversion = (string) ($infoData['version'] ?? '');
+        $info->gameversion = ScalarCaster::toString($infoData['version'] ?? '');
 
         // Get player count from metrics if available
         if ($metricsData !== null && $metricsData !== []) {
-            $info->numplayers = (int) ($metricsData['currentplayernum'] ?? 0);
-            $info->maxplayers = (int) ($metricsData['maxplayernum'] ?? 0);
+            $info->numplayers = ScalarCaster::toInt($metricsData['currentplayernum'] ?? 0);
+            $info->maxplayers = ScalarCaster::toInt($metricsData['maxplayernum'] ?? 0);
         } else {
             $info->numplayers = 0;
             $info->maxplayers = 0;
@@ -132,7 +133,7 @@ class Palworld extends CSQuery implements ProtocolInterface
             foreach ($playersData['players'] as $player) {
                 if (is_array($player)) {
                     $info->players[] = [
-                        'name'  => (string) ($player['name'] ?? ''),
+                        'name'  => ScalarCaster::toString($player['name'] ?? ''),
                         'score' => 0, // Palworld doesn't have scores
                         'time'  => 0, // Palworld doesn't track play time in API
                     ];

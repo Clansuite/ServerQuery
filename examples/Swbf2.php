@@ -13,6 +13,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Clansuite\ServerQuery\ServerProtocols\Swbf2;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 
 // Example server for Star Wars Battlefront 2
 // Find real servers at:
@@ -45,10 +46,10 @@ if ($q->query_server(true, true)) {
                 $team  = $p['team'] ?? $p['teamId'] ?? '';
                 $squad = $p['squad'] ?? $p['squadId'] ?? '';
                 $ping  = $p['ping'] ?? '0';
-                \printf(" %2d. %-28s  score:%5s  team:%3s  squad:%3s  ping:%3s\n", $idx, (string) $name, (string) $score, (string) $team, (string) $squad, (string) $ping);
+                \printf(" %2d. %-28s  score:%5s  team:%3s  squad:%3s  ping:%3s\n", $idx, ScalarCaster::toString($name), ScalarCaster::toString($score), ScalarCaster::toString($team), ScalarCaster::toString($squad), ScalarCaster::toString($ping));
             }
         }
     }
 } else {
-    print 'Query failed: ' . ($q->errstr ?? 'unknown') . "\n";
+    print 'Query failed: ' . $q->errstr . "\n";
 }

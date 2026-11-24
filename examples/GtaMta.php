@@ -27,7 +27,7 @@ print "Querying Multi Theft Auto server {$config['server_addr']}:{$config['serve
 
 // Query server (request players and rules)
 if (!$server->query_server(true, true)) {
-    print 'Failed to query server: ' . ($server->errstr ?? 'unknown error') . "\n";
+    print 'Failed to query server: ' . $server->errstr . "\n";
 
     exit(1);
 }

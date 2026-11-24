@@ -57,6 +57,12 @@ final readonly class WorkerCaptureStrategy implements CaptureStrategyInterface
 
             $serverInfoData = $workerData['server_info'];
 
+            /** @var array<string, mixed> $rules */
+            $rules = isset($serverInfoData['rules']) && is_array($serverInfoData['rules']) ? $serverInfoData['rules'] : [];
+
+            /** @var array<array<string, mixed>> $players */
+            $players = isset($serverInfoData['players']) && is_array($serverInfoData['players']) ? $serverInfoData['players'] : [];
+
             $serverInfo = new ServerInfo(
                 address: isset($serverInfoData['address']) && is_string($serverInfoData['address']) ? $serverInfoData['address'] : null,
                 queryport: isset($serverInfoData['queryport']) && is_int($serverInfoData['queryport']) ? $serverInfoData['queryport'] : null,
@@ -68,8 +74,8 @@ final readonly class WorkerCaptureStrategy implements CaptureStrategyInterface
                 gametype: isset($serverInfoData['gametype']) && is_string($serverInfoData['gametype']) ? $serverInfoData['gametype'] : null,
                 numplayers: isset($serverInfoData['numplayers']) && is_int($serverInfoData['numplayers']) ? $serverInfoData['numplayers'] : 0,
                 maxplayers: isset($serverInfoData['maxplayers']) && is_int($serverInfoData['maxplayers']) ? $serverInfoData['maxplayers'] : 0,
-                rules: isset($serverInfoData['rules']) && is_array($serverInfoData['rules']) ? $serverInfoData['rules'] : [],
-                players: isset($serverInfoData['players']) && is_array($serverInfoData['players']) ? $serverInfoData['players'] : [],
+                rules: $rules,
+                players: $players,
                 errstr: isset($serverInfoData['errstr']) && is_string($serverInfoData['errstr']) ? $serverInfoData['errstr'] : null,
             );
 

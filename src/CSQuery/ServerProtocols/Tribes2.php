@@ -60,7 +60,7 @@ class Tribes2 extends Torque implements ProtocolInterface
     public function getNativeJoinURI(): string
     {
         // Tribes 2 uses tribes2:// protocol for joining servers
-        return 'tribes2://' . ($this->address ?? '') . ':' . ($this->hostport ?? 0);
+        return 'tribes2://' . ($this->address ?? '') . ':' . $this->hostport;
     }
 
     /**

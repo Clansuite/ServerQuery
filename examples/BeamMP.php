@@ -59,7 +59,7 @@ if ($server->query_server(true, true)) {
         print "No server variables available\n";
     }
 
-    print "\nError: " . ($server->errstr ?? '') . "\n";
+    print "\nError: " . $server->errstr . "\n";
 } else {
-    print 'Failed to query server: ' . ($server->errstr ?? 'unknown error') . "\n";
+    print 'Failed to query server: ' . $server->errstr . "\n";
 }

@@ -53,5 +53,5 @@ if ($q->query_server(true, true)) {
         print 'Rules count: ' . \count($q->rules) . "\n";
     }
 } else {
-    print 'Query failed: ' . ($q->errstr ?? 'unknown') . "\n";
+    print 'Query failed: ' . $q->errstr . "\n";
 }

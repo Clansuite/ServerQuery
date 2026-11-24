@@ -21,6 +21,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -124,7 +125,7 @@ class Ddnet extends CSQuery implements ProtocolInterface
     #[Override]
     public function getVersion(ServerInfo $info): string
     {
-        return (string) ($info->rules['version'] ?? 'unknown');
+        return ScalarCaster::toString($info->rules['version'] ?? 'unknown');
     }
 
     /**

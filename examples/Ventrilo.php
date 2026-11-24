@@ -14,6 +14,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Clansuite\Capture\ServerAddress;
 use Clansuite\ServerQuery\ServerProtocols\Ventrilo;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 
 // Simple CLI: examples/Ventrilo.php [address] [port] [--fixture]
 $args = $argv;
@@ -80,9 +81,9 @@ if ($fixtureMode) {
         $entry = [];
     }
 
-    $name    = (string) ($entry['name'] ?? $entry['gq_name'] ?? $address);
-    $clients = $entry['clientcount'] ?? (\is_array($entry['players'] ?? null) ? \count($entry['players']) : 0);
-    $max     = (string) ($entry['maxclients'] ?? 0);
+    $name    = ScalarCaster::toString($entry['name'] ?? $entry['gq_name'] ?? $address);
+    $clients = ScalarCaster::toString($entry['clientcount'] ?? (\is_array($entry['players'] ?? null) ? \count($entry['players']) : 0));
+    $max     = ScalarCaster::toString($entry['maxclients'] ?? 0);
 
     print "Server: {$name}\n";
     print "Players: {$clients}/{$max}\n";
@@ -93,7 +94,7 @@ if ($fixtureMode) {
     if (\is_array($players)) {
         foreach ($players as $p) {
             if (\is_array($p)) {
-                $pname = (string) ($p['name'] ?? 'unknown');
+                $pname = ScalarCaster::toString($p['name'] ?? 'unknown');
                 print ' - ' . $pname . "\n";
             }
         }
@@ -109,18 +110,18 @@ $info  = $proto->query(new ServerAddress($address, $port));
 
 if ($info->online) {
     $servertitle = $info->servertitle ?? $address;
-    $numplayers  = $info->numplayers ?? 0;
-    $maxplayers  = $info->maxplayers ?? 0;
+    $numplayers  = $info->numplayers;
+    $maxplayers  = $info->maxplayers;
 
     print "Server: {(string) {$servertitle}}\n";
     print "Players: {(string) {$numplayers}}/{(string) {$maxplayers}}\n";
     print "--- PLAYERS ---\n";
 
-    $players = $info->players ?? [];
+    $players = $info->players;
 
     foreach ($players as $p) {
         if (\is_array($p)) {
-            $pname = (string) ($p['name'] ?? 'unknown');
+            $pname = ScalarCaster::toString($p['name'] ?? 'unknown');
             print ' - ' . $pname . "\n";
         }
     }

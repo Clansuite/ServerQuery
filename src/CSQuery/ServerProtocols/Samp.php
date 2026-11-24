@@ -23,6 +23,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -94,26 +95,26 @@ class Samp extends CSQuery implements ProtocolInterface
         $offset           = 4;
         $this->password   = ord($response[$offset++]);
         $tmp              = @unpack('n', substr($response, $offset, 2));
-        $this->numplayers = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+        $this->numplayers = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
         $offset += 2;
         $tmp              = @unpack('n', substr($response, $offset, 2));
-        $this->maxplayers = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+        $this->maxplayers = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
         $offset += 2;
 
         $tmp         = @unpack('N', substr($response, $offset, 4));
-        $hostnameLen = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+        $hostnameLen = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
         $offset += 4;
         $this->servertitle = substr($response, $offset, $hostnameLen);
         $offset += $hostnameLen;
 
         $tmp         = @unpack('N', substr($response, $offset, 4));
-        $gamemodeLen = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+        $gamemodeLen = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
         $offset += 4;
         $gamemode = substr($response, $offset, $gamemodeLen);
         $offset += $gamemodeLen;
 
         $tmp         = @unpack('N', substr($response, $offset, 4));
-        $languageLen = is_array($tmp) && isset($tmp[1]) ? (int) $tmp[1] : 0;
+        $languageLen = is_array($tmp) && isset($tmp[1]) ? ScalarCaster::toInt($tmp[1]) : 0;
         $offset += 4;
         $language = substr($response, $offset, $languageLen);
 

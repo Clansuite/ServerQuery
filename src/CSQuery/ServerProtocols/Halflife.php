@@ -32,6 +32,7 @@ use function strpos;
 use function substr;
 use function unpack;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -301,14 +302,14 @@ class Halflife extends CSQuery
                 return false;
             }
 
-            $numplayers = isset($data['numplayers']) ? (int) $data['numplayers'] : 0;
+            $numplayers = isset($data['numplayers']) ? ScalarCaster::toInt($data['numplayers']) : 0;
 
             $pos = 1;
 
             $players = [];
 
             for ($i = 0; $i < $numplayers; $i++) {
-                $index = isset($data[$pos]) ? (int) $data[$pos] : 0;
+                $index = isset($data[$pos]) ? ScalarCaster::toInt($data[$pos]) : 0;
                 $pos++;
 
                 $players[$index]['name'] = $this->get_string($data, $pos);
@@ -367,7 +368,7 @@ class Halflife extends CSQuery
             return false;
         }
 
-        $numrules = isset($data['numrules']) ? (int) $data['numrules'] : 0;
+        $numrules = isset($data['numrules']) ? ScalarCaster::toInt($data['numrules']) : 0;
 
         $pos = 1;
 
@@ -417,7 +418,9 @@ class Halflife extends CSQuery
             }
             // extract player name
             $curPlayer['name'] = substr($data, $i, $endPlayerName - $i);
+
             // add player to the list of players
+            /** @var array<string, mixed> $curPlayer */
             $this->players[] = $curPlayer;
         }
 
@@ -443,7 +446,7 @@ class Halflife extends CSQuery
         $len = count($data);
 
         while ($pos < $len && isset($data[$pos]) && $data[$pos] !== 0) {
-            $string .= chr((int) $data[$pos]);
+            $string .= chr(ScalarCaster::toInt($data[$pos]));
             $pos++;
         }
 
@@ -464,11 +467,11 @@ class Halflife extends CSQuery
             return 0;
         }
 
-        $long = (int) ($data[$pos] ?? 0);
+        $long = ScalarCaster::toInt($data[$pos] ?? 0);
 
         for ($i = 1; $i < 4; $i++) {
             $pos++;
-            $long += ((int) ($data[$pos] ?? 0)) << (8 * $i);
+            $long += (ScalarCaster::toInt($data[$pos] ?? 0)) << (8 * $i);
         }
 
         return $long;

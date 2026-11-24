@@ -32,6 +32,12 @@ final class ServerInfoExtractor
         /** @var array<string, mixed> $data */
         $data = get_object_vars($server);
 
+        /** @var array<string, mixed> $rules */
+        $rules = is_array($data['rules'] ?? null) ? $data['rules'] : [];
+
+        /** @var array<array<string, mixed>> $players */
+        $players = is_array($data['players'] ?? null) ? $data['players'] : [];
+
         return new ServerInfo(
             address: is_string($data['address'] ?? null) ? $data['address'] : null,
             queryport: is_int($data['queryport'] ?? null) ? $data['queryport'] : null,
@@ -43,8 +49,8 @@ final class ServerInfoExtractor
             gametype: is_string($data['gametype'] ?? null) ? $data['gametype'] : null,
             numplayers: is_int($data['numplayers'] ?? null) ? $data['numplayers'] : 0,
             maxplayers: is_int($data['maxplayers'] ?? null) ? $data['maxplayers'] : 0,
-            rules: is_array($data['rules'] ?? null) ? $data['rules'] : [],
-            players: is_array($data['players'] ?? null) ? $data['players'] : [],
+            rules: $rules,
+            players: $players,
             errstr: is_string($data['errstr'] ?? null) ? $data['errstr'] : null,
         );
     }

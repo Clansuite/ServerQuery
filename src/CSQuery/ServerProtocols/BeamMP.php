@@ -155,6 +155,7 @@ class BeamMP extends CSQuery implements ProtocolInterface
             return false;
         }
 
+        /** @var array<string, mixed> $found */
         $this->parseServerEntry($found);
 
         return true;

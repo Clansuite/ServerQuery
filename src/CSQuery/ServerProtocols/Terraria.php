@@ -33,6 +33,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -126,9 +127,9 @@ class Terraria extends CSQuery implements ProtocolInterface
         foreach ($info->players as $player) {
             if (is_array($player)) {
                 $this->players[] = [
-                    'name'  => (string) ($player['name'] ?? ''),
-                    'score' => (int) ($player['score'] ?? 0),
-                    'time'  => (int) ($player['time'] ?? 0),
+                    'name'  => ScalarCaster::toString($player['name'] ?? ''),
+                    'score' => ScalarCaster::toInt($player['score'] ?? 0),
+                    'time'  => ScalarCaster::toInt($player['time'] ?? 0),
                 ];
             }
         }
@@ -166,7 +167,7 @@ class Terraria extends CSQuery implements ProtocolInterface
                         $jsonBody = substr($response, $jsonStart);
                         $data     = json_decode($jsonBody, true);
 
-                        if ($data !== null && isset($data['status']) && $data['status'] === '200') {
+                        if (is_array($data) && isset($data['status']) && $data['status'] === '200') {
                             $this->parseTShockResponse($data, $info);
                             $info->online = true;
 
@@ -188,11 +189,11 @@ class Terraria extends CSQuery implements ProtocolInterface
         $server = $data['server'] ?? null;
 
         if (is_array($server)) {
-            $info->name            = (string) ($server['name'] ?? '');
-            $info->map             = (string) ($server['world'] ?? '');
-            $info->players_current = (int) ($server['players'] ?? 0);
-            $info->players_max     = (int) ($server['maxplayers'] ?? 0);
-            $info->version         = (string) ($server['version'] ?? '');
+            $info->name            = ScalarCaster::toString($server['name'] ?? '');
+            $info->map             = ScalarCaster::toString($server['world'] ?? '');
+            $info->players_current = ScalarCaster::toInt($server['players'] ?? 0);
+            $info->players_max     = ScalarCaster::toInt($server['maxplayers'] ?? 0);
+            $info->version         = ScalarCaster::toString($server['version'] ?? '');
         }
 
         $playersData = $data['players'] ?? null;
@@ -203,9 +204,9 @@ class Terraria extends CSQuery implements ProtocolInterface
             foreach ($playersData as $player) {
                 if (is_array($player)) {
                     $info->players[] = [
-                        'name'  => (string) ($player['name'] ?? ''),
-                        'score' => (int) ($player['score'] ?? 0),
-                        'time'  => (int) ($player['time'] ?? 0),
+                        'name'  => ScalarCaster::toString($player['name'] ?? ''),
+                        'score' => ScalarCaster::toInt($player['score'] ?? 0),
+                        'time'  => ScalarCaster::toInt($player['time'] ?? 0),
                     ];
                 }
             }
