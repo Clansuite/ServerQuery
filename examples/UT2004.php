@@ -45,6 +45,6 @@ if ($server->query_server(true, true)) {
         }
     }
 } else {
-    print '❌ Failed: ' . ($server->errstr ?? 'unknown') . \PHP_EOL;
+    print '❌ Failed: ' . $server->errstr . \PHP_EOL;
     \print_r($server->debug);
 }

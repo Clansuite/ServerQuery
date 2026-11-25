@@ -167,8 +167,8 @@ class DocumentProtocols
             }
 
             /** @var CSQuery $instance */ $instance = $reflection->newInstanceWithoutConstructor();
-            $game_series_list                       = $instance->game_series_list ?? [$instance->name ?? 'Unknown'];
-            $supportedGames                         = $instance->supportedGames ?? [];
+            $game_series_list                       = $instance->game_series_list;
+            $supportedGames                         = $instance->supportedGames;
 
             foreach ($game_series_list as $series) {
                 if (!isset($this->series[$series])) {

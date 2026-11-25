@@ -82,8 +82,8 @@ class Dayz extends Steam implements ProtocolInterface
             gametype: $this->gametype,
             numplayers: $this->numplayers,
             maxplayers: $this->maxplayers,
-            rules: $this->rules ?? [],
-            players: $this->players ?? [],
+            rules: $this->rules,
+            players: $this->players,
             errstr: $this->errstr,
         );
     }

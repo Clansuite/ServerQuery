@@ -237,9 +237,9 @@ class Mumble extends CSQuery implements ProtocolInterface
 
         $this->online      = $info->online;
         $this->servertitle = $info->servertitle ?? '';
-        $this->numplayers  = $info->numplayers ?? 0;
-        $this->maxplayers  = $info->maxplayers ?? 0;
-        $this->players     = $info->players ?? [];
+        $this->numplayers  = $info->numplayers;
+        $this->maxplayers  = $info->maxplayers;
+        $this->players     = $info->players;
 
         return $this->online;
     }

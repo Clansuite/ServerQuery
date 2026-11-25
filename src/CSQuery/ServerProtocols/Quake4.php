@@ -140,14 +140,14 @@ class Quake4 extends Quake
         // Skip empty parts at the beginning
         $i = 0;
 
-        while ($i < count($parts) && ($parts[$i] ?? '') === '') {
+        while ($i < count($parts) && $parts[$i] === '') {
             $i++;
         }
 
         // Parse key-value pairs
         // The format should be key\x00value\x00key\x00value\x00...
         while ($i < count($parts) - 1) {
-            $potentialKey   = $parts[$i] ?? '';
+            $potentialKey   = $parts[$i];
             $potentialValue = $parts[$i + 1] ?? '';
 
             // Check if this looks like a key (contains known key patterns)
@@ -183,10 +183,10 @@ class Quake4 extends Quake
 
         for ($i = 0; $i < count($parts); $i += 4) {
             if ($i + 3 < count($parts)) {
-                $score = (int) ($parts[$i] ?? 0);
+                $score = (int) $parts[$i];
                 $ping  = (int) ($parts[$i + 1] ?? 0);
                 $name  = $parts[$i + 2] ?? '';
-                $clan  = $parts[$i + 3] ?? '';
+                $clan  = $parts[$i + 3];
 
                 $players[] = [
                     'name'  => $name,

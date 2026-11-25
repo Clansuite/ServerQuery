@@ -32,7 +32,7 @@ if ($server->query_server()) {
     print 'Game: ' . $server->gamename . \PHP_EOL;
     print 'Version: ' . $server->gameversion . \PHP_EOL;
 
-    if (isset($server->players) && \is_array($server->players)) {
+    if ($server->players !== []) {
         print 'Player List:' . \PHP_EOL;
 
         foreach ($server->players as $player) {

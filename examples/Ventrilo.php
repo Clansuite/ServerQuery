@@ -110,14 +110,14 @@ $info  = $proto->query(new ServerAddress($address, $port));
 
 if ($info->online) {
     $servertitle = $info->servertitle ?? $address;
-    $numplayers  = $info->numplayers ?? 0;
-    $maxplayers  = $info->maxplayers ?? 0;
+    $numplayers  = $info->numplayers;
+    $maxplayers  = $info->maxplayers;
 
     print "Server: {(string) {$servertitle}}\n";
     print "Players: {(string) {$numplayers}}/{(string) {$maxplayers}}\n";
     print "--- PLAYERS ---\n";
 
-    $players = $info->players ?? [];
+    $players = $info->players;
 
     foreach ($players as $p) {
         if (\is_array($p)) {

@@ -63,5 +63,5 @@ if ($server->query_server(true, true)) {  // enable players and rules
         print "No players list available\n";
     }
 } else {
-    print 'Failed to query server: ' . ($server->errstr ?? 'unknown error') . "\n";
+    print 'Failed to query server: ' . $server->errstr . "\n";
 }

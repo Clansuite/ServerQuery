@@ -91,11 +91,11 @@ class Starbound extends CSQuery implements ProtocolInterface
         }
 
         $this->gamename    = 'Starbound';
-        $this->gameversion = $parts[1] ?? '';
-        $this->servertitle = $parts[2] ?? '';
-        $this->mapname     = $parts[4] ?? '';
+        $this->gameversion = $parts[1];
+        $this->servertitle = $parts[2];
+        $this->mapname     = $parts[4];
 
-        $playerPart  = $parts[3] ?? '';
+        $playerPart  = $parts[3];
         $playerParts = explode('/', $playerPart);
 
         if (count($playerParts) === 2) {

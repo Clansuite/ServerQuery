@@ -41,5 +41,5 @@ if ($q->query_server(true, true)) {
         }
     }
 } else {
-    print 'Query failed: ' . ($q->errstr ?? 'unknown') . "\n";
+    print 'Query failed: ' . $q->errstr . "\n";
 }

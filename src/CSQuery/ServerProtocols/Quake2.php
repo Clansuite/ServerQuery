@@ -108,7 +108,7 @@ class Quake2 extends Quake
         $rules = [];
 
         for ($i = 0; $i < count($parts) - 1; $i += 2) {
-            $key   = $parts[$i] ?? '';
+            $key   = $parts[$i];
             $value = $parts[$i + 1] ?? '';
 
             // Map common keys to properties

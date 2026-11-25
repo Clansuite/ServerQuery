@@ -55,7 +55,7 @@ if ($server->query_server(true, true)) {  // enable players and rules
     }
 } else {
     print "Failed to query server. Server may be offline or unreachable.\n";
-    print 'Error: ' . ($server->errstr ?? 'Unknown error') . "\n";
+    print 'Error: ' . $server->errstr . "\n";
 }
 
 print "Note: While GameTracker shows this server as active with players, it may not respond to query requests.\n";
