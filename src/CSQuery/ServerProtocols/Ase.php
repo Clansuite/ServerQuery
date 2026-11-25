@@ -24,6 +24,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -216,11 +217,11 @@ class Ase extends CSQuery implements ProtocolInterface
         }
 
         // Set info from rules
-        $this->gamename    = (string) ($this->rules['gamename'] ?? '');
-        $this->gametype    = (string) ($this->rules['gametype'] ?? '');
-        $this->mapname     = (string) ($this->rules['map'] ?? '');
-        $this->gameversion = (string) ($this->rules['version'] ?? '');
-        $this->servertitle = (string) ($this->rules['hostname'] ?? '');
+        $this->gamename    = ScalarCaster::toString($this->rules['gamename'] ?? '');
+        $this->gametype    = ScalarCaster::toString($this->rules['gametype'] ?? '');
+        $this->mapname     = ScalarCaster::toString($this->rules['map'] ?? '');
+        $this->gameversion = ScalarCaster::toString($this->rules['version'] ?? '');
+        $this->servertitle = ScalarCaster::toString($this->rules['hostname'] ?? '');
         $this->numplayers  = (int) ($this->rules['num_players'] ?? 0);
         $this->maxplayers  = (int) ($this->rules['max_players'] ?? 0);
         $this->password    = (int) ($this->rules['password'] ?? 0);

@@ -171,12 +171,14 @@ class Halflife extends CSQuery
         assert(isset($data['header'], $data['indicator']));
 
         /** @var array<int, int> $data */
+        /** @psalm-suppress InvalidArrayOffset -- unpack() provides the named key 'header' */
         if (($data['header'] ?? null) !== -1) {
             $this->debug[$command] = 'Not a hl server, expected 0xFF 0xFF 0xFF 0xFF in first 4 bytes';
 
             return false;
         }
 
+        /** @psalm-suppress InvalidArrayOffset -- unpack() provides the named key 'indicator' */
         if (!isset($data['indicator']) || $data['indicator'] !== 0x6D) {
             $this->debug[$command] = 'Not a hl server, expected 0x6D in byte 5';
 

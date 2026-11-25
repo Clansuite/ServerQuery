@@ -64,10 +64,12 @@ class UdpClient
             return null;
         }
 
-        $result       = '';
+        $result = '';
+
+        /** @var array<string, mixed> $socketstatus */
         $socketstatus = stream_get_meta_data($fp);
 
-        while (!$socketstatus['timed_out'] && !$socketstatus['eof']) {
+        while (!(bool) ($socketstatus['timed_out'] ?? false) && !(bool) ($socketstatus['eof'] ?? false)) {
             $chunk = fread($fp, 128);
 
             if ($chunk !== false) {
@@ -151,10 +153,12 @@ class UdpClient
         $packetCount = 0;
 
         while ($maxPackets === 0 || $packetCount < $maxPackets) {
-            $result       = '';
+            $result = '';
+
+            /** @var array<string, mixed> $socketstatus */
             $socketstatus = stream_get_meta_data($fp);
 
-            while (!$socketstatus['timed_out'] && !$socketstatus['eof']) {
+            while (!(bool) ($socketstatus['timed_out'] ?? false) && !(bool) ($socketstatus['eof'] ?? false)) {
                 $data = fread($fp, 128);
 
                 if ($data === false || $data === '') {
