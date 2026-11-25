@@ -311,13 +311,9 @@ class CounterStrike16 extends CSQuery
         $parts = [];
 
         // Helper to parse a chunk's header and return [count, number, payloadPart, checksum|null]
-        $parseChunk = static function (mixed $chunk): ?array
+        $parseChunk = static function (string $chunk): ?array
         {
-            $r = is_string($chunk) ? new PacketReader($chunk) : null;
-
-            if ($r === null) {
-                return null;
-            }
+            $r = new PacketReader($chunk);
 
             $h = $r->readInt32();
 
@@ -358,11 +354,7 @@ class CounterStrike16 extends CSQuery
             }
 
             // Fallback to GoldSource-style parsing
-            $r = is_string($chunk) ? new PacketReader($chunk) : null;
-
-            if ($r === null) {
-                return null;
-            }
+            $r = new PacketReader($chunk);
 
             $r->readInt32();
             $r->readInt32();

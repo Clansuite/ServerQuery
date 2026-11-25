@@ -11,6 +11,7 @@
     findUnusedBaselineEntry       = "true"
     findUnusedCode                = "false"
     findUnusedPsalmSuppress       = "true"
+    allConstantsGlobal           = "true"
     limitMethodComplexity         = "true"
     ensureArrayStringOffsetsExist = "true"
     ensureArrayIntOffsetsExist    = "true"
@@ -26,6 +27,7 @@
     <issueHandlers>
         <RedundantIdentityWithTrue errorLevel="suppress"/> <!-- Causes trouble with `match(true)` -->
         <MissingThrowsDocblock errorLevel="suppress"/> <!-- prefer PHPStan: @throws void -->
+        <DeprecatedSyntax errorLevel="suppress"/> <!-- project target is PHP 8.2; __sleep() still supported -->
         <ClassMustBeFinal errorLevel="suppress" /> <!-- Holy shit. The final inserts are so broken! -->
     </issueHandlers>
 

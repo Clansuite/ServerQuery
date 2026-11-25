@@ -141,7 +141,18 @@ class Tibia extends CSQuery implements ProtocolInterface
         }
 
         // Parse serverinfo
-        $attributes            = $xmlDoc->serverinfo->attributes();
+        $serverInfo = $xmlDoc->serverinfo;
+
+        if ($serverInfo === null) {
+            return;
+        }
+
+        $attributes = $serverInfo->attributes();
+
+        if ($attributes === null) {
+            return;
+        }
+
         $info->name            = (string) ($attributes['servername'] ?? '');
         $info->map             = (string) ($attributes['map_name'] ?? '');
         $info->players_current = (int) ($attributes['players_online'] ?? 0);
@@ -153,18 +164,26 @@ class Tibia extends CSQuery implements ProtocolInterface
 
         // Parse players
         $info->players = [];
-        $attributes    = $xmlDoc->players->attributes();
+        $playersNode   = $xmlDoc->players;
 
-        if ($attributes !== null) {
-            foreach ($attributes as $key => $value) {
-                // Players are stored as attributes, parse them
-                if (str_starts_with($key, 'player')) {
-                    $info->players[] = [
-                        'name'  => (string) $value,
-                        'score' => 0,
-                        'time'  => 0,
-                    ];
-                }
+        if ($playersNode === null) {
+            return;
+        }
+
+        $attributes = $playersNode->attributes();
+
+        if ($attributes === null) {
+            return;
+        }
+
+        foreach ($attributes as $key => $value) {
+            // Players are stored as attributes, parse them
+            if (str_starts_with($key, 'player')) {
+                $info->players[] = [
+                    'name'  => (string) $value,
+                    'score' => 0,
+                    'time'  => 0,
+                ];
             }
         }
     }

@@ -146,7 +146,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
 
         // parse fields following node-gamedig logic
         $st                = $info[0] ?? null;
-        $this->servertitle = is_string($st) ? $st : '';
+        $this->servertitle = $st;
 
         $np = $info[1] ?? null;
 

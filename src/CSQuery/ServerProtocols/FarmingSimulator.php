@@ -141,21 +141,37 @@ class FarmingSimulator extends CSQuery implements ProtocolInterface
             return false;
         }
 
+        $server = $xml->Server;
+
+        if ($server === null) {
+            return false;
+        }
+
+        $slots = $server->Slots;
+
+        if ($slots === null) {
+            return false;
+        }
+
         // Parse the XML data
         $info->address     = $addr->ip . ':' . $addr->port;
         $info->queryport   = $addr->port;
         $info->gamename    = 'Farming Simulator';
-        $info->servertitle = (string) $xml->Server['name'];
-        $info->mapname     = (string) $xml->Server['mapName'];
-        $info->numplayers  = (int) $xml->Server->Slots['numUsed'];
-        $info->maxplayers  = (int) $xml->Server->Slots['capacity'];
+        $info->servertitle = (string) $server['name'];
+        $info->mapname     = (string) $server['mapName'];
+        $info->numplayers  = (int) $slots['numUsed'];
+        $info->maxplayers  = (int) $slots['capacity'];
 
         // Players
         $players = [];
 
-        foreach ($xml->Server->Slots->Player as $player) {
-            if ((string) $player['isUsed'] === 'true') {
-                $players[] = ['name' => (string) $player, 'score' => 0, 'time' => (int) $player['uptime']];
+        $playerNodes = $slots->Player;
+
+        if ($playerNodes !== null) {
+            foreach ($playerNodes as $player) {
+                if ((string) $player['isUsed'] === 'true') {
+                    $players[] = ['name' => (string) $player, 'score' => 0, 'time' => (int) $player['uptime']];
+                }
             }
         }
         $info->players = $players;
@@ -163,7 +179,7 @@ class FarmingSimulator extends CSQuery implements ProtocolInterface
         // Rules (server variables)
         $rules = [];
 
-        $attributes = $xml->Server->attributes();
+        $attributes = $server->attributes();
 
         if ($attributes !== null) {
             foreach ($attributes as $key => $value) {

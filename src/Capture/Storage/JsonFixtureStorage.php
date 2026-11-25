@@ -29,6 +29,7 @@ use function is_string;
 use function json_decode;
 use function json_encode;
 use function mkdir;
+use function preg_replace;
 use function serialize;
 use function sprintf;
 use function str_replace;
@@ -220,11 +221,27 @@ final readonly class JsonFixtureStorage implements FixtureStorageInterface
         return $captures;
     }
 
+    /**
+     * Restricts a remote value to one safe path segment.
+     *
+     * @psalm-taint-escape file
+     */
+    private function safeSegment(string $value): string
+    {
+        $safe = preg_replace('/[^a-zA-Z0-9._:-]/', '_', $value) ?? 'unknown';
+
+        return $safe === '' || $safe === '.' || $safe === '..' ? 'unknown' : $safe;
+    }
+
     private function buildPath(string $protocol, string $version, string $ip, int $port): string
     {
-        $normalizedIp = str_replace('.', '_', $ip);
-        $filename     = sprintf('capture_%s_%d.json', $normalizedIp, $port);
+        // Protocol, version and IP can originate from a remote server response.
+        // Allow only safe filename characters so they cannot escape the fixtures directory.
+        $safeProtocol = $this->safeSegment(strtolower($protocol));
+        $safeVersion  = $this->safeSegment($version);
+        $safeIp       = $this->safeSegment(str_replace('.', '_', $ip));
+        $filename     = sprintf('capture_%s_%d.json', $safeIp, $port);
 
-        return $this->fixturesDir . '/' . strtolower($protocol) . '/' . $version . '/' . $filename;
+        return $this->fixturesDir . '/' . $safeProtocol . '/' . $safeVersion . '/' . $filename;
     }
 }
