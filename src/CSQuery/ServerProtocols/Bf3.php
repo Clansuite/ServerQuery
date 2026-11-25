@@ -37,6 +37,7 @@ use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
 use Clansuite\ServerQuery\CSQuery;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -95,7 +96,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
     #[Override]
     public function getNativeJoinURI(): string
     {
-        return 'bf4://' . $this->address . ':' . $this->hostport;
+        return 'bf4://' . ($this->address ?? '') . ':' . $this->hostport;
     }
 
     /**
@@ -361,9 +362,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
         }
 
         // serverInfo is usually the first packet
-        /** @var string $si */
-        /** @phpstan-ignore-next-line offsetAccess.notFound */
-        $si                         = $packets[0];
+        $si                         = ScalarCaster::toString($packets[0] ?? '');
         $result['serverInfoParams'] = $si;
 
         if ($si !== '' && str_starts_with($si, 'OK')) {
@@ -425,7 +424,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
                 $mapped['roundtime'] = (int) $info[$idx];
             } $idx++;
 
-            if (isset($info[$idx]) && is_string($info[$idx]) && str_contains($info[$idx], ':')) {
+            if (isset($info[$idx]) && str_contains($info[$idx], ':')) {
                 $mapped['gameIpAndPort'] = $info[$idx];
             }
 
@@ -440,10 +439,6 @@ class Bf3 extends CSQuery implements ProtocolInterface
             }
 
             $p = explode("\t", $p);
-
-            if (count($p) === 0) {
-                continue;
-            }
 
             if ($p[0] !== 'OK') {
                 continue;
@@ -569,7 +564,7 @@ class Bf3 extends CSQuery implements ProtocolInterface
         $totalLength = 12;
 
         foreach ($params as $p) {
-            $b       = (string) $p;
+            $b       = $p;
             $parts[] = $b;
             $totalLength += 4 + strlen($b) + 1;
         }

@@ -66,11 +66,15 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['Battlefield'];
 
     /**
      * List of supported games.
+     *
+     * @var array<string>
      */
     public array $supportedGames = ['Battlefield 4'];
     protected int $port_diff     = 22000;
@@ -89,7 +93,7 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
     #[Override]
     public function getNativeJoinURI(): string
     {
-        return 'bf4://' . $this->address . ':' . $this->hostport;
+        return 'bf4://' . ($this->address ?? '') . ':' . $this->hostport;
     }
 
     /**
@@ -185,9 +189,9 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
         } $idx++;
 
         // try to read ip:port
-        if (isset($info[$idx]) && str_contains((string) $info[$idx], ':')) {
+        if (isset($info[$idx]) && str_contains($info[$idx], ':')) {
             $this->rules['ip'] = $info[$idx];
-            $parts             = explode(':', (string) $info[$idx], 2);
+            $parts             = explode(':', $info[$idx], 2);
             $host              = $parts[0];
             $port              = $parts[1] ?? '';
             $this->gameHost    = $host;
@@ -383,7 +387,7 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
                 $mapped['roundtime'] = (int) $info[$idx];
             } $idx++;
 
-            if (isset($info[$idx]) && str_contains((string) $info[$idx], ':')) {
+            if (isset($info[$idx]) && str_contains($info[$idx], ':')) {
                 $mapped['gameIpAndPort'] = $info[$idx];
             }
 
@@ -522,7 +526,7 @@ class Battlefield4 extends CSQuery implements ProtocolInterface
         $totalLength = 12;
 
         foreach ($params as $p) {
-            $b       = (string) $p;
+            $b       = $p;
             $parts[] = $b;
             $totalLength += 4 + strlen($b) + 1;
         }

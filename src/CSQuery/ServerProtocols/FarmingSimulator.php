@@ -163,8 +163,12 @@ class FarmingSimulator extends CSQuery implements ProtocolInterface
         // Rules (server variables)
         $rules = [];
 
-        foreach ($xml->Server->attributes() as $key => $value) {
-            $rules[$key] = (string) $value;
+        $attributes = $xml->Server->attributes();
+
+        if ($attributes !== null) {
+            foreach ($attributes as $key => $value) {
+                $rules[$key] = (string) $value;
+            }
         }
         $info->rules = $rules;
 

@@ -181,8 +181,8 @@ class Bf1942 extends CSQuery implements ProtocolInterface
             } elseif ($parsingPlayers) {
                 // Additional player fields
                 if ($this->players !== []) {
-                    $lastPlayer       = &$this->players[count($this->players) - 1];
-                    $lastPlayer[$key] = $value;
+                    $lastIndex                       = count($this->players) - 1;
+                    $this->players[$lastIndex][$key] = $value;
                 }
             } else {
                 // Server info

@@ -63,7 +63,7 @@ class ArkSurvivalEvolved extends Steam
     #[Override]
     public function getNativeJoinURI(): string
     {
-        return 'steam://connect/' . $this->address . ':' . $this->hostport;
+        return 'steam://connect/' . ($this->address ?? '') . ':' . $this->hostport;
     }
 
     /**

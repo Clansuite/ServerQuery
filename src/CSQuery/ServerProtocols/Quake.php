@@ -45,6 +45,8 @@ class Quake extends CSQuery implements ProtocolInterface
 
     /**
      * List of supported games.
+     *
+     * @var array<string>
      */
     public array $supportedGames = ['Quake', 'Quake 2', 'Quake 3 Arena', 'Quake 4'];
 
@@ -55,6 +57,8 @@ class Quake extends CSQuery implements ProtocolInterface
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['Quake'];
 

@@ -78,7 +78,8 @@ class ListCapturesCommand
                 }
             }
 
-            print json_encode($capture, JSON_PRETTY_PRINT) . "\n";
+            $json = json_encode($capture, JSON_PRETTY_PRINT);
+            print ($json !== false ? $json : '') . "\n";
         }
 
         return 0;

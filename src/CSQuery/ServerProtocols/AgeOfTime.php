@@ -53,6 +53,6 @@ class AgeOfTime extends Tribes2 implements ProtocolInterface
     public function getNativeJoinURI(): string
     {
         // Age of Time uses ageoftime:// protocol for joining servers
-        return 'ageoftime://' . $this->address . ':' . $this->hostport;
+        return 'ageoftime://' . ($this->address ?? '') . ':' . $this->hostport;
     }
 }

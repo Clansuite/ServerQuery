@@ -23,7 +23,6 @@ use function count;
 use function explode;
 use function file_put_contents;
 use function glob;
-use function is_array;
 use function sort;
 use function strcasecmp;
 use function uksort;
@@ -130,6 +129,7 @@ class DocumentProtocols
             $games = array_unique($games);
             sort($games);
         }
+        unset($games);
 
         // Build gameList
         $this->gameList = [];
@@ -229,8 +229,8 @@ class DocumentProtocols
         $markdown .= "| Number | Game Name | Server Protocol |\n";
         $markdown .= "|--------|-----------|-----------------|\n";
 
-        foreach ($this->gameList as $index => $game) {
-            $parts    = explode(' - ', (string) $game, 2);
+        foreach (array_values($this->gameList) as $index => $game) {
+            $parts    = explode(' - ', $game, 2);
             $gameName = $parts[0];
             $protocol = $parts[1] ?? '';
             $number   = $index + 1;
@@ -243,10 +243,8 @@ class DocumentProtocols
         foreach ($this->series as $series => $games) {
             $markdown .= "#### {$series}\n\n";
 
-            if (is_array($games)) {
-                foreach ($games as $game) {
-                    $markdown .= '- ' . (string) $game . "\n";
-                }
+            foreach ($games as $game) {
+                $markdown .= '- ' . $game . "\n";
             }
             $markdown .= "\n";
         }
@@ -298,8 +296,8 @@ class DocumentProtocols
         $html .= "<thead>\n<tr>\n<th>#</th>\n<th>Game Name</th>\n<th>Server Protocol</th>\n</tr>\n</thead>\n";
         $html .= "<tbody>\n";
 
-        foreach ($this->gameList as $index => $game) {
-            $parts    = explode(' - ', (string) $game, 2);
+        foreach (array_values($this->gameList) as $index => $game) {
+            $parts    = explode(' - ', $game, 2);
             $gameName = $parts[0] ?? '';
             $protocol = $parts[1] ?? '';
             $number   = $index + 1;

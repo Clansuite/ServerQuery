@@ -59,6 +59,8 @@ class Minecraft extends CSQuery implements ProtocolInterface
 
     /**
      * List of supported games.
+     *
+     * @var array<string>
      */
     public array $supportedGames = ['Minecraft'];
 

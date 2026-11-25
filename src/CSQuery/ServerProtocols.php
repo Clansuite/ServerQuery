@@ -108,6 +108,8 @@ use Clansuite\ServerQuery\ServerProtocols\Zandronum;
  * Supported Server Protocols Registry.
  *
  * Contains the mapping of protocol names to their implementing classes.
+ *
+ * @psalm-suppress DeprecatedClass -- legacy protocols stay registered for existing captures
  */
 class ServerProtocols
 {

@@ -81,10 +81,6 @@ final readonly class WorkerCaptureStrategy implements CaptureStrategyInterface
 
             $debugLog = $workerData['debug'];
 
-            if (!is_array($debugLog)) {
-                $debugLog = [];
-            }
-
             $metadata = [
                 'ip'          => $addr->ip,
                 'port'        => $addr->port,

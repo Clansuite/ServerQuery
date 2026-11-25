@@ -170,7 +170,7 @@ class Steam extends CSQuery implements ProtocolInterface
         }
 
         $endtime = microtime(true);
-        $diff    = round(($endtime - $starttime) * 1000, 0);
+        $diff    = round(($endtime - $starttime) * 1000.0, 0);
         // response time
         $this->response = round($diff, 2);
 
@@ -496,7 +496,10 @@ class Steam extends CSQuery implements ProtocolInterface
 
             if (($result = $this->sendCommand($address, $port, $command . $challenge)) !== false) {
                 // Process rules...
-                if ($this->rules['Type'] === 'HL1') {
+                /** @var string $rulesType */
+                $rulesType = $this->rules['Type'];
+
+                if ($rulesType === 'HL1') {
                     // rules can be in multiple packets in 1.6, we have to sort it out
                     // First packet has a 16 byte header, subsequent packet has an 8 byte header.
                     $str = "/\xFE\xFF\xFF\xFF/"; // packet signature (both first and second start with this)
@@ -607,6 +610,7 @@ class Steam extends CSQuery implements ProtocolInterface
 
             // format time
             if (array_key_exists('time', $curPlayer) && is_numeric($curPlayer['time']) && is_finite((float) $curPlayer['time']) && $curPlayer['time'] >= 0 && $curPlayer['time'] <= 86400) {
+                /** @var false|int $timestamp */
                 $timestamp         = mktime(0, 0, (int) $curPlayer['time']);
                 $curPlayer['time'] = $timestamp !== false ? date('H:i:s', $timestamp) : '00:00:00';
             } else {
@@ -681,7 +685,7 @@ class Steam extends CSQuery implements ProtocolInterface
         $i += 2;
 
         /** @var array{1: int} $val */
-        return (int) $val[1];
+        return $val[1];
     }
 
     /**
@@ -699,7 +703,7 @@ class Steam extends CSQuery implements ProtocolInterface
         $i += 8;
 
         /** @var array{1: int} $val */
-        return (int) $val[1];
+        return $val[1];
     }
 
     /**

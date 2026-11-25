@@ -37,6 +37,7 @@ use function unserialize;
 use Clansuite\Capture\CaptureResult;
 use Clansuite\Capture\ServerInfo;
 use Override;
+use RuntimeException;
 
 /**
  * Stores and retrieves capture results as JSON fixtures for testing and development purposes.
@@ -67,7 +68,13 @@ final readonly class JsonFixtureStorage implements FixtureStorageInterface
             'packets'     => base64_encode(serialize($result->rawPackets)), // Assuming rawPackets is array of packets
             'server_info' => $result->serverInfo->toArray(),
         ];
-        file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT));
+        $json = json_encode($data, JSON_PRETTY_PRINT);
+
+        if ($json === false) {
+            throw new RuntimeException('Failed to encode fixture data as JSON');
+        }
+
+        file_put_contents($path, $json);
 
         return $path;
     }

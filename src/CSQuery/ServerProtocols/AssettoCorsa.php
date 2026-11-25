@@ -114,13 +114,11 @@ class AssettoCorsa extends CSQuery implements ProtocolInterface
         $this->players     = [];
 
         foreach ($info->players as $player) {
-            if (is_array($player)) {
-                $this->players[] = [
-                    'name'  => $player['name'] ?? '',
-                    'score' => 0,
-                    'time'  => 0,
-                ];
-            }
+            $this->players[] = [
+                'name'  => $player['name'] ?? '',
+                'score' => 0,
+                'time'  => 0,
+            ];
         }
         $this->numplayers = count($this->players);
 

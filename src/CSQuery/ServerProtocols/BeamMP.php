@@ -37,7 +37,9 @@ use Override;
  */
 class BeamMP extends CSQuery implements ProtocolInterface
 {
-    public string $name          = 'BeamMP';
+    public string $name = 'BeamMP';
+
+    /** @var array<string> */
     public array $supportedGames = ['BeamMP', 'BeamNG.drive'];
     public string $protocol      = 'beammp';
 

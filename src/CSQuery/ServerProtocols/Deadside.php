@@ -38,6 +38,8 @@ class Deadside extends Steam
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['DEADSIDE'];
 

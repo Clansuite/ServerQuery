@@ -76,7 +76,7 @@ class Ddnet extends CSQuery implements ProtocolInterface
      */
     public function getServerLink(): string
     {
-        return 'ddnet://' . $this->address . ':' . $this->gameport;
+        return 'ddnet://' . ($this->address ?? '') . ':' . $this->gameport;
     }
 
     /**

@@ -32,8 +32,7 @@ class HtmlRenderer
     /**
      * Render server data as HTML tables.
      *
-     * @param array        $data The decoded JSON data from toJson()
-     * @param array<mixed> $data
+     * @param array<mixed> $data The decoded JSON data from toJson()
      *
      * @return string HTML representation of the server data
      */
@@ -212,7 +211,8 @@ class HtmlRenderer
         foreach ($data['rules'] as $key => $value) {
             $html .= '<tr>';
             $keyStr   = ScalarCaster::toString($key);
-            $valueStr = is_scalar($value) ? (string) $value : (is_object($value) || is_array($value) ? (json_encode($value) !== false ? json_encode($value) : '') : '');
+            $json     = json_encode($value);
+            $valueStr = is_scalar($value) ? (string) $value : ($json !== false ? $json : '');
             $html .= '<td>' . htmlentities($keyStr) . '</td>';
             $html .= '<td>' . htmlentities($valueStr) . '</td>';
             $html .= '</tr>';

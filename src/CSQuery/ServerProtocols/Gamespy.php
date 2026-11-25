@@ -160,6 +160,7 @@ class Gamespy extends CSQuery implements ProtocolInterface
 
             // Check for player data
             if (preg_match('/^player_(\d+)$/', $key, $matches) === 1) {
+                /** @var array{non-falsy-string, numeric-string} $matches */
                 $playerIndex = (int) $matches[1];
 
                 if (!isset($this->players[$playerIndex])) {
@@ -168,6 +169,7 @@ class Gamespy extends CSQuery implements ProtocolInterface
                 $this->players[$playerIndex]['name'] = $val;
                 $numPlayers                          = max($numPlayers, $playerIndex + 1);
             } elseif (preg_match('/^frags_(\d+)$/', $key, $matches) === 1) {
+                /** @var array{non-falsy-string, numeric-string} $matches */
                 $playerIndex = (int) $matches[1];
 
                 if (!isset($this->players[$playerIndex])) {
@@ -175,6 +177,7 @@ class Gamespy extends CSQuery implements ProtocolInterface
                 }
                 $this->players[$playerIndex]['score'] = is_numeric($val) ? (int) $val : 0;
             } elseif (preg_match('/^ping_(\d+)$/', $key, $matches) === 1) {
+                /** @var array{non-falsy-string, numeric-string} $matches */
                 $playerIndex = (int) $matches[1];
 
                 if (!isset($this->players[$playerIndex])) {

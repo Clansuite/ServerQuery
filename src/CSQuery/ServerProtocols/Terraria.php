@@ -125,13 +125,11 @@ class Terraria extends CSQuery implements ProtocolInterface
         $this->players     = [];
 
         foreach ($info->players as $player) {
-            if (is_array($player)) {
-                $this->players[] = [
-                    'name'  => ScalarCaster::toString($player['name'] ?? ''),
-                    'score' => ScalarCaster::toInt($player['score'] ?? 0),
-                    'time'  => ScalarCaster::toInt($player['time'] ?? 0),
-                ];
-            }
+            $this->players[] = [
+                'name'  => ScalarCaster::toString($player['name'] ?? ''),
+                'score' => ScalarCaster::toInt($player['score'] ?? 0),
+                'time'  => ScalarCaster::toInt($player['time'] ?? 0),
+            ];
         }
 
         return $this->online;

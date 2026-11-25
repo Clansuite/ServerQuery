@@ -16,7 +16,6 @@ use function fclose;
 use function fread;
 use function fsockopen;
 use function fwrite;
-use function is_array;
 use function simplexml_load_string;
 use function str_starts_with;
 use Clansuite\Capture\Protocol\ProtocolInterface;
@@ -123,9 +122,6 @@ class Tibia extends CSQuery implements ProtocolInterface
         $this->players     = [];
 
         foreach ($info->players as $player) {
-            if (!is_array($player)) {
-                continue;
-            }
             $this->players[] = [
                 'name'  => $player['name'] ?? '',
                 'score' => $player['score'] ?? 0,

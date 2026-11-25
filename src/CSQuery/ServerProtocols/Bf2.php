@@ -110,6 +110,7 @@ class Bf2 extends Gamespy3
         // Split into server info and players/teams
         $split = preg_split('/\\x00\\x00\\x01/', $data, 2);
 
+        /** @var false|list<string> $split */
         if ($split === [] || $split === false) {
             $this->errstr = 'Failed to split response';
 

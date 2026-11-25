@@ -34,6 +34,8 @@ class Quake2 extends Quake
 
     /**
      * List of supported games.
+     *
+     * @var array<string>
      */
     public array $supportedGames = ['Quake 2'];
 
@@ -172,6 +174,7 @@ class Quake2 extends Quake
             // Quake2 player format: score ping "name"
             // Example:  5  50 "PlayerName"
             if (preg_match('/^\s*(\d+)\s+(\d+)\s+"([^"]*)"/', $line, $matches) === 1) {
+                /** @var array{string, string, string, string} $matches */
                 $players[] = [
                     'score' => (int) $matches[1],
                     'ping'  => (int) $matches[2],

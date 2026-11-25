@@ -35,6 +35,7 @@ use function trim;
 use function unpack;
 use Clansuite\ServerQuery\CSQuery;
 use Clansuite\ServerQuery\Util\PacketReader;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use Override;
 
 /**
@@ -121,7 +122,7 @@ class CounterStrike16 extends CSQuery
         }
 
         $endtime = microtime(true);
-        $diff    = round(($endtime - $starttime) * 1000, 0);
+        $diff    = round(($endtime - $starttime) * 1000.0, 0);
         // response time
         $this->response = round($diff, 2);
 
@@ -202,6 +203,7 @@ class CounterStrike16 extends CSQuery
             return false;
         }
 
+        /** @var array{0: non-falsy-string, challenge: numeric-string, 1: numeric-string} $matches */
         $challenge      = $matches['challenge'];
         $commandPayload = "\xFF\xFF\xFF\xFFrcon {$challenge} \"{$rcon_pwd}\" {$command}\n";
 
@@ -668,6 +670,8 @@ class CounterStrike16 extends CSQuery
                         'time'  => $currentPlayer['time'],
                     ];
                 }
+
+                /** @var array{non-falsy-string, numeric-string} $matches */
                 $currentPlayer = ['index' => (int) $matches[1]];
 
                 continue;
@@ -692,6 +696,7 @@ class CounterStrike16 extends CSQuery
 
             // Fallback: try the original format
             if (preg_match('/^#(\d+)\s+"([^"]+)"\s+(\d+)\s+([\d:]+)\s+/', $line, $matches) === 1) {
+                /** @var array{non-falsy-string, numeric-string, non-empty-string, numeric-string, non-empty-string} $matches */
                 $players[] = [
                     'name'  => $matches[2],
                     'score' => (int) $matches[3],
@@ -855,8 +860,8 @@ class CounterStrike16 extends CSQuery
         $this->mapname     = $mapName;
         $this->gamename    = $gameName;
         $this->steamAppID  = $appId;
-        $this->numplayers  = $numPlayers;
-        $this->maxplayers  = $maxPlayers;
+        $this->numplayers  = ScalarCaster::toInt($numPlayers);
+        $this->maxplayers  = ScalarCaster::toInt($maxPlayers);
         $this->password    = $password > 0 ? 1 : 0;
         $this->gameversion = $gameVersion;
 

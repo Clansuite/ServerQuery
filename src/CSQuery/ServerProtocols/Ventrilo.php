@@ -33,12 +33,12 @@ use function socket_recvfrom;
 use function socket_sendto;
 use function socket_set_option;
 use function strlen;
+use Clansuite\ServerQuery\Util\ScalarCaster;
 use function strpos;
 use function strtolower;
 use function substr;
 use function trim;
 use function unpack;
-use Clansuite\ServerQuery\Util\ScalarCaster;
 use Clansuite\Capture\Protocol\ProtocolInterface;
 use Clansuite\Capture\ServerAddress;
 use Clansuite\Capture\ServerInfo;
@@ -140,10 +140,10 @@ class Ventrilo extends CSQuery implements ProtocolInterface
             $fromPort = 0;
             $recv     = @socket_recvfrom($sock, $buf, 8192, 0, $from, $fromPort);
 
-            if ($recv === false || $recv === 0 || !is_string($buf) || $buf === '') {
+            if ($recv === false || $recv === 0 || $buf === '') {
                 break;
             }
-            $packets[] = $buf;
+            $packets[] = ScalarCaster::toString($buf);
 
             // if fewer than 8192 bytes received, likely last packet
             if ($recv < 8192) {
@@ -254,7 +254,11 @@ class Ventrilo extends CSQuery implements ProtocolInterface
         // convert %HEX sequences
         $decrypted = preg_replace_callback(
             '|%([0-9A-F]{2})|i',
-            static fn (array $matches): string => pack('H*', $matches[1]),
+            static function (array $matches): string {
+                /** @var array{non-falsy-string, non-falsy-string} $matches */
+
+                return pack('H*', $matches[1]);
+            },
             $decrypted,
         ) ?? $decrypted;
 
@@ -298,7 +302,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
 
                     foreach ($items as $item) {
                         $parts = array_pad(explode('=', $item, 2), 2, '');
-                        $k     = strtolower((string) $parts[0]);
+                        $k     = strtolower($parts[0]);
                         $v     = $parts[1] ?? '';
                         $p[$k] = $v;
                     }
@@ -312,7 +316,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
 
                     foreach ($items as $item) {
                         $parts = array_pad(explode('=', $item, 2), 2, '');
-                        $k     = strtolower((string) $parts[0]);
+                        $k     = strtolower($parts[0]);
                         $v     = $parts[1] ?? '';
                         $c[$k] = $v;
                     }
@@ -457,8 +461,8 @@ class Ventrilo extends CSQuery implements ProtocolInterface
                 throw new RuntimeException('Header missing datakey or pck');
             }
 
-            $a1 = (int) $header_assoc['datakey'] & 0xFF;
-            $a2 = (int) $header_assoc['datakey'] >> 8;
+            $a1 = $header_assoc['datakey'] & 0xFF;
+            $a2 = $header_assoc['datakey'] >> 8;
 
             if ($a1 === 0) {
                 throw new RuntimeException('Data key invalid');
@@ -477,7 +481,7 @@ class Ventrilo extends CSQuery implements ProtocolInterface
                 $data .= chr($byte);
             }
 
-            $decryptedParts[(int) $header_assoc['pck']] = $data;
+            $decryptedParts[$header_assoc['pck']] = $data;
         }
 
         ksort($decryptedParts);

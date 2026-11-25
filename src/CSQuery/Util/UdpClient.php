@@ -68,7 +68,11 @@ class UdpClient
         $socketstatus = stream_get_meta_data($fp);
 
         while (!$socketstatus['timed_out'] && !$socketstatus['eof']) {
-            $result .= fread($fp, 128);
+            $chunk = fread($fp, 128);
+
+            if ($chunk !== false) {
+                $result .= $chunk;
+            }
             $socketstatus = stream_get_meta_data($fp);
         }
 
@@ -169,7 +173,7 @@ class UdpClient
 
             // Wait for inter-packet timeout
             if ($interPacketTimeout > 0) {
-                usleep((int) ($interPacketTimeout * 1000000));
+                usleep((int) ($interPacketTimeout * 1000000.0));
             }
         }
 

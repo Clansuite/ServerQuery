@@ -32,26 +32,40 @@ final class ServerInfoExtractor
         /** @var array<string, mixed> $data */
         $data = get_object_vars($server);
 
+        $rules       = $data['rules'] ?? null;
+        $players     = $data['players'] ?? null;
+        $address     = $data['address'] ?? null;
+        $queryport   = $data['queryport'] ?? null;
+        $online      = $data['online'] ?? null;
+        $gamename    = $data['gamename'] ?? null;
+        $gameversion = $data['gameversion'] ?? null;
+        $servertitle = $data['servertitle'] ?? null;
+        $mapname     = $data['mapname'] ?? null;
+        $gametype    = $data['gametype'] ?? null;
+        $numplayers  = $data['numplayers'] ?? null;
+        $maxplayers  = $data['maxplayers'] ?? null;
+        $errstr      = $data['errstr'] ?? null;
+
         /** @var array<string, mixed> $rules */
-        $rules = is_array($data['rules'] ?? null) ? $data['rules'] : [];
+        $rules = is_array($rules) ? $rules : [];
 
         /** @var array<array<string, mixed>> $players */
-        $players = is_array($data['players'] ?? null) ? $data['players'] : [];
+        $players = is_array($players) ? $players : [];
 
         return new ServerInfo(
-            address: is_string($data['address'] ?? null) ? $data['address'] : null,
-            queryport: is_int($data['queryport'] ?? null) ? $data['queryport'] : null,
-            online: is_bool($data['online'] ?? null) ? $data['online'] : false,
-            gamename: is_string($data['gamename'] ?? null) ? $data['gamename'] : null,
-            gameversion: is_string($data['gameversion'] ?? null) ? $data['gameversion'] : null,
-            servertitle: is_string($data['servertitle'] ?? null) ? $data['servertitle'] : null,
-            mapname: is_string($data['mapname'] ?? null) ? $data['mapname'] : null,
-            gametype: is_string($data['gametype'] ?? null) ? $data['gametype'] : null,
-            numplayers: is_int($data['numplayers'] ?? null) ? $data['numplayers'] : 0,
-            maxplayers: is_int($data['maxplayers'] ?? null) ? $data['maxplayers'] : 0,
+            address: is_string($address) ? $address : null,
+            queryport: is_int($queryport) ? $queryport : null,
+            online: is_bool($online) ? $online : false,
+            gamename: is_string($gamename) ? $gamename : null,
+            gameversion: is_string($gameversion) ? $gameversion : null,
+            servertitle: is_string($servertitle) ? $servertitle : null,
+            mapname: is_string($mapname) ? $mapname : null,
+            gametype: is_string($gametype) ? $gametype : null,
+            numplayers: is_int($numplayers) ? $numplayers : 0,
+            maxplayers: is_int($maxplayers) ? $maxplayers : 0,
             rules: $rules,
             players: $players,
-            errstr: is_string($data['errstr'] ?? null) ? $data['errstr'] : null,
+            errstr: is_string($errstr) ? $errstr : null,
         );
     }
 }

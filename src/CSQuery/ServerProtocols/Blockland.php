@@ -55,6 +55,6 @@ class Blockland extends Tribes2 implements ProtocolInterface
     public function getNativeJoinURI(): string
     {
         // Blockland uses blockland:// protocol for joining servers
-        return 'blockland://' . $this->address . ':' . $this->hostport;
+        return 'blockland://' . ($this->address ?? '') . ':' . $this->hostport;
     }
 }

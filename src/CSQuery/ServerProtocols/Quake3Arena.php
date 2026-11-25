@@ -15,7 +15,6 @@ namespace Clansuite\ServerQuery\ServerProtocols;
 use function count;
 use function explode;
 use function htmlentities;
-use function is_string;
 use function preg_match;
 use function preg_replace;
 use function preg_split;
@@ -81,7 +80,7 @@ class Quake3Arena extends Quake
         $temp    = explode("\x0a", $result);
         $rawdata = [];
 
-        if (isset($temp[1]) && is_string($temp[1])) {
+        if (isset($temp[1])) {
             $rawdata = explode('\\', substr($temp[1], 1, strlen($temp[1])));
         }
 
@@ -99,7 +98,7 @@ class Quake3Arena extends Quake
                 case 'gamename':
                     $this->gametype = $rawdata[$i] ?? '';
 
-                    $this->gamename = 'q3a_' . preg_replace('/[ :]/', '_', strtolower($rawdata[$i] ?? ''));
+                    $this->gamename = 'q3a_' . (preg_replace('/[ :]/', '_', strtolower($rawdata[$i] ?? '')) ?? '');
 
                     break;
 
@@ -176,11 +175,13 @@ class Quake3Arena extends Quake
 
                 // match with team info
                 if (preg_match("/(\d+)[^0-9](\d+)[^0-9]\"(.*)\"/", $line, $curplayer) === 1) {
+                    /** @var array{non-falsy-string, numeric-string, numeric-string, string} $curplayer */
                     // ignore spectators (team > 2)
                     if ((int) $curplayer[3] > 2) {
                         // ignore spectators
                     }
 
+                    /** @var array{non-falsy-string, numeric-string, numeric-string, string} $curplayer */
                     $players[$i - 1]['name']  = $curplayer[3];
                     $players[$i - 1]['score'] = (int) $curplayer[1];
                     $players[$i - 1]['ping']  = (int) $curplayer[2];
@@ -188,6 +189,7 @@ class Quake3Arena extends Quake
                     $teamInfo                 = true;
                     $pingOnly                 = false;
                 } elseif (preg_match("/(\d+).\"(.*)\"/", $line, $curplayer) === 1) {
+                    /** @var array{non-falsy-string, numeric-string, numeric-string, string} $curplayer */
                     $players[$i - 1]['name'] = $curplayer[2];
                     $players[$i - 1]['ping'] = (int) $curplayer[1];
                     $pingOnly                = true; // for MoHAA

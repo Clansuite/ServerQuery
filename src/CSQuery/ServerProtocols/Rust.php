@@ -71,7 +71,10 @@ class Rust extends Steam
     {
         // Match mp{number} and cp{number} patterns
         if (preg_match_all('/(mp|cp)(\d+)/', $keywords, $matches) !== false) {
-            foreach ($matches[1] as $index => $type) {
+            /** @var array{list<string>, list<'cp'|'mp'>, list<numeric-string>} $groups */
+            $groups = $matches;
+
+            foreach ($groups[1] as $index => $type) {
                 if (!isset($matches[2][$index])) {
                     continue;
                 }

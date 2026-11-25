@@ -182,8 +182,8 @@ final class HuffmanDecoder
         }
 
         // min()/max() on a non-empty array of ints is safe because the table is populated above
-        $this->minHuffmanBitstring = (int) min($lengths);
-        $this->maxHuffmanBitstring = (int) max($lengths);
+        $this->minHuffmanBitstring = min($lengths);
+        $this->maxHuffmanBitstring = max($lengths);
     }
 
     /**

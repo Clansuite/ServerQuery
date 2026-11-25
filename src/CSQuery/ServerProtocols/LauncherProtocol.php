@@ -40,7 +40,7 @@ abstract class LauncherProtocol extends CSQuery
     /**
      * Game name for this protocol.
      */
-    protected string $gameName;
+    protected string $gameName = '';
 
     /**
      * Constructor.

@@ -39,6 +39,8 @@ class Quake4 extends Quake
 
     /**
      * List of supported games.
+     *
+     * @var array<string>
      */
     public array $supportedGames = ['Quake 4'];
 
@@ -49,6 +51,8 @@ class Quake4 extends Quake
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['Quake'];
 

@@ -36,8 +36,10 @@ use Override;
  */
 class Mumble extends CSQuery implements ProtocolInterface
 {
-    private const PORT_DIFF      = -36938; // clientPort + PORT_DIFF = query port (64738 + -36938 = 27800)
-    public string $name          = 'Mumble';
+    private const PORT_DIFF = -36938; // clientPort + PORT_DIFF = query port (64738 + -36938 = 27800)
+    public string $name     = 'Mumble';
+
+    /** @var array<string> */
     public array $supportedGames = ['Mumble'];
     public string $protocol      = 'mumble';
 
@@ -154,8 +156,10 @@ class Mumble extends CSQuery implements ProtocolInterface
                 ];
 
                 // collect any users in this channel
-                if (is_array($node['users'] ?? null) && $node['users'] !== []) {
-                    foreach ($node['users'] as $user) {
+                $users = $node['users'] ?? null;
+
+                if (is_array($users) && $users !== []) {
+                    foreach ($users as $user) {
                         // user might be keyed by session id
                         if (is_array($user)) {
                             $pname     = $user['name'] ?? $user['username'] ?? null;
@@ -170,8 +174,10 @@ class Mumble extends CSQuery implements ProtocolInterface
                 }
 
                 // recurse channels
-                if (is_array($node['channels'] ?? null) && $node['channels'] !== []) {
-                    foreach ($node['channels'] as $child) {
+                $children = $node['channels'] ?? null;
+
+                if (is_array($children) && $children !== []) {
+                    foreach ($children as $child) {
                         if (is_array($child)) {
                             $extract($child, $cid);
                         }
@@ -211,7 +217,7 @@ class Mumble extends CSQuery implements ProtocolInterface
 
         // set info
         $this->numplayers = count($players);
-        $this->maxplayers = isset($data['x_gtmurmur_max_users']) ? ScalarCaster::toInt($data['x_gtmurmur_max_users']) : ($this->maxplayers ?? 0);
+        $this->maxplayers = isset($data['x_gtmurmur_max_users']) ? ScalarCaster::toInt($data['x_gtmurmur_max_users']) : $this->maxplayers;
         $this->players    = $players;
         $this->channels   = array_values($channels);
         $this->online     = true;

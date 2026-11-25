@@ -260,7 +260,7 @@ class Bc2 extends CSQuery implements ProtocolInterface
         }
 
         /** @var array{1: int} $unpacked */
-        $itemCount = isset($unpacked[1]) ? (int) $unpacked[1] : 0;
+        $itemCount = $unpacked[1] ?? 0;
         $ptr       = 4;
         $items     = [];
 

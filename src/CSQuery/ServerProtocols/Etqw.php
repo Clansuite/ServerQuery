@@ -12,8 +12,6 @@
 
 namespace Clansuite\ServerQuery\ServerProtocols;
 
-use function is_int;
-use function is_string;
 use function preg_match;
 use function strlen;
 use function substr;
@@ -84,19 +82,19 @@ class Etqw extends Quake4
         $info = $this->parseDoom3Info($data);
 
         // Extract basic server information
-        $this->gamename    = isset($info['gamename']) && is_string($info['gamename']) ? $info['gamename'] : 'baseETQW-1';
-        $this->gameversion = $this->translateProtocolVersion(isset($info['protocol']) && is_string($info['protocol']) ? $info['protocol'] : (isset($info['si_version']) && is_string($info['si_version']) ? $info['si_version'] : ''));
-        $this->servertitle = isset($info['si_name']) && is_string($info['si_name']) ? $info['si_name'] : '';
-        $this->mapname     = isset($info['si_map']) && is_string($info['si_map']) ? $info['si_map'] : '';
-        $this->gametype    = isset($info['si_rules']) && is_string($info['si_rules']) ? $info['si_rules'] : '';
-        $this->maxplayers  = isset($info['si_maxPlayers']) && is_int($info['si_maxPlayers']) ? $info['si_maxPlayers'] : 0;
+        $this->gamename    = $info['gamename'] ?? 'baseETQW-1';
+        $this->gameversion = $this->translateProtocolVersion($info['protocol'] ?? ($info['si_version'] ?? ''));
+        $this->servertitle = $info['si_name'] ?? '';
+        $this->mapname     = $info['si_map'] ?? '';
+        $this->gametype    = $info['si_rules'] ?? '';
+        $this->maxplayers  = isset($info['si_maxPlayers']) ? (int) $info['si_maxPlayers'] : 0;
         $this->numplayers  = 0; // Will be calculated from players
 
         // Store all rules
         $this->rules = $info;
 
         // Get players if requested
-        if ($getPlayers && isset($info['si_players']) && is_string($info['si_players'])) {
+        if ($getPlayers && isset($info['si_players'])) {
             $this->parsePlayers($info['si_players']);
         }
 

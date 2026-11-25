@@ -38,6 +38,8 @@ class Dnl extends Unreal2
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['Dark and Light'];
 

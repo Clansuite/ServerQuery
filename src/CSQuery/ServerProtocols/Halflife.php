@@ -54,6 +54,8 @@ class Halflife extends CSQuery
 
     /**
      * Game series.
+     *
+     * @var array<string>
      */
     public array $game_series_list = ['Half-Life'];
 
@@ -146,7 +148,7 @@ class Halflife extends CSQuery
         }
 
         $endtime = microtime(true);
-        $diff    = round(($endtime - $starttime) * 1000, 0);
+        $diff    = round(($endtime - $starttime) * 1000.0, 0);
         // response time
         $this->response = round($diff, 2);
 
@@ -198,19 +200,19 @@ class Halflife extends CSQuery
         $gamedesc = $this->get_string($data, $pos);
         $pos += strlen($gamedesc) + 1;
 
-        $numplayers = isset($data[$pos]) && is_numeric($data[$pos]) ? (int) $data[$pos] : 0;
+        $numplayers = isset($data[$pos]) ? ScalarCaster::toInt($data[$pos]) : 0;
         $pos++;
 
-        $maxplayers = isset($data[$pos]) && is_numeric($data[$pos]) ? (int) $data[$pos] : 0;
+        $maxplayers = isset($data[$pos]) ? ScalarCaster::toInt($data[$pos]) : 0;
         $pos++;
         $pos++;
         $pos++;
         $pos++;
 
-        $password = isset($data[$pos]) && is_numeric($data[$pos]) ? (int) $data[$pos] : 0;
+        $password = isset($data[$pos]) ? ScalarCaster::toInt($data[$pos]) : 0;
         $pos++;
 
-        $ismod = isset($data[$pos]) && is_numeric($data[$pos]) ? (int) $data[$pos] : 0;
+        $ismod = isset($data[$pos]) ? ScalarCaster::toInt($data[$pos]) : 0;
         $pos++;
 
         // if this is a mod, get mod specific information
@@ -410,11 +412,10 @@ class Halflife extends CSQuery
 
             // format time
             if (array_key_exists('time', $curPlayer) && is_int($curPlayer['time'])) {
+                /** @var false|int $timestamp */
                 $timestamp = mktime(0, 0, $curPlayer['time']);
 
-                if ($timestamp !== false) {
-                    $curPlayer['time'] = date('H:i:s', $timestamp);
-                }
+                $curPlayer['time'] = $timestamp !== false ? date('H:i:s', $timestamp) : '00:00:00';
             }
             // extract player name
             $curPlayer['name'] = substr($data, $i, $endPlayerName - $i);

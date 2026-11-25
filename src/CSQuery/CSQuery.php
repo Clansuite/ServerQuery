@@ -264,6 +264,7 @@ class CSQuery
             throw new InvalidArgumentException("Protocol '{$protocol}' is not supported.");
         }
 
+        /** @psalm-suppress UnsafeInstantiation -- all protocol classes share CSQuery's constructor signature */
         return new $className($address, $port);
     }
 
